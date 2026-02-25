@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fetch Toronto amenities from Open Data and output JSON for Humanity's Guide.
+Fetch Toronto amenities from Open Data and output JSON for Nunki.
 Toronto uses CKAN API. Run from project root: python scripts/fetch_toronto.py
 
 Data sources:

@@ -33,7 +33,7 @@ def _load_gtfs(zip_url: str, cache_dir: Path | None) -> tuple[dict[str, list[str
     zip_path = cache_dir / "gtfs.zip"
 
     try:
-        req = urllib.request.Request(zip_url, headers={"User-Agent": "HumanitysGuide/1.0"})
+        req = urllib.request.Request(zip_url, headers={"User-Agent": "Nunki/1.0"})
         with urllib.request.urlopen(req, timeout=60) as r:
             zip_path.write_bytes(r.read())
     except Exception as e:

@@ -1,10 +1,10 @@
-/* Humanity's Guide — Service Worker
+/* Nunki — Service Worker
  * Cache-first: app shell
  * Stale-while-revalidate: JSON data
  */
 
-const SHELL_CACHE = 'humanitys-guide-shell-v1';
-const DATA_CACHE = 'humanitys-guide-data-v1';
+const SHELL_CACHE = 'nunki-shell-v1';
+const DATA_CACHE = 'nunki-data-v1';
 
 const SHELL_ASSETS = [
   '/',
@@ -27,7 +27,7 @@ self.addEventListener('activate', (e) => {
     caches.keys().then((keys) =>
       Promise.all(
         keys
-          .filter((k) => k.startsWith('humanitys-guide-') && k !== SHELL_CACHE && k !== DATA_CACHE)
+          .filter((k) => k.startsWith('nunki-') && k !== SHELL_CACHE && k !== DATA_CACHE)
           .map((k) => caches.delete(k))
       )
     ).then(() => self.clients.claim())

@@ -106,7 +106,7 @@
       <p>Foundry (BC) and 211 (both provinces) can connect you to substance use programs. Many are free. You can ask for help without judgment.</p>
     `}},y={vancouver:{name:"Vancouver",dataFile:"vancouver.json"},toronto:{name:"Toronto",dataFile:"toronto.json"}},x=[{id:"survival",title:"Survival Guide",desc:"Shelters, meals, washrooms, transit",route:"/survival"},{id:"foster",title:"Foster Youth Navigator",desc:"Benefits, housing, life skills",route:"/foster"}],w={shelter:"Shelter",meal:"Meal program",washroom:"Washroom",safe_injection:"Safe consumption",transit_hub:"Transit"};let l=null,c=null,p="all",h="all",u=null;function m(){return document.getElementById("app")}function S(){return"/"}async function T(e){const o=S(),t=e.startsWith("/")?e:`${o}data/${e}`,s=await fetch(t);if(!s.ok)throw new Error(`Failed to load ${e}`);return s.json()}function d(){const e=l?y[l]:null,o=m();if(!e){o.innerHTML=`
       <main class="page city-select" role="main">
-        <h1>Humanity's Guide</h1>
+        <h1>Nunki</h1>
         <p style="margin: 1rem 0; color: var(--muted);">Choose your city</p>
         ${Object.entries(y).map(([t,s])=>`
           <button class="city-btn" type="button" data-city="${t}" aria-label="Select ${s.name}">${s.name}</button>
@@ -115,7 +115,7 @@
     `,o.querySelectorAll(".city-btn").forEach(t=>{t.addEventListener("click",()=>A(t.dataset.city))});return}o.innerHTML=`
     <main class="page" role="main">
       <header class="header">
-        <h1>Humanity's Guide</h1>
+        <h1>Nunki</h1>
         <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${e.name}</p>
       </header>
       <nav class="section-grid" aria-label="Main sections">

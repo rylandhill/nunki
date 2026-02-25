@@ -1,6 +1,6 @@
 {
-  "name": "Humanity's Guide",
-  "short_name": "HumanitysGuide",
+  "name": "Nunki",
+  "short_name": "Nunki",
   "description": "Shelters, meals, washrooms, transit. Foster youth benefits. No login required.",
   "start_url": "/",
   "display": "standalone",

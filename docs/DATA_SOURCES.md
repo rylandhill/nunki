@@ -1,6 +1,6 @@
 # Data Sources & Adding New Cities
 
-This document describes all data sources used by Humanity's Guide and how to add support for new cities. The app is designed to be adopted by developers in other cities—this guide makes that process straightforward.
+This document describes all data sources used by Nunki and how to add support for new cities. The app is designed to be adopted by developers in other cities—this guide makes that process straightforward.
 
 ---
 

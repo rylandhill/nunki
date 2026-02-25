@@ -1,5 +1,5 @@
 /**
- * Humanity's Guide — Offline-first PWA
+ * Nunki — Offline-first PWA
  * No logins. No tracking. Works offline.
  */
 
@@ -53,7 +53,7 @@ function renderHome() {
   if (!city) {
     app.innerHTML = `
       <main class="page city-select" role="main">
-        <h1>Humanity's Guide</h1>
+        <h1>Nunki</h1>
         <p style="margin: 1rem 0; color: var(--muted);">Choose your city</p>
         ${Object.entries(CITIES).map(([id, c]) => `
           <button class="city-btn" type="button" data-city="${id}" aria-label="Select ${c.name}">${c.name}</button>
@@ -69,7 +69,7 @@ function renderHome() {
   app.innerHTML = `
     <main class="page" role="main">
       <header class="header">
-        <h1>Humanity's Guide</h1>
+        <h1>Nunki</h1>
         <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${city.name}</p>
       </header>
       <nav class="section-grid" aria-label="Main sections">

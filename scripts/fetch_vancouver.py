@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fetch Vancouver amenities from Open Data and output JSON for Humanity's Guide.
+Fetch Vancouver amenities from Open Data and output JSON for Nunki.
 Run from project root: python scripts/fetch_vancouver.py
 """
 

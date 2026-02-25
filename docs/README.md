@@ -1,6 +1,6 @@
-# Humanity's Guide — Documentation
+# Nunki — Documentation
 
-Documentation for developers who want to use, contribute to, or extend Humanity's Guide.
+Documentation for developers who want to use, contribute to, or extend Nunki.
 
 ## Contents
 

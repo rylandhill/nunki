@@ -1,3 +1,3 @@
 # Cloudflare Pages
-# Deploy: npx wrangler pages deploy dist --project-name=humanitys-guide
+# Deploy: npx wrangler pages deploy dist --project-name=nunki
 # Or connect repo at dash.cloudflare.com → Pages → Build: npm run build, Output: dist

@@ -1,4 +1,4 @@
-# Humanity's Guide
+# Nunki
 
 Offline-first PWA for survival resources (shelters, meals, washrooms) and foster youth benefits. No logins. No tracking.
 
@@ -48,7 +48,7 @@ Full details, API endpoints, schemas, and how to add new cities: **[docs/DATA_SO
 2. Build command: `npm run build`
 3. Output directory: `dist`
 
-Or use Wrangler: `npx wrangler pages deploy dist --project-name=humanitys-guide`
+Or use Wrangler: `npx wrangler pages deploy dist --project-name=nunki`
 
 ## Project structure
 
