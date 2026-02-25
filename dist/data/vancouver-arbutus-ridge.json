@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "city": "vancouver",
+    "region": "arbutus-ridge",
+    "updated": "2026-02-24"
+  },
+  "amenities": [
+    {
+      "id": "meal-van-52",
+      "type": "meal",
+      "name": "St Mary's Kerrisdale - Community Meal",
+      "address": "2490 W 37th Ave, Vancouver, BC",
+      "intersection": "Arbutus-Ridge",
+      "region": "arbutus-ridge",
+      "hours": "Every Tuesday, 11:30AM - 12:30PM",
+      "phone": "",
+      "lat": 49.238121,
+      "lng": -123.162091,
+      "notes": "Free. Wheelchair accessible"
+    }
+  ]
+}

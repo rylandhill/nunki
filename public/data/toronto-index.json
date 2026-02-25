@@ -1,0 +1,7 @@
+{
+  "city": "toronto",
+  "regions": [
+    { "id": "downtown", "name": "Downtown", "file": "toronto-downtown.json" }
+  ],
+  "updated": "2025-02-24"
+}

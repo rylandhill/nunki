@@ -1,0 +1,275 @@
+{
+  "meta": {
+    "city": "vancouver",
+    "region": "kitsilano",
+    "updated": "2026-02-24"
+  },
+  "amenities": [
+    {
+      "id": "washroom-van-13",
+      "type": "washroom",
+      "name": "McBride Park \u2014 Central, field house",
+      "address": "Central, field house, Kitsilano",
+      "intersection": "Kitsilano",
+      "region": "kitsilano",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.26810696563152,
+      "lng": -123.18014096216841,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "004",
+        "007",
+        "009",
+        "014",
+        "044",
+        "084",
+        "N17"
+      ]
+    },
+    {
+      "id": "washroom-van-20",
+      "type": "washroom",
+      "name": "Quilchena Park \u2014 North east corner, fieldhouse",
+      "address": "North east corner, fieldhouse, Arbutus Ridge",
+      "intersection": "Arbutus Ridge",
+      "region": "kitsilano",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.24464304772728,
+      "lng": -123.14872394440481,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "016"
+      ]
+    },
+    {
+      "id": "washroom-van-22",
+      "type": "washroom",
+      "name": "Trafalgar Park \u2014 North side, fieldhouse",
+      "address": "North side, fieldhouse, Arbutus Ridge",
+      "intersection": "Arbutus Ridge",
+      "region": "kitsilano",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.25155496544842,
+      "lng": -123.16347197280247,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "002",
+        "025",
+        "N22"
+      ]
+    },
+    {
+      "id": "washroom-van-41",
+      "type": "washroom",
+      "name": "Jericho Beach Park \u2014 Service Yard - public exterior attached to service building",
+      "address": "Service Yard - public exterior attached to service building, West Point Grey",
+      "intersection": "West Point Grey",
+      "region": "kitsilano",
+      "hours": "Dawn - 11:00 pm",
+      "phone": "",
+      "lat": 49.27442916398891,
+      "lng": -123.20282013106967,
+      "notes": "Wheelchair accessible"
+    },
+    {
+      "id": "washroom-van-66",
+      "type": "washroom",
+      "name": "Carnarvon Park \u2014 West side, field house",
+      "address": "West side, field house, Arbutus Ridge",
+      "intersection": "Arbutus Ridge",
+      "region": "kitsilano",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.25674201569889,
+      "lng": -123.17260900971546,
+      "notes": "",
+      "nearby_routes": [
+        "002",
+        "033",
+        "N22"
+      ]
+    },
+    {
+      "id": "washroom-van-83",
+      "type": "washroom",
+      "name": "Vanier Park \u2014 Burrard Civic Marina",
+      "address": "Burrard Civic Marina, Kitsilano",
+      "intersection": "Kitsilano",
+      "region": "kitsilano",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.275196010474275,
+      "lng": -123.13985594322915,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "023"
+      ]
+    },
+    {
+      "id": "washroom-van-85",
+      "type": "washroom",
+      "name": "Kitsilano War Memorial \u2014 2690 Larch St",
+      "address": "2690 Larch St, Kitsilano",
+      "intersection": "Kitsilano",
+      "region": "kitsilano",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.26234325331626,
+      "lng": -123.16185934533655,
+      "notes": "",
+      "nearby_routes": [
+        "002",
+        "009",
+        "099",
+        "N17",
+        "N22"
+      ]
+    },
+    {
+      "id": "washroom-van-112",
+      "type": "washroom",
+      "name": "Hadden Park \u2014 West, caretaker house (actually in Kits)",
+      "address": "West, caretaker house (actually in Kits), Kitsilano",
+      "intersection": "Kitsilano",
+      "region": "kitsilano",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.27746099219153,
+      "lng": -123.15030998197221,
+      "notes": "Wheelchair accessible"
+    },
+    {
+      "id": "washroom-van-118",
+      "type": "washroom",
+      "name": "Tatlow Park \u2014 South, field house",
+      "address": "South, field house, Kitsilano",
+      "intersection": "Kitsilano",
+      "region": "kitsilano",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.26947601104013,
+      "lng": -123.1695119500403,
+      "notes": "",
+      "nearby_routes": [
+        "002",
+        "004",
+        "007",
+        "014",
+        "044",
+        "084",
+        "N22"
+      ]
+    },
+    {
+      "id": "washroom-van-127",
+      "type": "washroom",
+      "name": "Jericho Beach Park \u2014 Concession/fieldhouse",
+      "address": "Concession/fieldhouse, West Point Grey",
+      "intersection": "West Point Grey",
+      "region": "kitsilano",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.27158002043859,
+      "lng": -123.19165896021171,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "004"
+      ]
+    },
+    {
+      "id": "washroom-van-128",
+      "type": "washroom",
+      "name": "Kitsilano Beach Park \u2014 Kitsilano Showboat concession",
+      "address": "Kitsilano Showboat concession, Kitsilano",
+      "intersection": "Kitsilano",
+      "region": "kitsilano",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.273014033025405,
+      "lng": -123.15754296825496,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "002",
+        "N22"
+      ]
+    },
+    {
+      "id": "washroom-van-129",
+      "type": "washroom",
+      "name": "Kitsilano Beach Park \u2014 Lifeguard station",
+      "address": "Lifeguard station, Kitsilano",
+      "intersection": "Kitsilano",
+      "region": "kitsilano",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.274471992371346,
+      "lng": -123.15370297407691,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "002",
+        "N22"
+      ]
+    },
+    {
+      "id": "meal-van-23",
+      "type": "meal",
+      "name": "Kitsilano Community Centre Breakfast Program",
+      "address": "2690 Larch St, Vancouver, BC",
+      "intersection": "Kitsilano",
+      "region": "kitsilano",
+      "hours": "Biweekly: 2nd and 4th Saturday, 7:30am-9am",
+      "phone": "",
+      "lat": 49.262056,
+      "lng": -123.160105,
+      "notes": "Free. ",
+      "nearby_routes": [
+        "009",
+        "099",
+        "N17"
+      ]
+    },
+    {
+      "id": "meal-van-52",
+      "type": "meal",
+      "name": "St Mary's Kerrisdale - Community Meal",
+      "address": "2490 W 37th Ave, Vancouver, BC",
+      "intersection": "Arbutus-Ridge",
+      "region": "kitsilano",
+      "hours": "Every Tuesday, 11:30AM - 12:30PM",
+      "phone": "",
+      "lat": 49.238121,
+      "lng": -123.162091,
+      "notes": "Free. Wheelchair accessible",
+      "nearby_routes": [
+        "016",
+        "041"
+      ]
+    },
+    {
+      "id": "meal-van-63",
+      "type": "meal",
+      "name": "Seniors Lunch at Kitsilano Neighbourhood House",
+      "address": "2305 West 7th Ave, Vancouver, BC",
+      "intersection": "Kitsilano",
+      "region": "kitsilano",
+      "hours": "Tuesdays 11:00am \u2013 1:00pm",
+      "phone": "",
+      "lat": 49.265901,
+      "lng": -123.158042,
+      "notes": "Low cost. Wheelchair accessible",
+      "nearby_routes": [
+        "004",
+        "007",
+        "009",
+        "014",
+        "044",
+        "084",
+        "099",
+        "N17"
+      ]
+    }
+  ]
+}

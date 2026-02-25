@@ -1,0 +1,35 @@
+{
+  "city": "vancouver",
+  "dataFile": "vancouver.json",
+  "mapRegions": [
+    {
+      "id": "downtown",
+      "name": "Downtown"
+    },
+    {
+      "id": "east-van",
+      "name": "East Van"
+    },
+    {
+      "id": "fairview",
+      "name": "Fairview"
+    },
+    {
+      "id": "kitsilano",
+      "name": "Kitsilano"
+    },
+    {
+      "id": "mount-pleasant",
+      "name": "Mount Pleasant"
+    },
+    {
+      "id": "south-van",
+      "name": "South Van"
+    },
+    {
+      "id": "west-point-grey",
+      "name": "West Point Grey"
+    }
+  ],
+  "updated": "2026-02-24"
+}

@@ -1,0 +1,543 @@
+{
+  "meta": {
+    "city": "vancouver",
+    "region": "south-van",
+    "updated": "2026-02-24"
+  },
+  "amenities": [
+    {
+      "id": "washroom-van-2",
+      "type": "washroom",
+      "name": "Balaclava Park \u2014 Central, field house",
+      "address": "Central, field house, Dunbar-Southlands",
+      "intersection": "Dunbar-Southlands",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.245233993117445,
+      "lng": -123.17546094914356,
+      "notes": "",
+      "nearby_routes": [
+        "002",
+        "N22"
+      ]
+    },
+    {
+      "id": "washroom-van-8",
+      "type": "washroom",
+      "name": "Fraser River Park \u2014 West corner",
+      "address": "West corner, Kerrisdale",
+      "intersection": "Kerrisdale",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.20739499780498,
+      "lng": -123.14985600420111,
+      "notes": ""
+    },
+    {
+      "id": "washroom-van-9",
+      "type": "washroom",
+      "name": "Fraserview Golf Course \u2014 Kerr Road @13th hole",
+      "address": "Kerr Road @13th hole, Killarney",
+      "intersection": "Killarney",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.21129535127691,
+      "lng": -123.04229966821495,
+      "notes": "",
+      "nearby_routes": [
+        "080",
+        "100"
+      ]
+    },
+    {
+      "id": "washroom-van-14",
+      "type": "washroom",
+      "name": "Moberly Park \u2014 South west corner at Community Hall",
+      "address": "South west corner at Community Hall, Sunset",
+      "intersection": "Sunset",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.2152529947934,
+      "lng": -123.08735497868794,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "008",
+        "080",
+        "100",
+        "N20",
+        "N8"
+      ]
+    },
+    {
+      "id": "washroom-van-15",
+      "type": "washroom",
+      "name": "Montgomery Park \u2014 North east corner",
+      "address": "North east corner, Oakridge",
+      "intersection": "Oakridge",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.23182604554475,
+      "lng": -123.12924098629418,
+      "notes": "",
+      "nearby_routes": [
+        "017",
+        "041",
+        "R4"
+      ]
+    },
+    {
+      "id": "washroom-van-16",
+      "type": "washroom",
+      "name": "Nanaimo Park \u2014 North side, fieldhouse",
+      "address": "North side, fieldhouse, Victoria-Fraserview",
+      "intersection": "Victoria-Fraserview",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.22824199783675,
+      "lng": -123.05742904218603,
+      "notes": "",
+      "nearby_routes": [
+        "029",
+        "049",
+        "430"
+      ]
+    },
+    {
+      "id": "washroom-van-17",
+      "type": "washroom",
+      "name": "Oak Park \u2014 East side field house",
+      "address": "East side field house, Marpole",
+      "intersection": "Marpole",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.21628599415058,
+      "lng": -123.12764097866088,
+      "notes": "",
+      "nearby_routes": [
+        "017"
+      ]
+    },
+    {
+      "id": "washroom-van-21",
+      "type": "washroom",
+      "name": "Riverfront Park \u2014 North side",
+      "address": "North side, Killarney",
+      "intersection": "Killarney",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.20576803638567,
+      "lng": -123.0518469713802,
+      "notes": "",
+      "nearby_routes": [
+        "080",
+        "100"
+      ]
+    },
+    {
+      "id": "washroom-van-24",
+      "type": "washroom",
+      "name": "Winona Park \u2014 Fieldhouse",
+      "address": "Fieldhouse, Marpole",
+      "intersection": "Marpole",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.21571797941276,
+      "lng": -123.11294894481753,
+      "notes": "",
+      "nearby_routes": [
+        "003",
+        "015",
+        "100",
+        "N15",
+        "N20",
+        "N8"
+      ]
+    },
+    {
+      "id": "washroom-van-33",
+      "type": "washroom",
+      "name": "Kerrisdale \u2014 5851 West Boulevard",
+      "address": "5851 West Boulevard, Kerrisdale",
+      "intersection": "Kerrisdale",
+      "region": "south-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.23318535416131,
+      "lng": -123.15709290739301,
+      "notes": "",
+      "nearby_routes": [
+        "016",
+        "041",
+        "R4"
+      ]
+    },
+    {
+      "id": "washroom-van-34",
+      "type": "washroom",
+      "name": "Killarney \u2014 6260 Killarney St",
+      "address": "6260 Killarney St, Killarney",
+      "intersection": "Killarney",
+      "region": "south-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.227036528643545,
+      "lng": -123.04396930018117,
+      "notes": "",
+      "nearby_routes": [
+        "026",
+        "049",
+        "430"
+      ]
+    },
+    {
+      "id": "washroom-van-50",
+      "type": "washroom",
+      "name": "Musqueam Park \u2014 4000 SW Marine Dr",
+      "address": "4000 SW Marine Dr, Dunbar-Southlands",
+      "intersection": "Dunbar-Southlands",
+      "region": "south-van",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.229432279280935,
+      "lng": -123.18992303549685,
+      "notes": "",
+      "nearby_routes": [
+        "049"
+      ]
+    },
+    {
+      "id": "washroom-van-54",
+      "type": "washroom",
+      "name": "Kerrisdale Park \u2014 Ice Rink",
+      "address": "Ice Rink, Shaughnessy",
+      "intersection": "Shaughnessy",
+      "region": "south-van",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.23543806889157,
+      "lng": -123.15353285764634,
+      "notes": "",
+      "nearby_routes": [
+        "016",
+        "041",
+        "R4"
+      ]
+    },
+    {
+      "id": "washroom-van-64",
+      "type": "washroom",
+      "name": "Bobolink Park \u2014 North side, fieldhouse",
+      "address": "North side, fieldhouse, Victoria-Fraserview",
+      "intersection": "Victoria-Fraserview",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.21560698536666,
+      "lng": -123.0564149547593,
+      "notes": "",
+      "nearby_routes": [
+        "029"
+      ]
+    },
+    {
+      "id": "washroom-van-67",
+      "type": "washroom",
+      "name": "Chaldecott Park \u2014 East side fieldhouse",
+      "address": "East side fieldhouse, Dunbar-Southlands",
+      "intersection": "Dunbar-Southlands",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.24942695918215,
+      "lng": -123.19112496215546,
+      "notes": "",
+      "nearby_routes": [
+        "007",
+        "025"
+      ]
+    },
+    {
+      "id": "washroom-van-69",
+      "type": "washroom",
+      "name": "Columbia Park \u2014 West Side",
+      "address": "West Side, Oakridge",
+      "intersection": "Oakridge",
+      "region": "south-van",
+      "hours": "Dawn to Dusk Weekends only",
+      "phone": "",
+      "lat": 49.23177479977243,
+      "lng": -123.11313783023915,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "015",
+        "041",
+        "Canada Line",
+        "N15",
+        "R4"
+      ]
+    },
+    {
+      "id": "washroom-van-71",
+      "type": "washroom",
+      "name": "Elm Park \u2014 Central, field house",
+      "address": "Central, field house, Kerrisdale",
+      "intersection": "Kerrisdale",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.23343197827387,
+      "lng": -123.16328394393365,
+      "notes": "",
+      "nearby_routes": [
+        "041"
+      ]
+    },
+    {
+      "id": "washroom-van-76",
+      "type": "washroom",
+      "name": "Memorial South Park \u2014 Oval",
+      "address": "Oval, Sunset",
+      "intersection": "Sunset",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.23073803414045,
+      "lng": -123.08438800219717,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "008",
+        "041",
+        "N8"
+      ]
+    },
+    {
+      "id": "washroom-van-77",
+      "type": "washroom",
+      "name": "Memorial West Park \u2014 Central, field house",
+      "address": "Central, field house, Dunbar-Southlands",
+      "intersection": "Dunbar-Southlands",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.243334983865445,
+      "lng": -123.18845500351183,
+      "notes": "",
+      "nearby_routes": [
+        "007"
+      ]
+    },
+    {
+      "id": "washroom-van-94",
+      "type": "washroom",
+      "name": "VanDusen Botanical Garden \u2014 Floral hall",
+      "address": "Floral hall, Shaughnessy",
+      "intersection": "Shaughnessy",
+      "region": "south-van",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.2386594319526,
+      "lng": -123.12955764644596,
+      "notes": "",
+      "nearby_routes": [
+        "017"
+      ]
+    },
+    {
+      "id": "washroom-van-103",
+      "type": "washroom",
+      "name": "Mccleery Golf Course \u2014 Unsure of exact location",
+      "address": "Unsure of exact location, Kerrisdale",
+      "intersection": "Kerrisdale",
+      "region": "south-van",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.2210231720367,
+      "lng": -123.16787418477047,
+      "notes": ""
+    },
+    {
+      "id": "washroom-van-109",
+      "type": "washroom",
+      "name": "Gordon Park \u2014 East side",
+      "address": "East side, Victoria-Fraserview",
+      "intersection": "Victoria-Fraserview",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.223870044041504,
+      "lng": -123.0694999779781,
+      "notes": "",
+      "nearby_routes": [
+        "020",
+        "049",
+        "430",
+        "N20"
+      ]
+    },
+    {
+      "id": "washroom-van-114",
+      "type": "washroom",
+      "name": "Maple Grove Park \u2014 Central, field house",
+      "address": "Central, field house, Kerrisdale",
+      "intersection": "Kerrisdale",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.223384020699434,
+      "lng": -123.15958297476698,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "016",
+        "049"
+      ]
+    },
+    {
+      "id": "washroom-van-116",
+      "type": "washroom",
+      "name": "Ross Park \u2014 South west corner, fieldhouse",
+      "address": "South west corner, fieldhouse, Sunset",
+      "intersection": "Sunset",
+      "region": "south-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.21669998012449,
+      "lng": -123.08279803559799,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "022",
+        "430"
+      ]
+    },
+    {
+      "id": "washroom-van-120",
+      "type": "washroom",
+      "name": "Champlain Heights \u2014 3350 Maquinna Drive",
+      "address": "3350 Maquinna Drive, Killarney",
+      "intersection": "Killarney",
+      "region": "south-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.214448061453886,
+      "lng": -123.03206634777003,
+      "notes": "",
+      "nearby_routes": [
+        "026",
+        "031"
+      ]
+    },
+    {
+      "id": "washroom-van-122",
+      "type": "washroom",
+      "name": "Dunbar \u2014 4747 Dunbar St",
+      "address": "4747 Dunbar St, Dunbar-Southlands",
+      "intersection": "Dunbar-Southlands",
+      "region": "south-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.24281542583886,
+      "lng": -123.18825196095462,
+      "notes": "",
+      "nearby_routes": [
+        "007"
+      ]
+    },
+    {
+      "id": "washroom-van-125",
+      "type": "washroom",
+      "name": "Marpole-Oakridge \u2014 990 W 59th Av",
+      "address": "990 W 59th Av, Marpole",
+      "intersection": "Marpole",
+      "region": "south-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.21677185719873,
+      "lng": -123.1286795021491,
+      "notes": "",
+      "nearby_routes": [
+        "017"
+      ]
+    },
+    {
+      "id": "washroom-van-126",
+      "type": "washroom",
+      "name": "Sunset \u2014 6810 Main St",
+      "address": "6810 Main St, Sunset",
+      "intersection": "Sunset",
+      "region": "south-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.22286659360525,
+      "lng": -123.10061043466422,
+      "notes": "",
+      "nearby_routes": [
+        "003",
+        "049"
+      ]
+    },
+    {
+      "id": "washroom-van-132",
+      "type": "washroom",
+      "name": "VanDusen Botanical Garden \u2014 At front entrance",
+      "address": "At front entrance, Shaughnessy",
+      "intersection": "Shaughnessy",
+      "region": "south-van",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.23851044914224,
+      "lng": -123.12863834069158,
+      "notes": "",
+      "nearby_routes": [
+        "017",
+        "041",
+        "R4"
+      ]
+    },
+    {
+      "id": "washroom-van-143",
+      "type": "washroom",
+      "name": "Langara Golf Course \u2014 Exterior of Building",
+      "address": "Exterior of Building, Oakridge",
+      "intersection": "Oakridge",
+      "region": "south-van",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.22388735761178,
+      "lng": -123.1125147594454,
+      "notes": "",
+      "nearby_routes": [
+        "015",
+        "049",
+        "Canada Line",
+        "N15"
+      ]
+    },
+    {
+      "id": "meal-van-4",
+      "type": "meal",
+      "name": "Bryn's Neighbourhood Table",
+      "address": "8680 Hudson St, Vancouver, BC",
+      "intersection": "Marpole",
+      "region": "south-van",
+      "hours": "Free, sit-down dinner every Thursday 6-7pm at St",
+      "phone": "",
+      "lat": 49.207246,
+      "lng": -123.134299,
+      "notes": "Free. Wheelchair accessible; Takeout available",
+      "nearby_routes": [
+        "010",
+        "017",
+        "100",
+        "N10"
+      ]
+    }
+  ]
+}

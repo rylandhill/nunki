@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "city": "vancouver",
+    "region": "west-van",
+    "updated": "2026-02-24"
+  },
+  "amenities": [
+    {
+      "id": "washroom-van-12",
+      "type": "washroom",
+      "name": "Locarno Park \u2014 Concession at fieldhouse",
+      "address": "Concession at fieldhouse, West Point Grey",
+      "intersection": "West Point Grey",
+      "region": "west-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.275065991158456,
+      "lng": -123.20655501267099,
+      "notes": ""
+    },
+    {
+      "id": "washroom-van-39",
+      "type": "washroom",
+      "name": "West Point Grey \u2014 4397 W 2nd Av",
+      "address": "4397 W 2nd Av, West Point Grey",
+      "intersection": "West Point Grey",
+      "region": "west-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.271797159811925,
+      "lng": -123.2045334775624,
+      "notes": ""
+    },
+    {
+      "id": "washroom-van-40",
+      "type": "washroom",
+      "name": "Spanish Banks Beach Park \u2014 West, fieldhouse",
+      "address": "West, fieldhouse, West Point Grey",
+      "intersection": "West Point Grey",
+      "region": "west-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.277471985052316,
+      "lng": -123.22267905551811,
+      "notes": "Wheelchair accessible"
+    },
+    {
+      "id": "washroom-van-90",
+      "type": "washroom",
+      "name": "Spanish Banks Beach Park \u2014 East, fieldhouse",
+      "address": "East, fieldhouse, West Point Grey",
+      "intersection": "West Point Grey",
+      "region": "west-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.27624397436726,
+      "lng": -123.21492003723966,
+      "notes": "Wheelchair accessible"
+    },
+    {
+      "id": "washroom-van-119",
+      "type": "washroom",
+      "name": "West Point Grey Park \u2014 Centre",
+      "address": "Centre, West Point Grey",
+      "intersection": "West Point Grey",
+      "region": "west-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.26654154245594,
+      "lng": -123.20457956432331,
+      "notes": ""
+    }
+  ]
+}

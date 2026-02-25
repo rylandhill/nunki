@@ -1,0 +1,759 @@
+{
+  "meta": {
+    "city": "vancouver",
+    "region": "east-van",
+    "updated": "2026-02-24"
+  },
+  "amenities": [
+    {
+      "id": "shelter-van-5",
+      "type": "shelter",
+      "name": "Vineyard Church",
+      "address": "1801 E 1st Ave",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "Call for hours",
+      "phone": "604-255-4463",
+      "lat": 49.269335660054985,
+      "lng": -123.07055190144827,
+      "notes": "Meals available",
+      "category": "Adults (all genders)",
+      "nearby_routes": [
+        "020",
+        "N20"
+      ]
+    },
+    {
+      "id": "shelter-van-14",
+      "type": "shelter",
+      "name": "Grandview Calvary Baptist Church",
+      "address": "1803 E 1st Ave",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "Call for hours",
+      "phone": "604-255-1411",
+      "lat": 49.26974745114546,
+      "lng": -123.06735635798717,
+      "notes": "Meals available",
+      "category": "Adults (all genders)",
+      "nearby_routes": [
+        "020",
+        "N20"
+      ]
+    },
+    {
+      "id": "washroom-van-3",
+      "type": "washroom",
+      "name": "Beaconsfield Park \u2014 East side, fieldhouse",
+      "address": "East side, fieldhouse, Renfrew-Collingwood",
+      "intersection": "Renfrew-Collingwood",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.25523298884104,
+      "lng": -123.0499339599333,
+      "notes": "",
+      "nearby_routes": [
+        "007",
+        "016"
+      ]
+    },
+    {
+      "id": "washroom-van-5",
+      "type": "washroom",
+      "name": "Collingwood Park \u2014 South corner, fieldhouse",
+      "address": "South corner, fieldhouse, Renfrew-Collingwood",
+      "intersection": "Renfrew-Collingwood",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.23652996300201,
+      "lng": -123.03671596074696,
+      "notes": "",
+      "nearby_routes": [
+        "019",
+        "026",
+        "027",
+        "028",
+        "041",
+        "Expo Line",
+        "N19",
+        "R4"
+      ]
+    },
+    {
+      "id": "washroom-van-7",
+      "type": "washroom",
+      "name": "Falaise Park \u2014 Community Hall",
+      "address": "Community Hall, Renfrew-Collingwood",
+      "intersection": "Renfrew-Collingwood",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.25512303377638,
+      "lng": -123.02940598630023,
+      "notes": "",
+      "nearby_routes": [
+        "027",
+        "028"
+      ]
+    },
+    {
+      "id": "washroom-van-10",
+      "type": "washroom",
+      "name": "Hastings Community Park \u2014 Central, field house",
+      "address": "Central, field house, Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.28064797026025,
+      "lng": -123.03787394911473,
+      "notes": "",
+      "nearby_routes": [
+        "014",
+        "016",
+        "027",
+        "N35",
+        "R5"
+      ]
+    },
+    {
+      "id": "washroom-van-11",
+      "type": "washroom",
+      "name": "Jones Park \u2014 North west corner, fieldhouse",
+      "address": "North west corner, fieldhouse, Kensington-Cedar Cottage",
+      "intersection": "Kensington-Cedar Cottage",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.236204957989564,
+      "lng": -123.0683280268142,
+      "notes": "",
+      "nearby_routes": [
+        "020",
+        "033",
+        "041",
+        "N20",
+        "R4"
+      ]
+    },
+    {
+      "id": "washroom-van-19",
+      "type": "washroom",
+      "name": "Pandora Park \u2014 South side, fieldhouse",
+      "address": "South side, fieldhouse, Grandview-Woodland",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "9:00 am - 7:00 pm",
+      "phone": "",
+      "lat": 49.28227999739962,
+      "lng": -123.05747804862285,
+      "notes": "",
+      "nearby_routes": [
+        "004",
+        "007",
+        "014",
+        "016",
+        "209",
+        "210",
+        "211",
+        "214",
+        "N35",
+        "R5"
+      ]
+    },
+    {
+      "id": "washroom-van-23",
+      "type": "washroom",
+      "name": "Victoria Park \u2014 West side",
+      "address": "West side, Grandview-Woodland",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.27174404161449,
+      "lng": -123.06741301627554,
+      "notes": "",
+      "nearby_routes": [
+        "020",
+        "N20"
+      ]
+    },
+    {
+      "id": "washroom-van-25",
+      "type": "washroom",
+      "name": "Woodland Park \u2014 Central, field house",
+      "address": "Central, field house, Grandview-Woodland",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.27836897097232,
+      "lng": -123.07322000486613,
+      "notes": "",
+      "nearby_routes": [
+        "014",
+        "016",
+        "020",
+        "022",
+        "N20",
+        "N35",
+        "R5"
+      ]
+    },
+    {
+      "id": "washroom-van-26",
+      "type": "washroom",
+      "name": "Britannia \u2014 1661 Napier St",
+      "address": "1661 Napier St, Grandview-Woodland",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.27504267038552,
+      "lng": -123.07065277917624,
+      "notes": "",
+      "nearby_routes": [
+        "020",
+        "022",
+        "N20"
+      ]
+    },
+    {
+      "id": "washroom-van-30",
+      "type": "washroom",
+      "name": "Hastings \u2014 3096 E Hastings St",
+      "address": "3096 E Hastings St, Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.28080523370132,
+      "lng": -123.03930991502807,
+      "notes": "",
+      "nearby_routes": [
+        "014",
+        "016",
+        "N35",
+        "R5"
+      ]
+    },
+    {
+      "id": "washroom-van-32",
+      "type": "washroom",
+      "name": "Kensington \u2014 5175 Dumfries St",
+      "address": "5175 Dumfries St, Kensington-Cedar Cottage",
+      "intersection": "Kensington-Cedar Cottage",
+      "region": "east-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.237165754113256,
+      "lng": -123.07466320602174,
+      "notes": "",
+      "nearby_routes": [
+        "022",
+        "033"
+      ]
+    },
+    {
+      "id": "washroom-van-37",
+      "type": "washroom",
+      "name": "Thunderbird \u2014 2311 Cassiar St",
+      "address": "2311 Cassiar St, Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.26360783509205,
+      "lng": -123.03210372093348,
+      "notes": "",
+      "nearby_routes": [
+        "009",
+        "027",
+        "099",
+        "Millennium Line",
+        "N9"
+      ]
+    },
+    {
+      "id": "washroom-van-38",
+      "type": "washroom",
+      "name": "Trout Lake \u2014 3360 Victoria Drive",
+      "address": "3360 Victoria Drive, Kensington-Cedar Cottage",
+      "intersection": "Kensington-Cedar Cottage",
+      "region": "east-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.25529203110348,
+      "lng": -123.0655282767287,
+      "notes": "",
+      "nearby_routes": [
+        "020",
+        "N20"
+      ]
+    },
+    {
+      "id": "washroom-van-42",
+      "type": "washroom",
+      "name": "New Brighton Park \u2014 North east corner, fieldhouse",
+      "address": "North east corner, fieldhouse, Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.289333968905524,
+      "lng": -123.03602500739287,
+      "notes": "Wheelchair accessible"
+    },
+    {
+      "id": "washroom-van-51",
+      "type": "washroom",
+      "name": "Vancouver Technical Secondary \u2014 NE of synturf field",
+      "address": "NE of synturf field, Renfrew-Collingwood",
+      "intersection": "Renfrew-Collingwood",
+      "region": "east-van",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.26055815523328,
+      "lng": -123.05008933604122,
+      "notes": "",
+      "nearby_routes": [
+        "007",
+        "009",
+        "016",
+        "027",
+        "099",
+        "Millennium Line",
+        "N9"
+      ]
+    },
+    {
+      "id": "washroom-van-62",
+      "type": "washroom",
+      "name": "Adanac Park \u2014 East side, fieldhouse",
+      "address": "East side, fieldhouse, Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.27588096678926,
+      "lng": -123.02407196073857,
+      "notes": "",
+      "nearby_routes": [
+        "027",
+        "028",
+        "R5"
+      ]
+    },
+    {
+      "id": "washroom-van-65",
+      "type": "washroom",
+      "name": "Burrard View Park \u2014 Fieldhouse",
+      "address": "Fieldhouse, Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.29036396133096,
+      "lng": -123.0496489708471,
+      "notes": "",
+      "nearby_routes": [
+        "004",
+        "209",
+        "210",
+        "211",
+        "214"
+      ]
+    },
+    {
+      "id": "washroom-van-68",
+      "type": "washroom",
+      "name": "Clinton Park \u2014 North east corner, fieldhouse",
+      "address": "North east corner, fieldhouse, Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.27114503209186,
+      "lng": -123.04978202766654,
+      "notes": "",
+      "nearby_routes": [
+        "016"
+      ]
+    },
+    {
+      "id": "washroom-van-74",
+      "type": "washroom",
+      "name": "John Hendry (Trout Lake) Park \u2014 At Trout Lake",
+      "address": "At Trout Lake, Kensington-Cedar Cottage",
+      "intersection": "Kensington-Cedar Cottage",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.25392603797215,
+      "lng": -123.0613879883137,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "007",
+        "020",
+        "N20"
+      ]
+    },
+    {
+      "id": "washroom-van-78",
+      "type": "washroom",
+      "name": "Norquay Park \u2014 West side, field house",
+      "address": "West side, field house, Renfrew-Collingwood",
+      "intersection": "Renfrew-Collingwood",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.23797498982738,
+      "lng": -123.05142495965826,
+      "notes": "",
+      "nearby_routes": [
+        "016",
+        "019",
+        "026",
+        "029",
+        "033",
+        "N19"
+      ]
+    },
+    {
+      "id": "washroom-van-80",
+      "type": "washroom",
+      "name": "Sunrise Park \u2014 North west corner, fieldhouse",
+      "address": "North west corner, fieldhouse, Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.26692299065219,
+      "lng": -123.03601798297022,
+      "notes": "",
+      "nearby_routes": [
+        "027"
+      ]
+    },
+    {
+      "id": "washroom-van-87",
+      "type": "washroom",
+      "name": "Renfrew Park \u2014 2929 E 22nd Av",
+      "address": "2929 E 22nd Av, Renfrew-Collingwood",
+      "intersection": "Renfrew-Collingwood",
+      "region": "east-van",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.25139334511874,
+      "lng": -123.04253597366504,
+      "notes": "",
+      "nearby_routes": [
+        "016",
+        "025"
+      ]
+    },
+    {
+      "id": "washroom-van-93",
+      "type": "washroom",
+      "name": "Rupert Park \u2014 Pitch & Putt (north side)",
+      "address": "Pitch & Putt (north side), Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.27305000035256,
+      "lng": -123.03068295983304,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "027"
+      ]
+    },
+    {
+      "id": "washroom-van-100",
+      "type": "washroom",
+      "name": "Kingcrest Park \u2014 Playground",
+      "address": "Playground, Kensington-Cedar Cottage",
+      "intersection": "Kensington-Cedar Cottage",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.24731189166449,
+      "lng": -123.07460205675565,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "019",
+        "022",
+        "025",
+        "N19"
+      ]
+    },
+    {
+      "id": "washroom-van-107",
+      "type": "washroom",
+      "name": "Brewers Park \u2014 North east corner fieldhouse",
+      "address": "North east corner fieldhouse, Kensington-Cedar Cottage",
+      "intersection": "Kensington-Cedar Cottage",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.247854989506635,
+      "lng": -123.06542594968943,
+      "notes": "",
+      "nearby_routes": [
+        "019",
+        "020",
+        "025",
+        "N19",
+        "N20"
+      ]
+    },
+    {
+      "id": "washroom-van-108",
+      "type": "washroom",
+      "name": "Garden Park \u2014 North east corner, fieldhouse",
+      "address": "North east corner, fieldhouse, Grandview-Woodland",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.26828599758696,
+      "lng": -123.05833399382524,
+      "notes": "",
+      "nearby_routes": [
+        "007"
+      ]
+    },
+    {
+      "id": "washroom-van-110",
+      "type": "washroom",
+      "name": "Grandview Park \u2014 North East Corner",
+      "address": "North East Corner, Grandview-Woodland",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.27376163002874,
+      "lng": -123.06995444645655,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "020",
+        "N20"
+      ]
+    },
+    {
+      "id": "washroom-van-111",
+      "type": "washroom",
+      "name": "Grays Park \u2014 Centre west by parking lot",
+      "address": "Centre west by parking lot, Kensington-Cedar Cottage",
+      "intersection": "Kensington-Cedar Cottage",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.2409609289076,
+      "lng": -123.08522025523621,
+      "notes": "",
+      "nearby_routes": [
+        "008",
+        "033",
+        "N8"
+      ]
+    },
+    {
+      "id": "washroom-van-117",
+      "type": "washroom",
+      "name": "Slocan Park \u2014 North side",
+      "address": "North side, Renfrew-Collingwood",
+      "intersection": "Renfrew-Collingwood",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.24443797709919,
+      "lng": -123.04795201778296,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "016",
+        "026",
+        "029",
+        "033",
+        "Expo Line"
+      ]
+    },
+    {
+      "id": "washroom-van-131",
+      "type": "washroom",
+      "name": "Rupert Park \u2014 South side, fieldhouse",
+      "address": "South side, fieldhouse, Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.270135003328,
+      "lng": -123.03060498029191,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "027"
+      ]
+    },
+    {
+      "id": "washroom-van-139",
+      "type": "washroom",
+      "name": "Empire Fields - Hastings Park \u2014 West Side",
+      "address": "West Side, Hastings-Sunrise",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.28250644914754,
+      "lng": -123.03430857894679,
+      "notes": "",
+      "nearby_routes": [
+        "014",
+        "028",
+        "130",
+        "N35"
+      ]
+    },
+    {
+      "id": "meal-van-2",
+      "type": "meal",
+      "name": "The Kettle Society - Meal Program",
+      "address": "1725 Venables St, Vancouver, BC",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "Daily @ 11:30am Must sign up in morning prior to meal service",
+      "phone": "",
+      "lat": 49.276925,
+      "lng": -123.070065,
+      "notes": "Low cost. Wheelchair accessible; Takeout available",
+      "nearby_routes": [
+        "014",
+        "016",
+        "020",
+        "N20",
+        "N35",
+        "R5"
+      ]
+    },
+    {
+      "id": "meal-van-8",
+      "type": "meal",
+      "name": "A Loving Spoonful - Meals and groceries",
+      "address": "1449 Powell St, Vancouver, BC",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "Eligible individuals and families can be referred by a Doctor, Nurse, Dietitian, Social Worker, or self-refer",
+      "phone": "",
+      "lat": 49.28329,
+      "lng": -123.07419,
+      "notes": "Free. ",
+      "nearby_routes": [
+        "004",
+        "007",
+        "014",
+        "016",
+        "020",
+        "209",
+        "210",
+        "211",
+        "214",
+        "N20",
+        "N35",
+        "R5"
+      ]
+    },
+    {
+      "id": "meal-van-18",
+      "type": "meal",
+      "name": "Aboriginal Friendship Centre-Elder Meals on Wheels",
+      "address": "1607 E Hastings St, Vancouver, BC",
+      "intersection": "Grandview-Woodland",
+      "region": "east-van",
+      "hours": "An Indigenous-operated program",
+      "phone": "(604) 251-4844",
+      "lat": 49.281562,
+      "lng": -123.071999,
+      "notes": "Free. ",
+      "nearby_routes": [
+        "004",
+        "007",
+        "014",
+        "016",
+        "020",
+        "209",
+        "210",
+        "211",
+        "214",
+        "N20",
+        "N35",
+        "R5"
+      ]
+    },
+    {
+      "id": "meal-van-54",
+      "type": "meal",
+      "name": "CityReach - Club Freedom Meal",
+      "address": "2650 Slocan St, Vancouver, BC",
+      "intersection": "Renfrew-Collingwood",
+      "region": "east-van",
+      "hours": "A Christ-centred worship service and hot meal",
+      "phone": "",
+      "lat": 49.261161,
+      "lng": -123.048888,
+      "notes": "Free. Wheelchair accessible",
+      "nearby_routes": [
+        "009",
+        "016",
+        "027",
+        "099",
+        "Millennium Line",
+        "N9"
+      ]
+    },
+    {
+      "id": "meal-van-68",
+      "type": "meal",
+      "name": "Collingwood N'hood House - Morning Star Breakfast",
+      "address": "5288 Joyce St, Vancouver, BC",
+      "intersection": "Renfrew-Collingwood",
+      "region": "east-van",
+      "hours": "Sat, 7am clothing and showers, 8-8:30am breakfast",
+      "phone": "",
+      "lat": 49.236608,
+      "lng": -123.032888,
+      "notes": "Free. Wheelchair accessible",
+      "nearby_routes": [
+        "019",
+        "026",
+        "027",
+        "028",
+        "041",
+        "Expo Line",
+        "N19",
+        "R4"
+      ]
+    },
+    {
+      "id": "meal-van-73",
+      "type": "meal",
+      "name": "Kiwassa Neighbourhood House - Community Lunch",
+      "address": "2425 Oxford St, Vancouver, BC",
+      "intersection": "Hastings-Sunrise",
+      "region": "east-van",
+      "hours": "First & third Friday of the month, 12:15pm",
+      "phone": "(604) 254-5401",
+      "lat": 49.286005,
+      "lng": -123.055856,
+      "notes": "Low cost. Wheelchair accessible",
+      "nearby_routes": [
+        "004",
+        "007",
+        "209",
+        "210",
+        "211",
+        "214"
+      ]
+    }
+  ]
+}

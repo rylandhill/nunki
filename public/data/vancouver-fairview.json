@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "city": "vancouver",
+    "region": "fairview",
+    "updated": "2026-02-24"
+  },
+  "amenities": [
+    {
+      "id": "washroom-van-4",
+      "type": "washroom",
+      "name": "Braemar Park \u2014 East edge, fieldhouse",
+      "address": "East edge, fieldhouse, South Cambie",
+      "intersection": "South Cambie",
+      "region": "fairview",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.24742099334927,
+      "lng": -123.12448302133969,
+      "notes": "",
+      "nearby_routes": [
+        "017",
+        "025"
+      ]
+    },
+    {
+      "id": "washroom-van-29",
+      "type": "washroom",
+      "name": "Douglas Park \u2014 801 W 22nd Av",
+      "address": "801 W 22nd Av, South Cambie",
+      "intersection": "South Cambie",
+      "region": "fairview",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.25211550271443,
+      "lng": -123.1224846980371,
+      "notes": "",
+      "nearby_routes": [
+        "017",
+        "025"
+      ]
+    },
+    {
+      "id": "washroom-van-49",
+      "type": "washroom",
+      "name": "Oak Meadows Park \u2014 NW Corner",
+      "address": "NW Corner, South Cambie",
+      "intersection": "South Cambie",
+      "region": "fairview",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.239023555598024,
+      "lng": -123.1269603577517,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "017"
+      ]
+    },
+    {
+      "id": "washroom-van-52",
+      "type": "washroom",
+      "name": "Heather Marina \u2014 Marina Building",
+      "address": "Marina Building, Fairview",
+      "intersection": "Fairview",
+      "region": "fairview",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.26886147584729,
+      "lng": -123.11871635134744,
+      "notes": "",
+      "nearby_routes": [
+        "015",
+        "050",
+        "084",
+        "Canada Line"
+      ]
+    },
+    {
+      "id": "washroom-van-72",
+      "type": "washroom",
+      "name": "Granville Park \u2014 Central, field house",
+      "address": "Central, field house, Fairview",
+      "intersection": "Fairview",
+      "region": "fairview",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.25849301101646,
+      "lng": -123.1419699494165,
+      "notes": "",
+      "nearby_routes": [
+        "009",
+        "010",
+        "016",
+        "033",
+        "N10"
+      ]
+    },
+    {
+      "id": "washroom-van-123",
+      "type": "washroom",
+      "name": "False Creek \u2014 1318 Cartwright St",
+      "address": "1318 Cartwright St, Fairview",
+      "intersection": "Fairview",
+      "region": "fairview",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.269397069509424,
+      "lng": -123.13402027146624,
+      "notes": "",
+      "nearby_routes": [
+        "004",
+        "007",
+        "010",
+        "014",
+        "016",
+        "050",
+        "084",
+        "N10",
+        "N17",
+        "N9"
+      ]
+    },
+    {
+      "id": "meal-van-6",
+      "type": "meal",
+      "name": "Care BC - Western and Chinese Meals on Wheels",
+      "address": "3077 Granville St, Vancouver, BC",
+      "intersection": "Fairview",
+      "region": "fairview",
+      "hours": "Western styled meals delivered weekdays 10:30 am-1pm, priced from $6",
+      "phone": "(604) 732-7638",
+      "lat": 49.258422,
+      "lng": -123.139174,
+      "notes": "Low cost. ",
+      "nearby_routes": [
+        "009",
+        "010",
+        "016",
+        "033",
+        "N10"
+      ]
+    },
+    {
+      "id": "meal-van-29",
+      "type": "meal",
+      "name": "Care BC - Chinese Meals on Wheels",
+      "address": "3077 Granville St, Vancouver, BC",
+      "intersection": "Fairview",
+      "region": "fairview",
+      "hours": "Meal delivery service for home-bound people including seniors, caregivers, people with illness or injury",
+      "phone": "(604) 733-6615",
+      "lat": 49.258422,
+      "lng": -123.139174,
+      "notes": "$9.95. ",
+      "nearby_routes": [
+        "009",
+        "010",
+        "016",
+        "033",
+        "N10"
+      ]
+    }
+  ]
+}

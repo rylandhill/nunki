@@ -1,0 +1,374 @@
+{
+  "meta": {
+    "city": "vancouver",
+    "region": "mount-pleasant",
+    "updated": "2026-02-24"
+  },
+  "amenities": [
+    {
+      "id": "shelter-van-1",
+      "type": "shelter",
+      "name": "Tenth Avenue Church",
+      "address": "11 W 10th Ave (10th & Ontario)",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "Call for hours",
+      "phone": "604-876-2181",
+      "lat": 49.262338305195684,
+      "lng": -123.10586046207774,
+      "notes": "Meals available",
+      "category": "Adults (all genders)",
+      "nearby_routes": [
+        "003",
+        "008",
+        "009",
+        "019",
+        "099",
+        "N19",
+        "N8",
+        "N9"
+      ]
+    },
+    {
+      "id": "shelter-van-9",
+      "type": "shelter",
+      "name": "Yukon Shelter",
+      "address": "1300 Yukon St",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "Call for hours",
+      "phone": "604-264-1680",
+      "lat": 49.26689088504469,
+      "lng": -123.11236726193974,
+      "notes": "Pets allowed",
+      "category": "Adults (all genders)",
+      "nearby_routes": [
+        "009",
+        "015",
+        "017",
+        "050",
+        "084",
+        "099",
+        "Canada Line",
+        "N15",
+        "N9"
+      ]
+    },
+    {
+      "id": "washroom-van-31",
+      "type": "washroom",
+      "name": "Hillcrest \u2014 4575 Clancy Loranger Way",
+      "address": "4575 Clancy Loranger Way, Riley Park",
+      "intersection": "Riley Park",
+      "region": "mount-pleasant",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.24386283540143,
+      "lng": -123.10801095525642,
+      "notes": "",
+      "nearby_routes": [
+        "003",
+        "033"
+      ]
+    },
+    {
+      "id": "washroom-van-48",
+      "type": "washroom",
+      "name": "Robson Park \u2014 South East Corner Fieldhouse",
+      "address": "South East Corner Fieldhouse, Mount Pleasant",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.25773293062128,
+      "lng": -123.09133535945465,
+      "notes": "",
+      "nearby_routes": [
+        "008",
+        "019",
+        "N19",
+        "N8"
+      ]
+    },
+    {
+      "id": "washroom-van-75",
+      "type": "washroom",
+      "name": "Jonathan Rogers Park \u2014 North side, fieldhouse",
+      "address": "North side, fieldhouse, Mount Pleasant",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.26449802894082,
+      "lng": -123.10762001604982,
+      "notes": "",
+      "nearby_routes": [
+        "009",
+        "099",
+        "N9"
+      ]
+    },
+    {
+      "id": "washroom-van-86",
+      "type": "washroom",
+      "name": "Mount Pleasant \u2014 1 Kingsway",
+      "address": "1 Kingsway, Mount Pleasant",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.264314648364575,
+      "lng": -123.10022103999772,
+      "notes": "",
+      "nearby_routes": [
+        "003",
+        "008",
+        "009",
+        "019",
+        "084",
+        "099",
+        "N19",
+        "N8",
+        "N9"
+      ]
+    },
+    {
+      "id": "washroom-van-91",
+      "type": "washroom",
+      "name": "Queen Elizabeth Park \u2014 Fieldhouse",
+      "address": "Fieldhouse, Riley Park",
+      "intersection": "Riley Park",
+      "region": "mount-pleasant",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.23893801685196,
+      "lng": -123.11157705659876,
+      "notes": "",
+      "nearby_routes": [
+        "015",
+        "033",
+        "N15"
+      ]
+    },
+    {
+      "id": "washroom-van-92",
+      "type": "washroom",
+      "name": "Queen Elizabeth Park \u2014 Lookout",
+      "address": "Lookout, Riley Park",
+      "intersection": "Riley Park",
+      "region": "mount-pleasant",
+      "hours": "7:30 am - 9:00 pm",
+      "phone": "",
+      "lat": 49.24221158928846,
+      "lng": -123.1129392155845,
+      "notes": "",
+      "nearby_routes": [
+        "015",
+        "033",
+        "N15"
+      ]
+    },
+    {
+      "id": "washroom-van-102",
+      "type": "washroom",
+      "name": "China Creek North Park \u2014 south-east corner",
+      "address": "south-east corner, Mount Pleasant",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.264494245003455,
+      "lng": -123.08153102730606,
+      "notes": "Wheelchair accessible",
+      "nearby_routes": [
+        "009",
+        "022",
+        "084",
+        "099",
+        "Millennium Line",
+        "N9"
+      ]
+    },
+    {
+      "id": "washroom-van-115",
+      "type": "washroom",
+      "name": "Prince Edward Park \u2014 Sout east corner, fieldhouse",
+      "address": "Sout east corner, fieldhouse, Riley Park",
+      "intersection": "Riley Park",
+      "region": "mount-pleasant",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.25119097086864,
+      "lng": -123.09705699407517,
+      "notes": "",
+      "nearby_routes": [
+        "003",
+        "025"
+      ]
+    },
+    {
+      "id": "washroom-van-121",
+      "type": "washroom",
+      "name": "Creekside \u2014 1 Athletes Way",
+      "address": "1 Athletes Way, Mount Pleasant",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "as per CC operating hours",
+      "phone": "",
+      "lat": 49.27178699895438,
+      "lng": -123.10558600026903,
+      "notes": "",
+      "nearby_routes": [
+        "003",
+        "008",
+        "019",
+        "022",
+        "023",
+        "084",
+        "Expo Line",
+        "N19",
+        "N8"
+      ]
+    },
+    {
+      "id": "washroom-van-130",
+      "type": "washroom",
+      "name": "Queen Elizabeth Park \u2014 Under \"Seasons\"",
+      "address": "Under \"Seasons\", Riley Park",
+      "intersection": "Riley Park",
+      "region": "mount-pleasant",
+      "hours": "7:30 am - 9:00 pm",
+      "phone": "",
+      "lat": 49.24182883201732,
+      "lng": -123.11176444175848,
+      "notes": "",
+      "nearby_routes": [
+        "015",
+        "033",
+        "N15"
+      ]
+    },
+    {
+      "id": "washroom-van-141",
+      "type": "washroom",
+      "name": "Riley Park \u2014 Fieldhouse",
+      "address": "Fieldhouse, Riley Park",
+      "intersection": "Riley Park",
+      "region": "mount-pleasant",
+      "hours": "Dawn to Dusk",
+      "phone": "",
+      "lat": 49.24203735141205,
+      "lng": -123.10360324008157,
+      "notes": "",
+      "nearby_routes": [
+        "003",
+        "033"
+      ]
+    },
+    {
+      "id": "meal-van-3",
+      "type": "meal",
+      "name": "Japanese Community Volunteers - Meals on Wheels",
+      "address": "42 W 8th Ave, Vancouver, BC",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "Japanese-style bento meal delivery service for home-bound seniors, including caregivers and people with illness or injury",
+      "phone": "(604) 687-2172",
+      "lat": 49.263553,
+      "lng": -123.105955,
+      "notes": "Low cost. ",
+      "nearby_routes": [
+        "003",
+        "008",
+        "009",
+        "019",
+        "099",
+        "N19",
+        "N8",
+        "N9"
+      ]
+    },
+    {
+      "id": "meal-van-30",
+      "type": "meal",
+      "name": "Jewish Family Services - JFS Kitchen",
+      "address": "54 E 3rd Ave, Vancouver, BC",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "Provides food support through a food bank, meal delivery program, and Jewish holiday assistance",
+      "phone": "",
+      "lat": 49.268006,
+      "lng": -123.103369,
+      "notes": "Free. Wheelchair accessible",
+      "nearby_routes": [
+        "003",
+        "008",
+        "019",
+        "084",
+        "N19",
+        "N8"
+      ]
+    },
+    {
+      "id": "meal-van-36",
+      "type": "meal",
+      "name": "Mount Pleasant N'hood House - Seniors Lunch",
+      "address": "800 E Broadway, Vancouver, BC",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "Come and share a meal with your neighbours at our Seniors Lunch on Tuesdays from 12-1PM",
+      "phone": "",
+      "lat": 49.262154,
+      "lng": -123.086769,
+      "notes": "Low cost. Wheelchair accessible",
+      "nearby_routes": [
+        "008",
+        "009",
+        "084",
+        "099",
+        "N8",
+        "N9"
+      ]
+    },
+    {
+      "id": "meal-van-41",
+      "type": "meal",
+      "name": "Cityview Church - Open Table",
+      "address": "4370 Sophia St, Vancouver, BC",
+      "intersection": "Riley Park",
+      "region": "mount-pleasant",
+      "hours": "Thurs at 12pm",
+      "phone": "",
+      "lat": 49.245928,
+      "lng": -123.098691,
+      "notes": "Free. Wheelchair accessible; Takeout available",
+      "nearby_routes": [
+        "003",
+        "025"
+      ]
+    },
+    {
+      "id": "meal-van-56",
+      "type": "meal",
+      "name": "Tenth Church - Oasis Cafe",
+      "address": "11 W 10th Ave, Vancouver, BC",
+      "intersection": "Mount Pleasant",
+      "region": "mount-pleasant",
+      "hours": "Mon 5:30-7:30pm, Tues 11am-1pm",
+      "phone": "",
+      "lat": 49.262351,
+      "lng": -123.105783,
+      "notes": "Free. Wheelchair accessible",
+      "nearby_routes": [
+        "003",
+        "008",
+        "009",
+        "019",
+        "099",
+        "N19",
+        "N8",
+        "N9"
+      ]
+    }
+  ]
+}

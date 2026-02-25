@@ -1,0 +1,3 @@
+# Cloudflare Pages
+# Deploy: npx wrangler pages deploy dist --project-name=humanitys-guide
+# Or connect repo at dash.cloudflare.com → Pages → Build: npm run build, Output: dist
