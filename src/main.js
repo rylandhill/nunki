@@ -143,6 +143,7 @@ let currentFilterType = 'all';
 let currentRegion = 'all';
 let currentSearch = '';
 let currentWheelchairOnly = false;
+let currentFavoritesOnly = false;
 let lastClickedAmenityId = null;
 
 const FAVORITES_KEY = 'nunki-favorites';
@@ -277,6 +278,7 @@ async function renderSurvival() {
     currentRegion = 'all';
     currentSearch = '';
     currentWheelchairOnly = false;
+    currentFavoritesOnly = false;
     lastClickedAmenityId = null;
     renderAmenityList();
   } catch (err) {
@@ -292,7 +294,7 @@ const AMENITY_TYPES = [
   { id: 'safe_injection', label: 'Safe consumption' },
 ];
 
-function renderAmenityList(filterType = 'all', region = 'all', search = '', wheelchairOnly = false) {
+function renderAmenityList(filterType = 'all', region = 'all', search = '', wheelchairOnly = false, favoritesOnly = false) {
   const app = getAppEl();
   if (!regionData || !regionData.amenities) return;
 
@@ -303,6 +305,9 @@ function renderAmenityList(filterType = 'all', region = 'all', search = '', whee
   }
   if (wheelchairOnly) {
     filtered = filtered.filter((a) => (a.notes || '').toLowerCase().includes('wheelchair accessible'));
+  }
+  if (favoritesOnly) {
+    filtered = filtered.filter((a) => isFavorite(a.id));
   }
   if (search.trim()) {
     const q = search.trim().toLowerCase();
@@ -332,6 +337,10 @@ function renderAmenityList(filterType = 'all', region = 'all', search = '', whee
     listContainer.innerHTML = listHtml;
     const headerSub = document.querySelector('.amenity-list-header-sub');
     if (headerSub) headerSub.textContent = `${filtered.length} places${updated ? ` · Updated ${updated}` : ''}`;
+    const wheelchairBtn = app.querySelector('[data-wheelchair]');
+    if (wheelchairBtn) wheelchairBtn.setAttribute('aria-pressed', wheelchairOnly);
+    const favoritesBtn = app.querySelector('[data-favorites]');
+    if (favoritesBtn) favoritesBtn.setAttribute('aria-pressed', favoritesOnly);
     app.querySelectorAll('.amenity-link[data-id]').forEach((btn) => {
       btn.addEventListener('click', () => {
         lastClickedAmenityId = btn.dataset.id;
@@ -376,6 +385,7 @@ function renderAmenityList(filterType = 'all', region = 'all', search = '', whee
           <button class="filter-btn" type="button" data-filter="${t.id}" aria-pressed="${filterType === t.id}">${t.label}</button>
         `).join('')}
         <button class="filter-btn" type="button" data-wheelchair aria-pressed="${wheelchairOnly}">Wheelchair accessible</button>
+        <button class="filter-btn" type="button" data-favorites aria-pressed="${favoritesOnly}">Favorites</button>
       </div>
       <ul class="amenity-list" id="amenity-list-container">
         ${listHtml}
@@ -392,31 +402,36 @@ function renderAmenityList(filterType = 'all', region = 'all', search = '', whee
     currentRegion = 'all';
     currentSearch = '';
     currentWheelchairOnly = false;
+    currentFavoritesOnly = false;
     lastClickedAmenityId = null;
     renderHome();
   });
   app.querySelector('[data-action="search"]')?.addEventListener('input', (e) => {
     currentSearch = e.target.value;
-    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
+    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly, currentFavoritesOnly);
   });
   app.querySelector('[data-action="search"]')?.addEventListener('search', (e) => {
     currentSearch = e.target.value || '';
-    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
+    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly, currentFavoritesOnly);
   });
-  app.querySelector('[data-action="wheelchair"]')?.addEventListener('click', () => {
+  app.querySelector('[data-wheelchair]')?.addEventListener('click', () => {
     currentWheelchairOnly = !currentWheelchairOnly;
-    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
+    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly, currentFavoritesOnly);
+  });
+  app.querySelector('[data-favorites]')?.addEventListener('click', () => {
+    currentFavoritesOnly = !currentFavoritesOnly;
+    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly, currentFavoritesOnly);
   });
   app.querySelectorAll('.filter-btn[data-filter]').forEach((btn) => {
     btn.addEventListener('click', () => {
       currentFilterType = btn.dataset.filter;
-      renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
+      renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly, currentFavoritesOnly);
     });
   });
   app.querySelectorAll('.filter-btn[data-region]').forEach((btn) => {
     btn.addEventListener('click', () => {
       currentRegion = btn.dataset.region;
-      renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
+      renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly, currentFavoritesOnly);
     });
   });
   app.querySelectorAll('.amenity-link[data-id]').forEach((btn) => {
@@ -504,7 +519,7 @@ function renderAmenityDetail(amenity) {
     </main>
   `;
   app.querySelector('[data-action="back-to-list"]').addEventListener('click', () => {
-    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
+    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly, currentFavoritesOnly);
   });
   app.querySelector('[data-action="favorite"]')?.addEventListener('click', () => {
     toggleFavorite(amenity.id);
