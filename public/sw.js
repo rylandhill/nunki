@@ -1,10 +1,10 @@
 /* Nunki — Service Worker
  * Cache-first: app shell
- * Stale-while-revalidate: JSON data
+ * Network-first: JSON data (fresh when online, cache when offline)
  */
 
-const SHELL_CACHE = 'nunki-shell-v2';
-const DATA_CACHE = 'nunki-data-v2';
+const SHELL_CACHE = 'nunki-shell-v3';
+const DATA_CACHE = 'nunki-data-v3';
 
 const SHELL_ASSETS = [
   '/',
@@ -47,20 +47,29 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // JSON data: stale-while-revalidate
+  // JSON data: network-first (fresh when online, cache when offline)
   if (url.pathname.startsWith('/data/')) {
     e.respondWith(
-      caches.open(DATA_CACHE).then((cache) =>
-        cache.match(e.request).then((cached) => {
-          const fetchPromise = fetch(e.request)
-            .then((res) => {
-              if (res.ok) cache.put(e.request, res.clone());
+      fetch(e.request)
+        .then((res) => {
+          if (res.ok) {
+            return caches.open(DATA_CACHE).then((cache) => {
+              cache.put(e.request, res.clone());
               return res;
-            })
-            .catch(() => cached);
-          return cached || fetchPromise;
+            });
+          }
+          return res;
         })
-      )
+        .catch(() =>
+          caches.open(DATA_CACHE).then((cache) =>
+            cache.match(e.request).then((cached) =>
+              cached || new Response(JSON.stringify({ error: 'offline' }), {
+                status: 503,
+                headers: { 'Content-Type': 'application/json' },
+              })
+            )
+          )
+        )
     );
     return;
   }

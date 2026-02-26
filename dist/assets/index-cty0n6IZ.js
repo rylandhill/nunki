@@ -138,7 +138,7 @@
         </section>
       </div>
     </div>
-  `,e.querySelectorAll('[data-action="close-info"]').forEach(a=>{a.addEventListener("click",B)}),document.body.appendChild(e);const o=document.createElement("button");o.type="button",o.className="info-btn",o.setAttribute("aria-label","App info & how to save offline"),o.innerHTML="ℹ️",o.addEventListener("click",S),document.body.appendChild(o);const t=!N(),s=!!localStorage.getItem(T);t&&!s&&S()}const y={vancouver:{name:"Vancouver",dataFile:"vancouver.json"},toronto:{name:"Toronto",dataFile:"toronto.json"}},H=[{id:"survival",title:"Survival Guide",desc:"Shelters, meals, washrooms, transit",route:"/survival"},{id:"foster",title:"Foster Youth Navigator",desc:"Benefits, housing, life skills",route:"/foster"}],C={shelter:"Shelter",meal:"Meal program",washroom:"Washroom",safe_injection:"Safe consumption",transit_hub:"Transit"};let l=null,c=null,h="all",p="all",u=null;function m(){return document.getElementById("app")}function k(){return"/"}async function E(e){const o=k(),t=e.startsWith("/")?e:`${o}data/${e}`,s=await fetch(t);if(!s.ok)throw new Error(`Failed to load ${e}`);return s.json()}function j(){const e=k().replace(/\/?$/,"/");["vancouver.json","toronto.json","benefits.json"].forEach(t=>fetch(`${e}data/${t}`).catch(()=>{}))}function d(){const e=l?y[l]:null,o=m();if(!e){o.innerHTML=`
+  `,e.querySelectorAll('[data-action="close-info"]').forEach(a=>{a.addEventListener("click",B)}),document.body.appendChild(e);const o=document.createElement("button");o.type="button",o.className="info-btn",o.setAttribute("aria-label","App info & how to save offline"),o.innerHTML="ℹ️",o.addEventListener("click",S),document.body.appendChild(o);const t=!N(),s=!!localStorage.getItem(T);t&&!s&&S()}const y={vancouver:{name:"Vancouver",dataFile:"vancouver.json"},toronto:{name:"Toronto",dataFile:"toronto.json"}},H=[{id:"survival",title:"Survival Guide test",desc:"Shelters, meals, washrooms, transit",route:"/survival"},{id:"foster",title:"Foster Youth Navigator",desc:"Benefits, housing, life skills",route:"/foster"}],C={shelter:"Shelter",meal:"Meal program",washroom:"Washroom",safe_injection:"Safe consumption",transit_hub:"Transit"};let l=null,c=null,h="all",p="all",u=null;function m(){return document.getElementById("app")}function k(){return"/"}async function E(e){const o=k(),t=e.startsWith("/")?e:`${o}data/${e}`,s=await fetch(t);if(!s.ok)throw new Error(`Failed to load ${e}`);return s.json()}function j(){const e=k().replace(/\/?$/,"/");["vancouver.json","toronto.json","benefits.json"].forEach(t=>fetch(`${e}data/${t}`).catch(()=>{}))}function d(){const e=l?y[l]:null,o=m();if(!e){o.innerHTML=`
       <main class="page city-select" role="main">
         <h1>Nunki</h1>
         <p style="margin: 1rem 0; color: var(--muted);">Choose your city</p>
@@ -165,7 +165,7 @@
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
-        <h1>Survival Guide</h1>
+        <h1>Survival Guide test</h1>
         <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${o.name}</p>
       </header>
       <p style="color: var(--muted);">Loading…</p>

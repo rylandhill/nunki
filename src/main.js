@@ -93,7 +93,7 @@ const CITIES = {
 };
 
 const SECTIONS = [
-  { id: 'survival', title: 'Survival Guide', desc: 'Shelters, meals, washrooms, transit', route: '/survival' },
+  { id: 'survival', title: 'Survival Guide test', desc: 'Shelters, meals, washrooms, transit', route: '/survival' },
   { id: 'foster', title: 'Foster Youth Navigator', desc: 'Benefits, housing, life skills', route: '/foster' },
 ];
 
@@ -200,7 +200,7 @@ async function renderSurvival() {
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
-        <h1>Survival Guide</h1>
+        <h1>Survival Guide test</h1>
         <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${city.name}</p>
       </header>
       <p style="color: var(--muted);">Loading…</p>
