@@ -1,21 +1,21 @@
 /**
- * Foster Youth Navigator — Life skills content
+ * Life skills content — benefits, taxes, jobs, healthcare
  * Written at ~8th grade reading level. Bullet points. Bold for key info.
  */
 
 export const FOSTER_SECTIONS = [
-  { id: 'benefits', title: 'Benefits checker', desc: "What you're entitled to", route: 'foster/benefits' },
+  { id: 'benefits', title: 'Benefits', desc: "What you're entitled to", route: 'foster/benefits' },
   { id: 'taxes', title: 'Taxes', desc: 'Filing your first return', route: 'foster/taxes' },
   { id: 'resumes', title: 'Resumes & jobs', desc: 'Getting your first job', route: 'foster/resumes' },
   { id: 'money', title: 'Money basics', desc: 'Banking and budgeting', route: 'foster/money' },
   { id: 'healthcare', title: 'Healthcare', desc: 'Getting a doctor, MSP/OHIP', route: 'foster/healthcare' },
   { id: 'mental-health', title: 'Mental health & addiction', desc: 'Free counselling and support', route: 'foster/mental-health' },
-  { id: 'survival', title: 'Need shelter or meals?', desc: 'Survival Guide', route: '/survival' },
+  { id: 'survival', title: 'Need shelter or meals?', desc: 'Places', route: '/survival' },
 ];
 
 export const FOSTER_CONTENT = {
   benefits: {
-    title: 'Benefits checker',
+    title: 'Benefits',
     body: `
       <p>Programs you may qualify for when you age out of care. Data loads from benefits.json.</p>
       <p><strong>BC211</strong> — Call <a href="tel:211">211</a> or visit bc211.ca for help finding services.</p>

@@ -52,8 +52,8 @@ function initInfoScreen() {
           <h3>What works offline</h3>
           <p>After you open Nunki once while online, everything is saved for offline use:</p>
           <ul>
-            <li><strong>Survival Guide</strong> — Shelters, meals, washrooms, safe consumption (Vancouver & Toronto)</li>
-            <li><strong>Foster Youth Navigator</strong> — Benefits, taxes, resumes, healthcare, mental health</li>
+            <li><strong>Places</strong> — Shelters, meals, washrooms, safe consumption (Vancouver & Toronto)</li>
+            <li><strong>Life skills</strong> — Benefits, taxes, healthcare, jobs, mental health</li>
             <li><strong>Transit tips</strong> — Text stop numbers for real-time arrivals</li>
           </ul>
         </section>
@@ -93,8 +93,8 @@ const CITIES = {
 };
 
 const SECTIONS = [
-  { id: 'survival', title: 'Survival Guide', desc: 'Shelters, meals, washrooms, transit', route: '/survival' },
-  { id: 'foster', title: 'Foster Youth Navigator', desc: 'Benefits, housing, life skills', route: '/foster' },
+  { id: 'survival', title: 'Places', desc: 'Shelters, meals, washrooms, transit', route: '/survival' },
+  { id: 'foster', title: 'Life skills', desc: 'Benefits, taxes, healthcare, jobs', route: '/foster' },
 ];
 
 const TYPE_LABELS = {
@@ -208,7 +208,7 @@ async function renderSurvival() {
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
-        <h1>Survival Guide</h1>
+        <h1>Places</h1>
         <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${city.name}</p>
       </header>
       <p style="color: var(--muted);">Loading…</p>
@@ -223,7 +223,7 @@ async function renderSurvival() {
     lastClickedAmenityId = null;
     renderAmenityList();
   } catch (err) {
-    app.querySelector('p').textContent = `Could not load data: ${err.message}. Try again when you have internet.`;
+    app.querySelector('p').textContent = `Could not load data: ${err.message}. Try again when you're online.`;
   }
 }
 
@@ -392,7 +392,7 @@ async function loadBenefitsContent() {
     }
     el.innerHTML = html;
   } catch {
-    el.innerHTML = '<p>Could not load benefits. Try again when you have internet.</p>';
+    el.innerHTML = '<p>Could not load benefits. Try again when you\'re online.</p>';
   }
 }
 
@@ -419,8 +419,8 @@ function renderFoster(sectionId = null) {
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
-        <h1>Foster Youth Navigator</h1>
-        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Life skills and resources</p>
+        <h1>Life skills</h1>
+        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Benefits, taxes, healthcare, jobs</p>
       </header>
       <ul class="resource-list">
         ${FOSTER_SECTIONS.map((s) => `

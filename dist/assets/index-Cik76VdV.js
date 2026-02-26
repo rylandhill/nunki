@@ -1,4 +1,4 @@
-(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))a(r);new MutationObserver(r=>{for(const i of r)if(i.type==="childList")for(const f of i.addedNodes)f.tagName==="LINK"&&f.rel==="modulepreload"&&a(f)}).observe(document,{childList:!0,subtree:!0});function t(r){const i={};return r.integrity&&(i.integrity=r.integrity),r.referrerPolicy&&(i.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?i.credentials="include":r.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function a(r){if(r.ep)return;r.ep=!0;const i=t(r);fetch(r.href,i)}})();const x=[{id:"benefits",title:"Benefits checker",desc:"What you're entitled to",route:"foster/benefits"},{id:"taxes",title:"Taxes",desc:"Filing your first return",route:"foster/taxes"},{id:"resumes",title:"Resumes & jobs",desc:"Getting your first job",route:"foster/resumes"},{id:"money",title:"Money basics",desc:"Banking and budgeting",route:"foster/money"},{id:"healthcare",title:"Healthcare",desc:"Getting a doctor, MSP/OHIP",route:"foster/healthcare"},{id:"mental-health",title:"Mental health & addiction",desc:"Free counselling and support",route:"foster/mental-health"},{id:"survival",title:"Need shelter or meals?",desc:"Survival Guide",route:"/survival"}],b={benefits:{title:"Benefits checker",body:`
+(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))r(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const f of i.addedNodes)f.tagName==="LINK"&&f.rel==="modulepreload"&&r(f)}).observe(document,{childList:!0,subtree:!0});function t(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(a){if(a.ep)return;a.ep=!0;const i=t(a);fetch(a.href,i)}})();const x=[{id:"benefits",title:"Benefits",desc:"What you're entitled to",route:"foster/benefits"},{id:"taxes",title:"Taxes",desc:"Filing your first return",route:"foster/taxes"},{id:"resumes",title:"Resumes & jobs",desc:"Getting your first job",route:"foster/resumes"},{id:"money",title:"Money basics",desc:"Banking and budgeting",route:"foster/money"},{id:"healthcare",title:"Healthcare",desc:"Getting a doctor, MSP/OHIP",route:"foster/healthcare"},{id:"mental-health",title:"Mental health & addiction",desc:"Free counselling and support",route:"foster/mental-health"},{id:"survival",title:"Need shelter or meals?",desc:"Resources nearby",route:"/survival"}],v={benefits:{title:"Benefits",body:`
       <p>Programs you may qualify for when you age out of care. Data loads from benefits.json.</p>
       <p><strong>BC211</strong> — Call <a href="tel:211">211</a> or visit bc211.ca for help finding services.</p>
       <div id="benefits-content"></div>
@@ -104,7 +104,7 @@
       <p><strong>211 Ontario</strong> — Call 211 or visit 211ontario.ca to find counselling and addiction services near you.</p>
       <h3>Addiction support</h3>
       <p>Foundry (BC) and 211 (both provinces) can connect you to substance use programs. Many are free. You can ask for help without judgment.</p>
-    `}},T="nunki-seen-info";function N(){return window.matchMedia("(display-mode: standalone)").matches||window.matchMedia("(display-mode: fullscreen)").matches||window.matchMedia("(display-mode: minimal-ui)").matches||window.navigator.standalone===!0}function S(){const e=document.getElementById("info-overlay");e&&e.classList.add("info-overlay--visible")}function B(){const e=document.getElementById("info-overlay");e&&e.classList.remove("info-overlay--visible");try{localStorage.setItem(T,"1")}catch{}}function F(){const e=document.createElement("div");e.id="info-overlay",e.className="info-overlay",e.setAttribute("role","dialog"),e.setAttribute("aria-labelledby","info-title"),e.innerHTML=`
+    `}},T="nunki-seen-info";function B(){return window.matchMedia("(display-mode: standalone)").matches||window.matchMedia("(display-mode: fullscreen)").matches||window.matchMedia("(display-mode: minimal-ui)").matches||window.navigator.standalone===!0}function S(){const e=document.getElementById("info-overlay");e&&e.classList.add("info-overlay--visible")}function j(){const e=document.getElementById("info-overlay");e&&e.classList.remove("info-overlay--visible");try{localStorage.setItem(T,"1")}catch{}}function N(){const e=document.createElement("div");e.id="info-overlay",e.className="info-overlay",e.setAttribute("role","dialog"),e.setAttribute("aria-labelledby","info-title"),e.innerHTML=`
     <div class="info-overlay__backdrop" data-action="close-info" aria-hidden="true"></div>
     <div class="info-overlay__panel">
       <div class="info-overlay__header">
@@ -122,8 +122,8 @@
           <h3>What works offline</h3>
           <p>After you open Nunki once while online, everything is saved for offline use:</p>
           <ul>
-            <li><strong>Survival Guide</strong> — Shelters, meals, washrooms, safe consumption (Vancouver & Toronto)</li>
-            <li><strong>Foster Youth Navigator</strong> — Benefits, taxes, resumes, healthcare, mental health</li>
+            <li><strong>Resources nearby</strong> — Shelters, meals, washrooms, safe consumption (Vancouver & Toronto)</li>
+            <li><strong>Life skills</strong> — Benefits, taxes, healthcare, jobs, mental health</li>
             <li><strong>Transit tips</strong> — Text stop numbers for real-time arrivals</li>
           </ul>
         </section>
@@ -138,15 +138,15 @@
         </section>
       </div>
     </div>
-  `,e.querySelectorAll('[data-action="close-info"]').forEach(r=>{r.addEventListener("click",B)}),document.body.appendChild(e);const o=document.createElement("button");o.type="button",o.className="info-btn",o.setAttribute("aria-label","App info & how to save offline"),o.innerHTML="ℹ️",o.addEventListener("click",S),document.body.appendChild(o);const t=!N(),a=!!localStorage.getItem(T);t&&!a&&S()}const y={vancouver:{name:"Vancouver",dataFile:"vancouver.json"},toronto:{name:"Toronto",dataFile:"toronto.json"}},H=[{id:"survival",title:"Survival Guide",desc:"Shelters, meals, washrooms, transit",route:"/survival"},{id:"foster",title:"Foster Youth Navigator",desc:"Benefits, housing, life skills",route:"/foster"}],E={shelter:"Shelter",meal:"Meal program",washroom:"Washroom",safe_injection:"Safe consumption",transit_hub:"Transit"};let l=null,c=null,h="all",p="all",u=null;function m(){return document.getElementById("app")}function k(){return"/"}async function C(e){const o=k(),t=e.startsWith("/")?e:`${o}data/${e}`,a=await fetch(t);if(!a.ok)throw new Error(`Failed to load ${e}`);return a.json()}function O(){const e=k().replace(/\/?$/,"/"),o=location.origin;document.querySelectorAll('script[src], link[rel="stylesheet"][href]').forEach(t=>{const a=(t.src||t.href||"").trim();a&&a.startsWith(o)&&fetch(a).catch(()=>{})}),["vancouver.json","toronto.json","benefits.json"].forEach(t=>fetch(`${e}data/${t}`).catch(()=>{}))}function d(){const e=l?y[l]:null,o=m();if(!e){o.innerHTML=`
+  `,e.querySelectorAll('[data-action="close-info"]').forEach(a=>{a.addEventListener("click",j)}),document.body.appendChild(e);const o=document.createElement("button");o.type="button",o.className="info-btn",o.setAttribute("aria-label","App info & how to save offline"),o.innerHTML="ℹ️",o.addEventListener("click",S),document.body.appendChild(o);const t=!B(),r=!!localStorage.getItem(T);t&&!r&&S()}const y={vancouver:{name:"Vancouver",dataFile:"vancouver.json"},toronto:{name:"Toronto",dataFile:"toronto.json"}},H=[{id:"survival",title:"Resources nearby",desc:"Shelters, meals, washrooms, transit",route:"/survival"},{id:"foster",title:"Life skills",desc:"Benefits, taxes, healthcare, jobs",route:"/foster"}],E={shelter:"Shelter",meal:"Meal program",washroom:"Washroom",safe_injection:"Safe consumption",transit_hub:"Transit"};let l=null,c=null,h="all",p="all",u=null;function m(){return document.getElementById("app")}function k(){return"/"}async function L(e){const o=k(),t=e.startsWith("/")?e:`${o}data/${e}`,r=await fetch(t);if(!r.ok)throw new Error(`Failed to load ${e}`);return r.json()}function F(){const e=k().replace(/\/?$/,"/"),o=location.origin;document.querySelectorAll('script[src], link[rel="stylesheet"][href]').forEach(t=>{const r=(t.src||t.href||"").trim();r&&r.startsWith(o)&&fetch(r).catch(()=>{})}),["vancouver.json","toronto.json","benefits.json"].forEach(t=>fetch(`${e}data/${t}`).catch(()=>{}))}function d(){const e=l?y[l]:null,o=m();if(!e){o.innerHTML=`
       <main class="page city-select" role="main">
         <h1>Nunki</h1>
         <p style="margin: 1rem 0; color: var(--muted);">Choose your city</p>
-        ${Object.entries(y).map(([t,a])=>`
-          <button class="city-btn" type="button" data-city="${t}" aria-label="Select ${a.name}">${a.name}</button>
+        ${Object.entries(y).map(([t,r])=>`
+          <button class="city-btn" type="button" data-city="${t}" aria-label="Select ${r.name}">${r.name}</button>
         `).join("")}
       </main>
-    `,o.querySelectorAll(".city-btn").forEach(t=>{t.addEventListener("click",()=>j(t.dataset.city))});return}o.innerHTML=`
+    `,o.querySelectorAll(".city-btn").forEach(t=>{t.addEventListener("click",()=>O(t.dataset.city))});return}o.innerHTML=`
     <main class="page" role="main">
       <header class="header">
         <h1>Nunki</h1>
@@ -161,21 +161,21 @@
         <button class="back-btn" type="button" data-action="change-city">← Change city</button>
       </p>
     </main>
-  `,o.querySelectorAll(".section-btn").forEach(t=>{t.addEventListener("click",()=>M(t.dataset.route))}),o.querySelector('[data-action="change-city"]').addEventListener("click",()=>{l=null,c=null,d()})}function j(e){l=e,d()}function M(e){e==="/survival"?w():e==="/foster"?g():d()}async function w(){const e=m(),o=y[l];if(o){e.innerHTML=`
+  `,o.querySelectorAll(".section-btn").forEach(t=>{t.addEventListener("click",()=>M(t.dataset.route))}),o.querySelector('[data-action="change-city"]').addEventListener("click",()=>{l=null,c=null,d()})}function O(e){l=e,d()}function M(e){e==="/survival"?w():e==="/foster"?g():d()}async function w(){const e=m(),o=y[l];if(o){e.innerHTML=`
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
-        <h1>Survival Guide</h1>
+        <h1>Resources nearby</h1>
         <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${o.name}</p>
       </header>
       <p style="color: var(--muted);">Loading…</p>
     </main>
-  `,e.querySelector('[data-action="back"]').addEventListener("click",()=>{c=null,d()});try{c=await C(o.dataFile),h="all",p="all",u=null,v()}catch(t){e.querySelector("p").textContent=`Could not load data: ${t.message}. Try again when you have internet.`}}}const I=[{id:"all",label:"All"},{id:"shelter",label:"Shelters"},{id:"meal",label:"Meals"},{id:"washroom",label:"Washrooms"},{id:"safe_injection",label:"Safe consumption"}];function v(e="all",o="all"){const t=m();if(!c||!c.amenities)return;const a=c.amenities;let r=e==="all"?a:a.filter(n=>n.type===e);o!=="all"&&(r=r.filter(n=>(n.region||"downtown")===o));const i=c.meta?.regions||[],f=y[l]?.name||"City";t.innerHTML=`
+  `,e.querySelector('[data-action="back"]').addEventListener("click",()=>{c=null,d()});try{c=await L(o.dataFile),h="all",p="all",u=null,b()}catch(t){e.querySelector("p").textContent=`Could not load data: ${t.message}. Try again when you're online.`}}}const I=[{id:"all",label:"All"},{id:"shelter",label:"Shelters"},{id:"meal",label:"Meals"},{id:"washroom",label:"Washrooms"},{id:"safe_injection",label:"Safe consumption"}];function b(e="all",o="all"){const t=m();if(!c||!c.amenities)return;const r=c.amenities;let a=e==="all"?r:r.filter(n=>n.type===e);o!=="all"&&(a=a.filter(n=>(n.region||"downtown")===o));const i=c.meta?.regions||[],f=y[l]?.name||"City";t.innerHTML=`
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back-to-list">← Back</button>
       <header class="header">
         <h1>${f}</h1>
-        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${r.length} places</p>
+        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${a.length} places</p>
       </header>
       ${i.length>0?`
       <div class="filter-row" style="margin-bottom:0.75rem;">
@@ -194,7 +194,7 @@
         `).join("")}
       </div>
       <ul class="amenity-list">
-        ${r.map(n=>`
+        ${a.map(n=>`
           <li class="amenity-item">
             <button class="amenity-link" type="button" data-id="${n.id}" style="width:100%;text-align:left;border:none;background:none;cursor:pointer;font:inherit;color:inherit;">
               <strong>${s(n.name)}</strong>
@@ -208,7 +208,7 @@
         <p>${l==="vancouver"?"Text your bus stop number to <strong>33333</strong> for real-time arrivals. Find stop numbers on the pole.":"Text your stop number to <strong>898882</strong> (TXTTTC) for real-time bus/streetcar arrivals."}</p>
       </section>
     </main>
-  `,t.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{c=null,h="all",p="all",u=null,d()}),t.querySelectorAll(".filter-btn[data-filter]").forEach(n=>{n.addEventListener("click",()=>{h=n.dataset.filter,v(h,p)})}),t.querySelectorAll(".filter-btn[data-region]").forEach(n=>{n.addEventListener("click",()=>{p=n.dataset.region,v(h,p)})}),t.querySelectorAll(".amenity-link[data-id]").forEach(n=>{n.addEventListener("click",()=>{u=n.dataset.id;const $=a.find(A=>A.id===n.dataset.id);$&&W($)})}),u&&requestAnimationFrame(()=>{const n=document.querySelector(`[data-id="${u}"]`);n&&n.scrollIntoView({block:"nearest",behavior:"auto"}),u=null})}function W(e){const o=m();o.innerHTML=`
+  `,t.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{c=null,h="all",p="all",u=null,d()}),t.querySelectorAll(".filter-btn[data-filter]").forEach(n=>{n.addEventListener("click",()=>{h=n.dataset.filter,b(h,p)})}),t.querySelectorAll(".filter-btn[data-region]").forEach(n=>{n.addEventListener("click",()=>{p=n.dataset.region,b(h,p)})}),t.querySelectorAll(".amenity-link[data-id]").forEach(n=>{n.addEventListener("click",()=>{u=n.dataset.id;const $=r.find(A=>A.id===n.dataset.id);$&&W($)})}),u&&requestAnimationFrame(()=>{const n=document.querySelector(`[data-id="${u}"]`);n&&n.scrollIntoView({block:"nearest",behavior:"auto"}),u=null})}function W(e){const o=m();o.innerHTML=`
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back-to-list">← Back to list</button>
       <div class="detail">
@@ -245,7 +245,7 @@
         `:""}
       </div>
     </main>
-  `,o.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{v(h,p)})}function s(e){if(!e)return"";const o=document.createElement("div");return o.textContent=e,o.innerHTML}async function _(){const e=document.getElementById("benefits-content");if(e)try{const o=await C("benefits.json");let t="";for(const[a,r]of Object.entries(o)){t+=`<h3>${s(r.province)}</h3>`;for(const i of r.programs||[])t+='<div class="benefit-card" style="margin-bottom:1rem;padding:1rem;border:1px solid var(--border);">',t+=`<strong>${s(i.name)}</strong> (${s(i.age)})<br>`,t+=`<p style="margin:0.5rem 0;">${s(i.what)}</p>`,i.phone&&(t+=`<p>Call <a href="tel:${i.phone.replace(/[\s\-]/g,"")}">${s(i.phone)}</a></p>`),i.link&&(t+=`<p><a href="${s(i.link)}" target="_blank" rel="noopener">Learn more</a></p>`),t+="</div>"}e.innerHTML=t}catch{e.innerHTML="<p>Could not load benefits. Try again when you have internet.</p>"}}function g(e=null){const o=m();if(e&&b[e]){const t=b[e];o.innerHTML=`
+  `,o.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{b(h,p)})}function s(e){if(!e)return"";const o=document.createElement("div");return o.textContent=e,o.innerHTML}async function _(){const e=document.getElementById("benefits-content");if(e)try{const o=await L("benefits.json");let t="";for(const[r,a]of Object.entries(o)){t+=`<h3>${s(a.province)}</h3>`;for(const i of a.programs||[])t+='<div class="benefit-card" style="margin-bottom:1rem;padding:1rem;border:1px solid var(--border);">',t+=`<strong>${s(i.name)}</strong> (${s(i.age)})<br>`,t+=`<p style="margin:0.5rem 0;">${s(i.what)}</p>`,i.phone&&(t+=`<p>Call <a href="tel:${i.phone.replace(/[\s\-]/g,"")}">${s(i.phone)}</a></p>`),i.link&&(t+=`<p><a href="${s(i.link)}" target="_blank" rel="noopener">Learn more</a></p>`),t+="</div>"}e.innerHTML=t}catch{e.innerHTML="<p>Could not load benefits. Try again when you're online.</p>"}}function g(e=null){const o=m();if(e&&v[e]){const t=v[e];o.innerHTML=`
       <main class="page" role="main">
         <button class="back-btn" type="button" data-action="foster-back">← Back</button>
         <header class="header">
@@ -257,8 +257,8 @@
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
-        <h1>Foster Youth Navigator</h1>
-        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Life skills and resources</p>
+        <h1>Life skills</h1>
+        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Benefits, taxes, healthcare, jobs</p>
       </header>
       <ul class="resource-list">
         ${x.map(t=>`
@@ -271,4 +271,4 @@
         `).join("")}
       </ul>
     </main>
-  `,o.querySelector('[data-action="back"]').addEventListener("click",()=>d()),o.querySelectorAll(".resource-link[data-route]").forEach(t=>{t.addEventListener("click",()=>{const a=t.dataset.route;a==="/survival"?w():a.startsWith("foster/")&&g(a.replace("foster/",""))})})}function L(){const e=window.location.hash.slice(1)||"";if(e==="survival")l||(l="vancouver"),w();else if(e.startsWith("foster")){const o=e.replace("foster","").replace(/^\//,"");o&&b[o]?g(o):g()}else d()}"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register(`${k()}sw.js`).then(e=>(e.update(),navigator.serviceWorker.addEventListener("controllerchange",()=>{window.location.reload()}),e.ready)).then(()=>O()).catch(()=>{})});window.addEventListener("load",F);window.addEventListener("hashchange",L);L();
+  `,o.querySelector('[data-action="back"]').addEventListener("click",()=>d()),o.querySelectorAll(".resource-link[data-route]").forEach(t=>{t.addEventListener("click",()=>{const r=t.dataset.route;r==="/survival"?w():r.startsWith("foster/")&&g(r.replace("foster/",""))})})}function C(){const e=window.location.hash.slice(1)||"";if(e==="survival")l||(l="vancouver"),w();else if(e.startsWith("foster")){const o=e.replace("foster","").replace(/^\//,"");o&&v[o]?g(o):g()}else d()}"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register(`${k()}sw.js`).then(e=>(navigator.onLine&&e.update(),navigator.serviceWorker.addEventListener("controllerchange",()=>{window.location.reload()}),e.ready)).then(()=>F()).catch(()=>{})});window.addEventListener("load",N);window.addEventListener("hashchange",C);C();

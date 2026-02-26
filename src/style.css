@@ -210,7 +210,7 @@ a:focus {
   font-size: 0.875rem;
 }
 
-/* Foster resource buttons - label above, bordered */
+/* Life skills resource buttons - label above, bordered */
 .resource-btn {
   width: 100%;
   text-align: left;
@@ -279,7 +279,7 @@ a:focus {
   border-color: var(--fg);
 }
 
-/* Foster content */
+/* Life skills content */
 .foster-content h3 {
   font-size: 1rem;
   margin: 1.5rem 0 0.5rem;

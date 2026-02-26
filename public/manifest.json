@@ -1,7 +1,7 @@
 {
   "name": "Nunki",
   "short_name": "Nunki",
-  "description": "Shelters, meals, washrooms, transit. Foster youth benefits. No login required.",
+  "description": "Shelters, meals, washrooms, transit. Benefits and life skills. No login required.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
