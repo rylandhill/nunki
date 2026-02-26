@@ -93,7 +93,7 @@ const CITIES = {
 };
 
 const SECTIONS = [
-  { id: 'survival', title: 'Survival Guide test', desc: 'Shelters, meals, washrooms, transit', route: '/survival' },
+  { id: 'survival', title: 'Survival Guide', desc: 'Shelters, meals, washrooms, transit', route: '/survival' },
   { id: 'foster', title: 'Foster Youth Navigator', desc: 'Benefits, housing, life skills', route: '/foster' },
 ];
 
@@ -127,11 +127,19 @@ async function fetchJSON(path) {
   return res.json();
 }
 
-/** Pre-fetch all data files so the service worker caches them for offline use. */
-function prefetchData() {
+/** Pre-fetch assets (JS, CSS) and data so the service worker caches them for offline use. */
+function prefetchForOffline() {
   const base = getBase().replace(/\/?$/, '/');
-  const files = ['vancouver.json', 'toronto.json', 'benefits.json'];
-  files.forEach((f) => fetch(`${base}data/${f}`).catch(() => {}));
+  const origin = location.origin;
+  // Cache current page's scripts and styles (they weren't cached on first load—SW wasn't controlling yet)
+  document.querySelectorAll('script[src], link[rel="stylesheet"][href]').forEach((el) => {
+    const url = (el.src || el.href || '').trim();
+    if (url && url.startsWith(origin)) fetch(url).catch(() => {});
+  });
+  // Cache all data files
+  ['vancouver.json', 'toronto.json', 'benefits.json'].forEach((f) =>
+    fetch(`${base}data/${f}`).catch(() => {})
+  );
 }
 
 function renderHome() {
@@ -200,7 +208,7 @@ async function renderSurvival() {
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
-        <h1>Survival Guide test</h1>
+        <h1>Survival Guide</h1>
         <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${city.name}</p>
       </header>
       <p style="color: var(--muted);">Loading…</p>
@@ -452,7 +460,7 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register(`${getBase()}sw.js`)
       .then((reg) => reg.ready)
-      .then(() => prefetchData())
+      .then(() => prefetchForOffline())
       .catch(() => {});
   });
 }
