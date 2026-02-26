@@ -232,8 +232,8 @@ function renderHome() {
   app.innerHTML = `
     <main class="page" role="main">
       <header class="header">
-        <h1>Nunki</h1>
-        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${city.name}</p>
+        <h1 class="header-city">${city.name}</h1>
+        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Places, life skills, donate</p>
       </header>
       <nav class="section-grid" aria-label="Main sections">
         ${SECTIONS.map((s) => `
@@ -276,8 +276,8 @@ async function renderSurvival() {
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
-        <h1>Places</h1>
-        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${city.name}</p>
+        <h1 class="header-city">${city.name}</h1>
+        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Places</p>
       </header>
       <p style="color: var(--muted);">Loading…</p>
     </main>
@@ -377,7 +377,7 @@ function renderAmenityList(filterType = 'all', region = 'all', search = '', whee
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back-to-list">← Back</button>
       <header class="header">
-        <h1>${cityName}</h1>
+        <h1 class="header-city">${cityName}</h1>
         <p class="amenity-list-header-sub" style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${filtered.length} places${updated ? ` · Updated ${updated}` : ''}</p>
       </header>
       <div style="margin-bottom:1rem;">
@@ -604,8 +604,8 @@ function renderFoster(sectionId = null) {
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
-        <h1>Life skills</h1>
-        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Benefits, taxes, healthcare, jobs</p>
+        <h1 class="header-city">${CITIES[currentCity]?.name || 'Life skills'}</h1>
+        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Life skills</p>
       </header>
       <ul class="resource-list">
         ${FOSTER_SECTIONS.map((s) => `
@@ -654,8 +654,8 @@ function renderDonate() {
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
-        <h1>Donate</h1>
-        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Support shelters and kitchens in ${escapeHtml(cityName)}</p>
+        <h1 class="header-city">${escapeHtml(cityName)}</h1>
+        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Donate — support shelters and kitchens</p>
       </header>
       <div class="detail foster-content">
         <ul>${listHtml}</ul>

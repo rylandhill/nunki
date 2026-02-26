@@ -66,4 +66,4 @@ Or use Wrangler: `npx wrangler pages deploy dist --project-name=nunki`
 - `public/data/` — Static JSON (amenities, benefits)
 - `public/sw.js` — Service Worker (cache-first shell and data)
 - `scripts/` — Data fetchers (`fetch_vancouver.py`, `fetch_toronto.py`, `fetch_benefits.py`), validation (`validate_crossref.py`)
-- `docs/` — [DATA_SOURCES](docs/DATA_SOURCES.md), [ACCURACY](docs/ACCURACY.md), [MAINTENANCE](docs/MAINTENANCE.md)
+- `docs/` — [DATA_SOURCES](docs/DATA_SOURCES.md), [ACCURACY](docs/ACCURACY.md), [MAINTENANCE](docs/MAINTENANCE.md), [AGENT_CONTEXT](docs/AGENT_CONTEXT.md) (for AI coding agents)

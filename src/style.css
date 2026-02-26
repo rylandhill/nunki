@@ -42,6 +42,7 @@ h1, h2, h3 {
 }
 
 h1 { font-size: 1.5rem; }
+h1.header-city { font-size: 2rem; }
 h2 { font-size: 1.25rem; }
 h3 { font-size: 1rem; }
 
