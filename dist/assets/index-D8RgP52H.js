@@ -208,7 +208,7 @@
         <p>${l==="vancouver"?"Text your bus stop number to <strong>33333</strong> for real-time arrivals. Find stop numbers on the pole.":"Text your stop number to <strong>898882</strong> (TXTTTC) for real-time bus/streetcar arrivals."}</p>
       </section>
     </main>
-  `,t.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{c=null,h="all",p="all",u=null,d()}),t.querySelectorAll(".filter-btn[data-filter]").forEach(n=>{n.addEventListener("click",()=>{h=n.dataset.filter,v(h,p)})}),t.querySelectorAll(".filter-btn[data-region]").forEach(n=>{n.addEventListener("click",()=>{p=n.dataset.region,v(h,p)})}),t.querySelectorAll(".amenity-link[data-id]").forEach(n=>{n.addEventListener("click",()=>{u=n.dataset.id;const $=a.find(A=>A.id===n.dataset.id);$&&_($)})}),u&&requestAnimationFrame(()=>{const n=document.querySelector(`[data-id="${u}"]`);n&&n.scrollIntoView({block:"nearest",behavior:"auto"}),u=null})}function _(e){const o=m();o.innerHTML=`
+  `,t.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{c=null,h="all",p="all",u=null,d()}),t.querySelectorAll(".filter-btn[data-filter]").forEach(n=>{n.addEventListener("click",()=>{h=n.dataset.filter,v(h,p)})}),t.querySelectorAll(".filter-btn[data-region]").forEach(n=>{n.addEventListener("click",()=>{p=n.dataset.region,v(h,p)})}),t.querySelectorAll(".amenity-link[data-id]").forEach(n=>{n.addEventListener("click",()=>{u=n.dataset.id;const $=a.find(A=>A.id===n.dataset.id);$&&W($)})}),u&&requestAnimationFrame(()=>{const n=document.querySelector(`[data-id="${u}"]`);n&&n.scrollIntoView({block:"nearest",behavior:"auto"}),u=null})}function W(e){const o=m();o.innerHTML=`
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back-to-list">← Back to list</button>
       <div class="detail">
@@ -245,7 +245,7 @@
         `:""}
       </div>
     </main>
-  `,o.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{v(h,p)})}function s(e){if(!e)return"";const o=document.createElement("div");return o.textContent=e,o.innerHTML}async function W(){const e=document.getElementById("benefits-content");if(e)try{const o=await C("benefits.json");let t="";for(const[a,r]of Object.entries(o)){t+=`<h3>${s(r.province)}</h3>`;for(const i of r.programs||[])t+='<div class="benefit-card" style="margin-bottom:1rem;padding:1rem;border:1px solid var(--border);">',t+=`<strong>${s(i.name)}</strong> (${s(i.age)})<br>`,t+=`<p style="margin:0.5rem 0;">${s(i.what)}</p>`,i.phone&&(t+=`<p>Call <a href="tel:${i.phone.replace(/[\s\-]/g,"")}">${s(i.phone)}</a></p>`),i.link&&(t+=`<p><a href="${s(i.link)}" target="_blank" rel="noopener">Learn more</a></p>`),t+="</div>"}e.innerHTML=t}catch{e.innerHTML="<p>Could not load benefits. Try again when you have internet.</p>"}}function g(e=null){const o=m();if(e&&b[e]){const t=b[e];o.innerHTML=`
+  `,o.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{v(h,p)})}function s(e){if(!e)return"";const o=document.createElement("div");return o.textContent=e,o.innerHTML}async function _(){const e=document.getElementById("benefits-content");if(e)try{const o=await C("benefits.json");let t="";for(const[a,r]of Object.entries(o)){t+=`<h3>${s(r.province)}</h3>`;for(const i of r.programs||[])t+='<div class="benefit-card" style="margin-bottom:1rem;padding:1rem;border:1px solid var(--border);">',t+=`<strong>${s(i.name)}</strong> (${s(i.age)})<br>`,t+=`<p style="margin:0.5rem 0;">${s(i.what)}</p>`,i.phone&&(t+=`<p>Call <a href="tel:${i.phone.replace(/[\s\-]/g,"")}">${s(i.phone)}</a></p>`),i.link&&(t+=`<p><a href="${s(i.link)}" target="_blank" rel="noopener">Learn more</a></p>`),t+="</div>"}e.innerHTML=t}catch{e.innerHTML="<p>Could not load benefits. Try again when you have internet.</p>"}}function g(e=null){const o=m();if(e&&b[e]){const t=b[e];o.innerHTML=`
       <main class="page" role="main">
         <button class="back-btn" type="button" data-action="foster-back">← Back</button>
         <header class="header">
@@ -253,7 +253,7 @@
         </header>
         <div class="detail foster-content">${t.body}</div>
       </main>
-    `,o.querySelector('[data-action="foster-back"]').addEventListener("click",()=>g()),e==="benefits"&&W();return}o.innerHTML=`
+    `,o.querySelector('[data-action="foster-back"]').addEventListener("click",()=>g()),e==="benefits"&&_();return}o.innerHTML=`
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
@@ -271,4 +271,4 @@
         `).join("")}
       </ul>
     </main>
-  `,o.querySelector('[data-action="back"]').addEventListener("click",()=>d()),o.querySelectorAll(".resource-link[data-route]").forEach(t=>{t.addEventListener("click",()=>{const a=t.dataset.route;a==="/survival"?w():a.startsWith("foster/")&&g(a.replace("foster/",""))})})}function L(){const e=window.location.hash.slice(1)||"";if(e==="survival")l||(l="vancouver"),w();else if(e.startsWith("foster")){const o=e.replace("foster","").replace(/^\//,"");o&&b[o]?g(o):g()}else d()}"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register(`${k()}sw.js`).then(e=>e.ready).then(()=>O()).catch(()=>{})});window.addEventListener("load",F);window.addEventListener("hashchange",L);L();
+  `,o.querySelector('[data-action="back"]').addEventListener("click",()=>d()),o.querySelectorAll(".resource-link[data-route]").forEach(t=>{t.addEventListener("click",()=>{const a=t.dataset.route;a==="/survival"?w():a.startsWith("foster/")&&g(a.replace("foster/",""))})})}function L(){const e=window.location.hash.slice(1)||"";if(e==="survival")l||(l="vancouver"),w();else if(e.startsWith("foster")){const o=e.replace("foster","").replace(/^\//,"");o&&b[o]?g(o):g()}else d()}"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register(`${k()}sw.js`).then(e=>(e.update(),navigator.serviceWorker.addEventListener("controllerchange",()=>{window.location.reload()}),e.ready)).then(()=>O()).catch(()=>{})});window.addEventListener("load",F);window.addEventListener("hashchange",L);L();

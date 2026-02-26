@@ -455,11 +455,17 @@ function handleRoute() {
   else renderHome();
 }
 
-// Register Service Worker and pre-fetch data for offline
+// Register Service Worker, check for updates (so PWA gets updates too), and pre-fetch for offline
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register(`${getBase()}sw.js`)
-      .then((reg) => reg.ready)
+      .then((reg) => {
+        reg.update(); // Force update check on every open (PWA often skips this)
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          window.location.reload(); // New SW activated — reload to get fresh app
+        });
+        return reg.ready;
+      })
       .then(() => prefetchForOffline())
       .catch(() => {});
   });

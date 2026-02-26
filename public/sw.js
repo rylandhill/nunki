@@ -3,8 +3,8 @@
  * Network-first: JSON data (fresh when online, cache when offline)
  */
 
-const SHELL_CACHE = 'nunki-shell-v4';
-const DATA_CACHE = 'nunki-data-v4';
+const SHELL_CACHE = 'nunki-shell-v5';
+const DATA_CACHE = 'nunki-data-v5';
 
 const SHELL_ASSETS = [
   '/',
@@ -12,12 +12,28 @@ const SHELL_ASSETS = [
   '/manifest.json',
 ];
 
-// Install: cache app shell
+function getBase() {
+  const path = self.location.pathname;
+  return path.endsWith('sw.js') ? path.replace(/sw\.js$/, '') || '/' : '/';
+}
+
+// Install: cache app shell + assets from index.html (so offline works even on first open)
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open(SHELL_CACHE).then((cache) => {
-      return cache.addAll(SHELL_ASSETS).catch(() => {});
-    }).then(() => self.skipWaiting())
+    caches.open(SHELL_CACHE).then((cache) =>
+      cache.addAll(SHELL_ASSETS).catch(() => {}).then(() =>
+        fetch(new URL('index.html', self.location.origin + getBase()))
+          .then((r) => r.text())
+          .then((html) => {
+            const assets = [];
+            const re = /(?:src|href)="(\/assets\/[^"]+)"/g;
+            let m;
+            while ((m = re.exec(html))) assets.push(m[1]);
+            return assets.length ? cache.addAll(assets.map((p) => new URL(p, self.location.origin).href)) : Promise.resolve();
+          })
+          .catch(() => {})
+      )
+    ).then(() => self.skipWaiting())
   );
 });
 
