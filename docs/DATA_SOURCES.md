@@ -24,6 +24,7 @@ The app uses **static JSON files** in `public/data/`. Data is fetched at build t
 2. Output `public/data/<city>.json` with the schema in [Data Schema](#data-schema)
 3. Add the city to `CITIES` in `src/main.js`
 4. Add `python3 scripts/fetch_<city>.py` to the `fetch-data` script in `package.json`
+5. Extend `scripts/validate_crossref.py` for the new city (see [ACCURACY.md](ACCURACY.md))
 
 ---
 
@@ -253,7 +254,7 @@ def fetch_shelters():
 
 ### National Option: NSPL
 
-The **National Service Provider List** (open.canada.ca, dataset `7e0189e3-8595-4e62-a4e9-4fed6f265e10`) lists emergency and transitional shelters across Canada. CSV/XLSX format, updated annually. Could be used as a base for Montreal, Calgary, Ottawa, and other cities—then supplement with local open data for washrooms, meals, and richer shelter details.
+The **National Service Provider List** (open.canada.ca, dataset `7e0189e3-8595-4e62-a4e9-4fed6f265e10`) lists emergency and transitional shelters across Canada. CSV/XLSX format, updated annually. Used by `validate_crossref.py` to cross-reference shelter names for Vancouver and Toronto. Could be used as a base for Montreal, Calgary, Ottawa, and other cities—then supplement with local open data for washrooms, meals, and richer shelter details.
 
 ---
 
@@ -261,6 +262,7 @@ The **National Service Provider List** (open.canada.ca, dataset `7e0189e3-8595-4
 
 - `requests` (optional; we use `urllib` in scripts)
 - Python 3.8+
+- `openpyxl` (optional; for `validate_crossref.py` to use NSPL 2024 instead of 2019) — `pip install -r scripts/requirements.txt`
 
 ---
 

@@ -62,3 +62,12 @@ When Vancouver Open Data adds a new facility without an address, add to `SHELTER
 ### Safe consumption site
 
 Add to `SAFE_CONSUMPTION_SITES` in the relevant fetch script. Include name, address, hours, phone, lat/lng (optional).
+
+### Shelter name alias (validation)
+
+When `npm run validate-data` reports a false positive (same shelter, different name in NSPL), add both names to `SHELTER_NAME_ALIASES` in `scripts/validate_crossref.py`. Example:
+
+```python
+# In the city's set, add both the Nunki name and NSPL name (normalized to lowercase)
+"our shelter name", "n spl official name",
+```

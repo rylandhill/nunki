@@ -64,6 +64,6 @@ Or use Wrangler: `npx wrangler pages deploy dist --project-name=nunki`
 
 - `src/` — App shell, styles, routing
 - `public/data/` — Static JSON (amenities, benefits)
-- `public/sw.js` — Service Worker (cache-first shell, stale-while-revalidate data)
-- `scripts/` — Data fetchers (`fetch_vancouver.py`, `fetch_toronto.py`, `fetch_benefits.py`)
-- `docs/` — Documentation for contributors and adopters
+- `public/sw.js` — Service Worker (cache-first shell and data)
+- `scripts/` — Data fetchers (`fetch_vancouver.py`, `fetch_toronto.py`, `fetch_benefits.py`), validation (`validate_crossref.py`)
+- `docs/` — [DATA_SOURCES](docs/DATA_SOURCES.md), [ACCURACY](docs/ACCURACY.md), [MAINTENANCE](docs/MAINTENANCE.md)

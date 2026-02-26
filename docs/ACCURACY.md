@@ -69,7 +69,7 @@ https://open.canada.ca/data/dataset/7e0189e3-8595-4e62-a4e9-4fed6f265e10/resourc
 ### Before Each Rollout
 
 1. **Run fetch-data:** `npm run fetch-data`
-2. **Run cross-reference:** `python3 scripts/validate_crossref.py`
+2. **Run validation:** `npm run validate-data`
 3. **Review report:** Check for missing shelters, name mismatches, stale data
 4. **Manual spot-check:** Pick 3–5 random entries, call or visit to verify
 
@@ -80,9 +80,11 @@ https://open.canada.ca/data/dataset/7e0189e3-8595-4e62-a4e9-4fed6f265e10/resourc
 - **In Nunki but not in NSPL** — May be new, seasonal, or naming difference. Review "closest" matches.
 - **In NSPL but not in Nunki** — Candidates to add. Cross-check with city open data before adding.
 
-Run: `npm run validate-data` or `python3 scripts/validate_crossref.py`
+**Run:** `npm run validate-data` or `python3 scripts/validate_crossref.py`
 
-Uses NSPL 2019 CSV (no extra deps). NSPL is updated annually; 2019 may lag. For latest NSPL 2024, install `openpyxl` and extend the script.
+**Name matching:** The script uses `SHELTER_NAME_ALIASES` in `validate_crossref.py` to treat known name variants as the same shelter (e.g. "Aboriginal Shelter" ↔ "Aboriginal Central Street Shelter", "Na-Me-Res" ↔ "Na-Me-Res (Native Men's Residence)"). When you discover new alias pairs, add them to reduce false positives.
+
+**NSPL version:** Uses NSPL 2019 CSV by default (no extra deps). With `openpyxl` installed (`pip install -r scripts/requirements.txt`), uses NSPL 2024 for latest data.
 
 ---
 
@@ -105,11 +107,12 @@ When expanding to new cities:
 1. **Identify primary sources** — city open data, provincial 211, NSPL
 2. **Cross-reference** — NSPL has national coverage; use it to validate
 3. **Document contacts** — who to email for corrections
-4. **Run validation** — extend validate_crossref.py for the new city
+4. **Extend validation** — add the new city to `validate_crossref.py` (in `load_nunki_shelters` and `nspl_shelters_by_city`), and add `SHELTER_NAME_ALIASES` entries as you discover name variants
 
 ---
 
 ## Related
 
 - [DATA_SOURCES.md](DATA_SOURCES.md) — Data sources, schemas, fetch scripts
+- [MAINTENANCE.md](MAINTENANCE.md) — Manual-only sources, update schedule
 - [personal_docs/explanation-for-non-technical.md](../personal_docs/explanation-for-non-technical.md) — How to explain Nunki to centres

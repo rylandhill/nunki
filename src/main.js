@@ -98,7 +98,7 @@ function initOfflineIndicator() {
   bar.setAttribute('aria-live', 'polite');
   function update() {
     const online = navigator.onLine;
-    let text = online ? 'Online' : 'Saved';
+    let text = online ? 'Online' : 'Offline';
     try {
       if (sessionStorage.getItem('nunki-updated')) {
         sessionStorage.removeItem('nunki-updated');
