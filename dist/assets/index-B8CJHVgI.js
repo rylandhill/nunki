@@ -1,4 +1,4 @@
-(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))s(r);new MutationObserver(r=>{for(const a of r)if(a.type==="childList")for(const g of a.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&s(g)}).observe(document,{childList:!0,subtree:!0});function t(r){const a={};return r.integrity&&(a.integrity=r.integrity),r.referrerPolicy&&(a.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?a.credentials="include":r.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function s(r){if(r.ep)return;r.ep=!0;const a=t(r);fetch(r.href,a)}})();const E=[{id:"benefits",title:"Benefits checker",desc:"What you're entitled to",route:"foster/benefits"},{id:"taxes",title:"Taxes",desc:"Filing your first return",route:"foster/taxes"},{id:"resumes",title:"Resumes & jobs",desc:"Getting your first job",route:"foster/resumes"},{id:"money",title:"Money basics",desc:"Banking and budgeting",route:"foster/money"},{id:"healthcare",title:"Healthcare",desc:"Getting a doctor, MSP/OHIP",route:"foster/healthcare"},{id:"mental-health",title:"Mental health & addiction",desc:"Free counselling and support",route:"foster/mental-health"},{id:"survival",title:"Need shelter or meals?",desc:"Survival Guide",route:"/survival"}],v={benefits:{title:"Benefits checker",body:`
+(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))s(a);new MutationObserver(a=>{for(const r of a)if(r.type==="childList")for(const f of r.addedNodes)f.tagName==="LINK"&&f.rel==="modulepreload"&&s(f)}).observe(document,{childList:!0,subtree:!0});function t(a){const r={};return a.integrity&&(r.integrity=a.integrity),a.referrerPolicy&&(r.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?r.credentials="include":a.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function s(a){if(a.ep)return;a.ep=!0;const r=t(a);fetch(a.href,r)}})();const x=[{id:"benefits",title:"Benefits checker",desc:"What you're entitled to",route:"foster/benefits"},{id:"taxes",title:"Taxes",desc:"Filing your first return",route:"foster/taxes"},{id:"resumes",title:"Resumes & jobs",desc:"Getting your first job",route:"foster/resumes"},{id:"money",title:"Money basics",desc:"Banking and budgeting",route:"foster/money"},{id:"healthcare",title:"Healthcare",desc:"Getting a doctor, MSP/OHIP",route:"foster/healthcare"},{id:"mental-health",title:"Mental health & addiction",desc:"Free counselling and support",route:"foster/mental-health"},{id:"survival",title:"Need shelter or meals?",desc:"Survival Guide",route:"/survival"}],b={benefits:{title:"Benefits checker",body:`
       <p>Programs you may qualify for when you age out of care. Data loads from benefits.json.</p>
       <p><strong>BC211</strong> — Call <a href="tel:211">211</a> or visit bc211.ca for help finding services.</p>
       <div id="benefits-content"></div>
@@ -104,7 +104,41 @@
       <p><strong>211 Ontario</strong> — Call 211 or visit 211ontario.ca to find counselling and addiction services near you.</p>
       <h3>Addiction support</h3>
       <p>Foundry (BC) and 211 (both provinces) can connect you to substance use programs. Many are free. You can ask for help without judgment.</p>
-    `}},y={vancouver:{name:"Vancouver",dataFile:"vancouver.json"},toronto:{name:"Toronto",dataFile:"toronto.json"}},x=[{id:"survival",title:"Survival Guide",desc:"Shelters, meals, washrooms, transit",route:"/survival"},{id:"foster",title:"Foster Youth Navigator",desc:"Benefits, housing, life skills",route:"/foster"}],w={shelter:"Shelter",meal:"Meal program",washroom:"Washroom",safe_injection:"Safe consumption",transit_hub:"Transit"};let l=null,c=null,p="all",h="all",u=null;function m(){return document.getElementById("app")}function S(){return"/"}async function T(e){const o=S(),t=e.startsWith("/")?e:`${o}data/${e}`,s=await fetch(t);if(!s.ok)throw new Error(`Failed to load ${e}`);return s.json()}function d(){const e=l?y[l]:null,o=m();if(!e){o.innerHTML=`
+    `}},T="nunki-seen-info";function N(){return window.matchMedia("(display-mode: standalone)").matches||window.matchMedia("(display-mode: fullscreen)").matches||window.matchMedia("(display-mode: minimal-ui)").matches||window.navigator.standalone===!0}function S(){const e=document.getElementById("info-overlay");e&&e.classList.add("info-overlay--visible")}function B(){const e=document.getElementById("info-overlay");e&&e.classList.remove("info-overlay--visible");try{localStorage.setItem(T,"1")}catch{}}function F(){const e=document.createElement("div");e.id="info-overlay",e.className="info-overlay",e.setAttribute("role","dialog"),e.setAttribute("aria-labelledby","info-title"),e.innerHTML=`
+    <div class="info-overlay__backdrop" data-action="close-info" aria-hidden="true"></div>
+    <div class="info-overlay__panel">
+      <div class="info-overlay__header">
+        <h2 id="info-title">Save Nunki for offline use</h2>
+        <button type="button" class="info-overlay__close" data-action="close-info" aria-label="Close">×</button>
+      </div>
+      <div class="info-overlay__body">
+        <section class="info-section">
+          <h3>How to add to your phone</h3>
+          <p><strong>iPhone (Safari):</strong> Tap the Share button (square with arrow) → Add to Home Screen → Add.</p>
+          <p><strong>Android (Chrome):</strong> Tap the ⋮ menu → Add to Home screen or Install app → Add.</p>
+          <p>Once added, Nunki works like an app and opens without the browser bar.</p>
+        </section>
+        <section class="info-section">
+          <h3>What works offline</h3>
+          <p>After you open Nunki once while online, everything is saved for offline use:</p>
+          <ul>
+            <li><strong>Survival Guide</strong> — Shelters, meals, washrooms, safe consumption (Vancouver & Toronto)</li>
+            <li><strong>Foster Youth Navigator</strong> — Benefits, taxes, resumes, healthcare, mental health</li>
+            <li><strong>Transit tips</strong> — Text stop numbers for real-time arrivals</li>
+          </ul>
+        </section>
+        <section class="info-section">
+          <h3>How to get the freshest data</h3>
+          <p>Data updates when you open Nunki while connected to the internet. The app checks for new shelter, meal, and washroom info in the background.</p>
+          <p><strong>Tip:</strong> Open the app when you have Wi‑Fi or data to refresh. No need to delete and re-add.</p>
+        </section>
+        <section class="info-section">
+          <h3>Privacy</h3>
+          <p>No logins. No tracking. Everything stays on your device.</p>
+        </section>
+      </div>
+    </div>
+  `,e.querySelectorAll('[data-action="close-info"]').forEach(a=>{a.addEventListener("click",B)}),document.body.appendChild(e);const o=document.createElement("button");o.type="button",o.className="info-btn",o.setAttribute("aria-label","App info & how to save offline"),o.innerHTML="ℹ️",o.addEventListener("click",S),document.body.appendChild(o);const t=!N(),s=!!localStorage.getItem(T);t&&!s&&S()}const y={vancouver:{name:"Vancouver",dataFile:"vancouver.json"},toronto:{name:"Toronto",dataFile:"toronto.json"}},H=[{id:"survival",title:"Survival Guide",desc:"Shelters, meals, washrooms, transit",route:"/survival"},{id:"foster",title:"Foster Youth Navigator",desc:"Benefits, housing, life skills",route:"/foster"}],C={shelter:"Shelter",meal:"Meal program",washroom:"Washroom",safe_injection:"Safe consumption",transit_hub:"Transit"};let l=null,c=null,h="all",p="all",u=null;function m(){return document.getElementById("app")}function k(){return"/"}async function E(e){const o=k(),t=e.startsWith("/")?e:`${o}data/${e}`,s=await fetch(t);if(!s.ok)throw new Error(`Failed to load ${e}`);return s.json()}function j(){const e=k().replace(/\/?$/,"/");["vancouver.json","toronto.json","benefits.json"].forEach(t=>fetch(`${e}data/${t}`).catch(()=>{}))}function d(){const e=l?y[l]:null,o=m();if(!e){o.innerHTML=`
       <main class="page city-select" role="main">
         <h1>Nunki</h1>
         <p style="margin: 1rem 0; color: var(--muted);">Choose your city</p>
@@ -112,14 +146,14 @@
           <button class="city-btn" type="button" data-city="${t}" aria-label="Select ${s.name}">${s.name}</button>
         `).join("")}
       </main>
-    `,o.querySelectorAll(".city-btn").forEach(t=>{t.addEventListener("click",()=>A(t.dataset.city))});return}o.innerHTML=`
+    `,o.querySelectorAll(".city-btn").forEach(t=>{t.addEventListener("click",()=>O(t.dataset.city))});return}o.innerHTML=`
     <main class="page" role="main">
       <header class="header">
         <h1>Nunki</h1>
         <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${e.name}</p>
       </header>
       <nav class="section-grid" aria-label="Main sections">
-        ${x.map(t=>`
+        ${H.map(t=>`
           <button class="section-btn" type="button" data-route="${t.route}">${t.title}<small>${t.desc}</small></button>
         `).join("")}
       </nav>
@@ -127,7 +161,7 @@
         <button class="back-btn" type="button" data-action="change-city">← Change city</button>
       </p>
     </main>
-  `,o.querySelectorAll(".section-btn").forEach(t=>{t.addEventListener("click",()=>B(t.dataset.route))}),o.querySelector('[data-action="change-city"]').addEventListener("click",()=>{l=null,c=null,d()})}function A(e){l=e,d()}function B(e){e==="/survival"?k():e==="/foster"?f():d()}async function k(){const e=m(),o=y[l];if(o){e.innerHTML=`
+  `,o.querySelectorAll(".section-btn").forEach(t=>{t.addEventListener("click",()=>M(t.dataset.route))}),o.querySelector('[data-action="change-city"]').addEventListener("click",()=>{l=null,c=null,d()})}function O(e){l=e,d()}function M(e){e==="/survival"?w():e==="/foster"?g():d()}async function w(){const e=m(),o=y[l];if(o){e.innerHTML=`
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
@@ -136,35 +170,35 @@
       </header>
       <p style="color: var(--muted);">Loading…</p>
     </main>
-  `,e.querySelector('[data-action="back"]').addEventListener("click",()=>{c=null,d()});try{c=await T(o.dataFile),p="all",h="all",u=null,b()}catch(t){e.querySelector("p").textContent=`Could not load data: ${t.message}. Try again when you have internet.`}}}const F=[{id:"all",label:"All"},{id:"shelter",label:"Shelters"},{id:"meal",label:"Meals"},{id:"washroom",label:"Washrooms"},{id:"safe_injection",label:"Safe consumption"}];function b(e="all",o="all"){const t=m();if(!c||!c.amenities)return;const s=c.amenities;let r=e==="all"?s:s.filter(n=>n.type===e);o!=="all"&&(r=r.filter(n=>(n.region||"downtown")===o));const a=c.meta?.regions||[],g=y[l]?.name||"City";t.innerHTML=`
+  `,e.querySelector('[data-action="back"]').addEventListener("click",()=>{c=null,d()});try{c=await E(o.dataFile),h="all",p="all",u=null,v()}catch(t){e.querySelector("p").textContent=`Could not load data: ${t.message}. Try again when you have internet.`}}}const I=[{id:"all",label:"All"},{id:"shelter",label:"Shelters"},{id:"meal",label:"Meals"},{id:"washroom",label:"Washrooms"},{id:"safe_injection",label:"Safe consumption"}];function v(e="all",o="all"){const t=m();if(!c||!c.amenities)return;const s=c.amenities;let a=e==="all"?s:s.filter(n=>n.type===e);o!=="all"&&(a=a.filter(n=>(n.region||"downtown")===o));const r=c.meta?.regions||[],f=y[l]?.name||"City";t.innerHTML=`
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back-to-list">← Back</button>
       <header class="header">
-        <h1>${g}</h1>
-        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${r.length} places</p>
+        <h1>${f}</h1>
+        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${a.length} places</p>
       </header>
-      ${a.length>0?`
+      ${r.length>0?`
       <div class="filter-row" style="margin-bottom:0.75rem;">
         <label style="font-size:0.75rem;color:var(--muted);display:block;margin-bottom:0.25rem;">Area</label>
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
           <button class="filter-btn" type="button" data-region="all" aria-pressed="${o==="all"}">All areas</button>
-          ${a.map(n=>`
+          ${r.map(n=>`
             <button class="filter-btn" type="button" data-region="${i(n.id)}" aria-pressed="${o===n.id}">${i(n.name)}</button>
           `).join("")}
         </div>
       </div>
       `:""}
       <div class="filter-row" style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
-        ${F.map(n=>`
+        ${I.map(n=>`
           <button class="filter-btn" type="button" data-filter="${n.id}" aria-pressed="${e===n.id}">${n.label}</button>
         `).join("")}
       </div>
       <ul class="amenity-list">
-        ${r.map(n=>`
+        ${a.map(n=>`
           <li class="amenity-item">
             <button class="amenity-link" type="button" data-id="${n.id}" style="width:100%;text-align:left;border:none;background:none;cursor:pointer;font:inherit;color:inherit;">
               <strong>${i(n.name)}</strong>
-              <small>${w[n.type]||n.type} · ${i(n.address||n.intersection||"")}</small>
+              <small>${C[n.type]||n.type} · ${i(n.address||n.intersection||"")}</small>
             </button>
           </li>
         `).join("")}
@@ -174,12 +208,12 @@
         <p>${l==="vancouver"?"Text your bus stop number to <strong>33333</strong> for real-time arrivals. Find stop numbers on the pole.":"Text your stop number to <strong>898882</strong> (TXTTTC) for real-time bus/streetcar arrivals."}</p>
       </section>
     </main>
-  `,t.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{c=null,p="all",h="all",u=null,d()}),t.querySelectorAll(".filter-btn[data-filter]").forEach(n=>{n.addEventListener("click",()=>{p=n.dataset.filter,b(p,h)})}),t.querySelectorAll(".filter-btn[data-region]").forEach(n=>{n.addEventListener("click",()=>{h=n.dataset.region,b(p,h)})}),t.querySelectorAll(".amenity-link[data-id]").forEach(n=>{n.addEventListener("click",()=>{u=n.dataset.id;const $=s.find(L=>L.id===n.dataset.id);$&&H($)})}),u&&requestAnimationFrame(()=>{const n=document.querySelector(`[data-id="${u}"]`);n&&n.scrollIntoView({block:"nearest",behavior:"auto"}),u=null})}function H(e){const o=m();o.innerHTML=`
+  `,t.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{c=null,h="all",p="all",u=null,d()}),t.querySelectorAll(".filter-btn[data-filter]").forEach(n=>{n.addEventListener("click",()=>{h=n.dataset.filter,v(h,p)})}),t.querySelectorAll(".filter-btn[data-region]").forEach(n=>{n.addEventListener("click",()=>{p=n.dataset.region,v(h,p)})}),t.querySelectorAll(".amenity-link[data-id]").forEach(n=>{n.addEventListener("click",()=>{u=n.dataset.id;const $=s.find(A=>A.id===n.dataset.id);$&&_($)})}),u&&requestAnimationFrame(()=>{const n=document.querySelector(`[data-id="${u}"]`);n&&n.scrollIntoView({block:"nearest",behavior:"auto"}),u=null})}function _(e){const o=m();o.innerHTML=`
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back-to-list">← Back to list</button>
       <div class="detail">
         <h2>${i(e.name)}</h2>
-        <p class="detail-meta">${w[e.type]||e.type} · ${i(e.address||e.intersection||"")}</p>
+        <p class="detail-meta">${C[e.type]||e.type} · ${i(e.address||e.intersection||"")}</p>
         <div class="detail-section">
           <h3>Contact</h3>
           <p>${e.phone?`<a href="tel:${e.phone}">${i(e.phone)}</a>`:"Call for info"}</p>
@@ -211,7 +245,7 @@
         `:""}
       </div>
     </main>
-  `,o.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{b(p,h)})}function i(e){if(!e)return"";const o=document.createElement("div");return o.textContent=e,o.innerHTML}async function j(){const e=document.getElementById("benefits-content");if(e)try{const o=await T("benefits.json");let t="";for(const[s,r]of Object.entries(o)){t+=`<h3>${i(r.province)}</h3>`;for(const a of r.programs||[])t+='<div class="benefit-card" style="margin-bottom:1rem;padding:1rem;border:1px solid var(--border);">',t+=`<strong>${i(a.name)}</strong> (${i(a.age)})<br>`,t+=`<p style="margin:0.5rem 0;">${i(a.what)}</p>`,a.phone&&(t+=`<p>Call <a href="tel:${a.phone.replace(/[\s\-]/g,"")}">${i(a.phone)}</a></p>`),a.link&&(t+=`<p><a href="${i(a.link)}" target="_blank" rel="noopener">Learn more</a></p>`),t+="</div>"}e.innerHTML=t}catch{e.innerHTML="<p>Could not load benefits. Try again when you have internet.</p>"}}function f(e=null){const o=m();if(e&&v[e]){const t=v[e];o.innerHTML=`
+  `,o.querySelector('[data-action="back-to-list"]').addEventListener("click",()=>{v(h,p)})}function i(e){if(!e)return"";const o=document.createElement("div");return o.textContent=e,o.innerHTML}async function W(){const e=document.getElementById("benefits-content");if(e)try{const o=await E("benefits.json");let t="";for(const[s,a]of Object.entries(o)){t+=`<h3>${i(a.province)}</h3>`;for(const r of a.programs||[])t+='<div class="benefit-card" style="margin-bottom:1rem;padding:1rem;border:1px solid var(--border);">',t+=`<strong>${i(r.name)}</strong> (${i(r.age)})<br>`,t+=`<p style="margin:0.5rem 0;">${i(r.what)}</p>`,r.phone&&(t+=`<p>Call <a href="tel:${r.phone.replace(/[\s\-]/g,"")}">${i(r.phone)}</a></p>`),r.link&&(t+=`<p><a href="${i(r.link)}" target="_blank" rel="noopener">Learn more</a></p>`),t+="</div>"}e.innerHTML=t}catch{e.innerHTML="<p>Could not load benefits. Try again when you have internet.</p>"}}function g(e=null){const o=m();if(e&&b[e]){const t=b[e];o.innerHTML=`
       <main class="page" role="main">
         <button class="back-btn" type="button" data-action="foster-back">← Back</button>
         <header class="header">
@@ -219,7 +253,7 @@
         </header>
         <div class="detail foster-content">${t.body}</div>
       </main>
-    `,o.querySelector('[data-action="foster-back"]').addEventListener("click",()=>f()),e==="benefits"&&j();return}o.innerHTML=`
+    `,o.querySelector('[data-action="foster-back"]').addEventListener("click",()=>g()),e==="benefits"&&W();return}o.innerHTML=`
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back">← Back</button>
       <header class="header">
@@ -227,7 +261,7 @@
         <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Life skills and resources</p>
       </header>
       <ul class="resource-list">
-        ${E.map(t=>`
+        ${x.map(t=>`
           <li class="resource-item">
             <button class="resource-link resource-btn" type="button" data-route="${t.route}">
               <span class="resource-label">${i(t.desc)}</span>
@@ -237,4 +271,4 @@
         `).join("")}
       </ul>
     </main>
-  `,o.querySelector('[data-action="back"]').addEventListener("click",()=>d()),o.querySelectorAll(".resource-link[data-route]").forEach(t=>{t.addEventListener("click",()=>{const s=t.dataset.route;s==="/survival"?k():s.startsWith("foster/")&&f(s.replace("foster/",""))})})}function C(){const e=window.location.hash.slice(1)||"";if(e==="survival")l||(l="vancouver"),k();else if(e.startsWith("foster")){const o=e.replace("foster","").replace(/^\//,"");o&&v[o]?f(o):f()}else d()}"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register(`${S()}sw.js`).catch(()=>{})});window.addEventListener("hashchange",C);C();
+  `,o.querySelector('[data-action="back"]').addEventListener("click",()=>d()),o.querySelectorAll(".resource-link[data-route]").forEach(t=>{t.addEventListener("click",()=>{const s=t.dataset.route;s==="/survival"?w():s.startsWith("foster/")&&g(s.replace("foster/",""))})})}function L(){const e=window.location.hash.slice(1)||"";if(e==="survival")l||(l="vancouver"),w();else if(e.startsWith("foster")){const o=e.replace("foster","").replace(/^\//,"");o&&b[o]?g(o):g()}else d()}"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register(`${k()}sw.js`).then(e=>e.ready).then(()=>j()).catch(()=>{})});window.addEventListener("load",F);window.addEventListener("hashchange",L);L();

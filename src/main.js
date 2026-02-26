@@ -6,6 +6,87 @@
 import './style.css';
 import { FOSTER_SECTIONS, FOSTER_CONTENT } from './foster-content.js';
 
+const INFO_SEEN_KEY = 'nunki-seen-info';
+
+function isStandalone() {
+  return (
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.matchMedia('(display-mode: fullscreen)').matches ||
+    window.matchMedia('(display-mode: minimal-ui)').matches ||
+    (window.navigator.standalone === true)
+  );
+}
+
+function showInfoScreen() {
+  const overlay = document.getElementById('info-overlay');
+  if (overlay) overlay.classList.add('info-overlay--visible');
+}
+
+function hideInfoScreen() {
+  const overlay = document.getElementById('info-overlay');
+  if (overlay) overlay.classList.remove('info-overlay--visible');
+  try { localStorage.setItem(INFO_SEEN_KEY, '1'); } catch {}
+}
+
+function initInfoScreen() {
+  const overlay = document.createElement('div');
+  overlay.id = 'info-overlay';
+  overlay.className = 'info-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-labelledby', 'info-title');
+  overlay.innerHTML = `
+    <div class="info-overlay__backdrop" data-action="close-info" aria-hidden="true"></div>
+    <div class="info-overlay__panel">
+      <div class="info-overlay__header">
+        <h2 id="info-title">Save Nunki for offline use</h2>
+        <button type="button" class="info-overlay__close" data-action="close-info" aria-label="Close">×</button>
+      </div>
+      <div class="info-overlay__body">
+        <section class="info-section">
+          <h3>How to add to your phone</h3>
+          <p><strong>iPhone (Safari):</strong> Tap the Share button (square with arrow) → Add to Home Screen → Add.</p>
+          <p><strong>Android (Chrome):</strong> Tap the ⋮ menu → Add to Home screen or Install app → Add.</p>
+          <p>Once added, Nunki works like an app and opens without the browser bar.</p>
+        </section>
+        <section class="info-section">
+          <h3>What works offline</h3>
+          <p>After you open Nunki once while online, everything is saved for offline use:</p>
+          <ul>
+            <li><strong>Survival Guide</strong> — Shelters, meals, washrooms, safe consumption (Vancouver & Toronto)</li>
+            <li><strong>Foster Youth Navigator</strong> — Benefits, taxes, resumes, healthcare, mental health</li>
+            <li><strong>Transit tips</strong> — Text stop numbers for real-time arrivals</li>
+          </ul>
+        </section>
+        <section class="info-section">
+          <h3>How to get the freshest data</h3>
+          <p>Data updates when you open Nunki while connected to the internet. The app checks for new shelter, meal, and washroom info in the background.</p>
+          <p><strong>Tip:</strong> Open the app when you have Wi‑Fi or data to refresh. No need to delete and re-add.</p>
+        </section>
+        <section class="info-section">
+          <h3>Privacy</h3>
+          <p>No logins. No tracking. Everything stays on your device.</p>
+        </section>
+      </div>
+    </div>
+  `;
+  overlay.querySelectorAll('[data-action="close-info"]').forEach((el) => {
+    el.addEventListener('click', hideInfoScreen);
+  });
+  document.body.appendChild(overlay);
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'info-btn';
+  btn.setAttribute('aria-label', 'App info & how to save offline');
+  btn.innerHTML = 'ℹ️';
+  btn.addEventListener('click', showInfoScreen);
+  document.body.appendChild(btn);
+
+  const inBrowser = !isStandalone();
+  const hasSeen = !!localStorage.getItem(INFO_SEEN_KEY);
+  if (inBrowser && !hasSeen) showInfoScreen();
+}
+
 const CITIES = {
   vancouver: { name: 'Vancouver', dataFile: 'vancouver.json' },
   toronto: { name: 'Toronto', dataFile: 'toronto.json' },
@@ -44,6 +125,13 @@ async function fetchJSON(path) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to load ${path}`);
   return res.json();
+}
+
+/** Pre-fetch all data files so the service worker caches them for offline use. */
+function prefetchData() {
+  const base = getBase().replace(/\/?$/, '/');
+  const files = ['vancouver.json', 'toronto.json', 'benefits.json'];
+  files.forEach((f) => fetch(`${base}data/${f}`).catch(() => {}));
 }
 
 function renderHome() {
@@ -359,12 +447,17 @@ function handleRoute() {
   else renderHome();
 }
 
-// Register Service Worker
+// Register Service Worker and pre-fetch data for offline
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register(`${getBase()}sw.js`).catch(() => {});
+    navigator.serviceWorker.register(`${getBase()}sw.js`)
+      .then((reg) => reg.ready)
+      .then(() => prefetchData())
+      .catch(() => {});
   });
 }
+
+window.addEventListener('load', initInfoScreen);
 
 window.addEventListener('hashchange', handleRoute);
 handleRoute();
