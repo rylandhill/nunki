@@ -3,8 +3,8 @@
  * Stale-while-revalidate: JSON data
  */
 
-const SHELL_CACHE = 'nunki-shell-v1';
-const DATA_CACHE = 'nunki-data-v1';
+const SHELL_CACHE = 'nunki-shell-v2';
+const DATA_CACHE = 'nunki-data-v2';
 
 const SHELL_ASSETS = [
   '/',
