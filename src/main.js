@@ -460,7 +460,7 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register(`${getBase()}sw.js`)
       .then((reg) => {
-        reg.update(); // Force update check on every open (PWA often skips this)
+        if (navigator.onLine) reg.update(); // Only when online — avoids failed requests that can trigger iOS "no internet" popup
         navigator.serviceWorker.addEventListener('controllerchange', () => {
           window.location.reload(); // New SW activated — reload to get fresh app
         });
