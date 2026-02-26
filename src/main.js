@@ -74,13 +74,17 @@ function initInfoScreen() {
   });
   document.body.appendChild(overlay);
 
+  const topBar = document.createElement('div');
+  topBar.id = 'top-bar';
+  topBar.className = 'top-bar';
   const btn = document.createElement('button');
   btn.type = 'button';
   btn.className = 'info-btn';
   btn.setAttribute('aria-label', 'App info & how to save offline');
   btn.innerHTML = 'i';
   btn.addEventListener('click', showInfoScreen);
-  document.body.appendChild(btn);
+  topBar.appendChild(btn);
+  document.body.appendChild(topBar);
 
   const inBrowser = !isStandalone();
   const hasSeen = !!localStorage.getItem(INFO_SEEN_KEY);
@@ -111,7 +115,9 @@ function initOfflineIndicator() {
   update();
   window.addEventListener('online', update);
   window.addEventListener('offline', update);
-  document.body.appendChild(bar);
+  const topBar = document.getElementById('top-bar');
+  if (topBar) topBar.insertBefore(bar, topBar.firstChild);
+  else document.body.appendChild(bar);
 }
 
 function setUpdatedFlag() {

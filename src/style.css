@@ -31,7 +31,8 @@ body {
 #app {
   min-height: 100vh;
   min-height: 100dvh;
-  padding-bottom: 2rem; /* Space for status bar */
+  padding-top: 3.5rem; /* Space for top bar (status + info) */
+  padding-top: calc(3.5rem + env(safe-area-inset-top, 0px));
 }
 
 /* Typography */
@@ -303,12 +304,24 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* Info button — always visible */
-.info-btn {
+/* Top bar — status + info button */
+.top-bar {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  padding-top: max(0.5rem, env(safe-area-inset-top));
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.info-btn {
+  flex-shrink: 0;
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.125rem;
@@ -489,19 +502,10 @@ a:focus {
   background: #111;
 }
 
-/* Status bar — offline/online indicator */
+/* Status bar — offline/online indicator (inside top bar) */
 .status-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  padding: 0.35rem 1rem;
   font-size: 0.75rem;
-  text-align: center;
   color: var(--muted);
-  background: var(--bg);
-  border-top: 1px solid var(--border);
 }
 .status-bar[data-status="offline"] {
   color: #f55;
