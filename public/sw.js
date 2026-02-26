@@ -3,8 +3,8 @@
  * Network-first: JSON data (fresh when online, cache when offline)
  */
 
-const SHELL_CACHE = 'nunki-shell-v10';
-const DATA_CACHE = 'nunki-data-v10';
+const SHELL_CACHE = 'nunki-shell-v11';
+const DATA_CACHE = 'nunki-data-v11';
 
 const SHELL_ASSETS = [
   '/',
@@ -63,29 +63,29 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // JSON data: network-first (fresh when online, cache when offline)
+  // JSON data: cache-first when we have it (avoids fetch that triggers iOS "no internet" popup)
+  // When cache miss, network-first. Stale-while-revalidate when online would still trigger popup when offline.
   if (url.pathname.startsWith('/data/')) {
     e.respondWith(
-      fetch(e.request)
-        .then((res) => {
-          if (res.ok) {
-            return caches.open(DATA_CACHE).then((cache) => {
-              cache.put(e.request, res.clone());
+      caches.open(DATA_CACHE).then((cache) =>
+        cache.match(e.request).then((cached) => {
+          if (cached) return cached;
+          return fetch(e.request)
+            .then((res) => {
+              if (res.ok) {
+                cache.put(e.request, res.clone());
+                return res;
+              }
               return res;
-            });
-          }
-          return res;
-        })
-        .catch(() =>
-          caches.open(DATA_CACHE).then((cache) =>
-            cache.match(e.request).then((cached) =>
-              cached || new Response(JSON.stringify({ error: 'offline' }), {
+            })
+            .catch(() =>
+              new Response(JSON.stringify({ error: 'offline' }), {
                 status: 503,
                 headers: { 'Content-Type': 'application/json' },
               })
-            )
-          )
-        )
+            );
+        })
+      )
     );
     return;
   }

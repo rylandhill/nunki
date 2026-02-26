@@ -1,0 +1,8 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local / personal docs (customize for sharing; not committed)
+personal_docs/

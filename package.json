@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "bump-cache": "node scripts/bump-cache.js",
     "fetch-data": "python3 scripts/fetch_vancouver.py && python3 scripts/fetch_toronto.py && python3 scripts/fetch_benefits.py",
+    "validate-data": "python3 scripts/validate_crossref.py",
     "start-dev": "npm run fetch-data && npm run build && npm run dev",
     "start": "npm run bump-cache && npm run fetch-data && npm run build"
   },

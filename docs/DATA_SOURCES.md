@@ -2,6 +2,8 @@
 
 This document describes all data sources used by Nunki and how to add support for new cities. The app is designed to be adopted by developers in other cities—this guide makes that process straightforward.
 
+**Accuracy is the top priority.** See **[docs/ACCURACY.md](ACCURACY.md)** for cross-reference resources and validation. See **[docs/MAINTENANCE.md](MAINTENANCE.md)** for manual-only sources and update schedule.
+
 ---
 
 ## Overview

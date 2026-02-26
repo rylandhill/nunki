@@ -25,6 +25,16 @@ npm run fetch-data
 
 Fetches Vancouver (shelters, meals, washrooms, safe consumption), Toronto (shelters), and foster youth benefits. Then rebuild: `npm run build`
 
+## Validate data (cross-reference with NSPL)
+
+Before rollout, cross-reference shelter data with the federal National Service Provider List:
+
+```bash
+npm run validate-data
+```
+
+See [docs/ACCURACY.md](docs/ACCURACY.md) for full accuracy strategy and resources.
+
 ## Data sources
 
 | City | Source | Datasets |

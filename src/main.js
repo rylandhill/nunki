@@ -98,7 +98,7 @@ function initOfflineIndicator() {
   bar.setAttribute('aria-live', 'polite');
   function update() {
     const online = navigator.onLine;
-    let text = online ? 'Online' : 'Offline';
+    let text = online ? 'Online' : 'Saved';
     try {
       if (sessionStorage.getItem('nunki-updated')) {
         sessionStorage.removeItem('nunki-updated');
@@ -183,8 +183,14 @@ function getBase() {
 async function fetchJSON(path) {
   const base = getBase();
   const url = path.startsWith('/') ? path : `${base}data/${path}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Failed to load ${path}`);
+  const fullUrl = url.startsWith('http') ? url : new URL(url, location.origin).href;
+  let res = await fetch(fullUrl).catch(() => null);
+  if (!res?.ok) {
+    const cached = await caches?.match?.(fullUrl);
+    if (cached?.ok) return cached.json();
+    if (res?.status === 503) throw new Error('offline');
+    throw new Error(res ? `Failed to load ${path}` : 'offline');
+  }
   return res.json();
 }
 
@@ -288,7 +294,10 @@ async function renderSurvival() {
     lastClickedAmenityId = null;
     renderAmenityList();
   } catch (err) {
-    app.querySelector('p').textContent = `Could not load data: ${err.message}. Try again when you're online.`;
+    const msg = err.message === 'offline'
+      ? "Open Nunki once while connected to load places."
+      : `Could not load: ${err.message}`;
+    app.querySelector('p').textContent = msg;
   }
 }
 
@@ -568,7 +577,7 @@ async function loadBenefitsContent() {
     }
     el.innerHTML = html;
   } catch {
-    el.innerHTML = '<p>Could not load benefits. Try again when you\'re online.</p>';
+    el.innerHTML = '<p>Open Nunki once while connected to load benefits.</p>';
   }
 }
 
@@ -680,7 +689,7 @@ if ('serviceWorker' in navigator) {
         });
         return reg.ready;
       })
-      .then(() => prefetchForOffline())
+      .then(() => { if (navigator.onLine) prefetchForOffline(); })
       .catch(() => {});
   });
 }
