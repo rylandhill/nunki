@@ -226,6 +226,35 @@ def fetch_shelters():
 
 ---
 
+## Future Cities: Montreal, Calgary, Ottawa
+
+### Montreal (donnees.montreal.ca)
+
+- **Portal:** https://donnees.montreal.ca
+- **Shelters:** No dedicated homeless shelter dataset found. Options: (1) **National Service Provider List (NSPL)** — federal CSV/XLSX with shelters across Canada including Montreal (open.canada.ca). (2) Contact Montreal open data team to request shelter data.
+- **Washrooms:** No dedicated public washroom dataset in search results. Portal has "Public Places" and municipal buildings — may include washroom info. Explore opendatamontreal.ca for datasets.
+- **Meals:** Check food-related datasets. May require manual curation.
+
+### Calgary (data.calgary.ca)
+
+- **Portal:** https://data.calgary.ca
+- **Shelters:** **Shelter Utilization (Capacity and Usage)** — dataset `p7ka-hqjn` tracks capacity/usage. May need to cross-reference with Calgary Homeless Foundation for location-level data. Calgary Homeless Foundation has HMIS and Point-in-Time data (contact required).
+- **Washrooms:** Search data.calgary.ca for "washroom" or "public toilet". May be under parks/amenities.
+- **Meals:** Search for food programs. May require manual curation.
+
+### Ottawa (open.ottawa.ca / data.ottawa.ca)
+
+- **Portal:** https://open.ottawa.ca
+- **Shelters:** **Temporary Emergency Accommodations Dashboard** — city-funded shelters, transitional housing, overflow. Data on Open Ottawa. Check for API/CSV export.
+- **Washrooms:** ~190 municipally-owned public washrooms. Data on data.ottawa.ca. Community project: gottago-ottawa.ca / ottpee.ca for washroom maps.
+- **Meals:** Search Open Ottawa. May require manual curation.
+
+### National Option: NSPL
+
+The **National Service Provider List** (open.canada.ca, dataset `7e0189e3-8595-4e62-a4e9-4fed6f265e10`) lists emergency and transitional shelters across Canada. CSV/XLSX format, updated annually. Could be used as a base for Montreal, Calgary, Ottawa, and other cities—then supplement with local open data for washrooms, meals, and richer shelter details.
+
+---
+
 ## Dependencies
 
 - `requests` (optional; we use `urllib` in scripts)

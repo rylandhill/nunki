@@ -87,6 +87,37 @@ function initInfoScreen() {
   if (inBrowser && !hasSeen) showInfoScreen();
 }
 
+function initOfflineIndicator() {
+  const bar = document.createElement('div');
+  bar.id = 'status-bar';
+  bar.className = 'status-bar';
+  bar.setAttribute('aria-live', 'polite');
+  function update() {
+    const online = navigator.onLine;
+    let text = online ? 'Online' : 'Offline';
+    try {
+      if (sessionStorage.getItem('nunki-updated')) {
+        sessionStorage.removeItem('nunki-updated');
+        text = 'Updated';
+        bar.dataset.status = 'updated';
+        bar.textContent = text;
+        setTimeout(update, 3000);
+        return;
+      }
+    } catch {}
+    bar.textContent = text;
+    bar.dataset.status = online ? 'online' : 'offline';
+  }
+  update();
+  window.addEventListener('online', update);
+  window.addEventListener('offline', update);
+  document.body.appendChild(bar);
+}
+
+function setUpdatedFlag() {
+  try { sessionStorage.setItem('nunki-updated', '1'); } catch {}
+}
+
 const CITIES = {
   vancouver: { name: 'Vancouver', dataFile: 'vancouver.json' },
   toronto: { name: 'Toronto', dataFile: 'toronto.json' },
@@ -110,7 +141,29 @@ let currentCity = null;
 let regionData = null;
 let currentFilterType = 'all';
 let currentRegion = 'all';
+let currentSearch = '';
+let currentWheelchairOnly = false;
 let lastClickedAmenityId = null;
+
+const FAVORITES_KEY = 'nunki-favorites';
+
+function getFavorites() {
+  try {
+    return JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+  } catch { return []; }
+}
+
+function isFavorite(amenityId) {
+  return getFavorites().some((f) => f.amenityId === amenityId && f.cityId === currentCity);
+}
+
+function toggleFavorite(amenityId) {
+  const favs = getFavorites();
+  const idx = favs.findIndex((f) => f.amenityId === amenityId && f.cityId === currentCity);
+  if (idx >= 0) favs.splice(idx, 1);
+  else favs.push({ cityId: currentCity, amenityId });
+  try { localStorage.setItem(FAVORITES_KEY, JSON.stringify(favs)); } catch {}
+}
 
 function getAppEl() {
   return document.getElementById('app');
@@ -222,6 +275,8 @@ async function renderSurvival() {
     regionData = await fetchJSON(city.dataFile);
     currentFilterType = 'all';
     currentRegion = 'all';
+    currentSearch = '';
+    currentWheelchairOnly = false;
     lastClickedAmenityId = null;
     renderAmenityList();
   } catch (err) {
@@ -237,7 +292,7 @@ const AMENITY_TYPES = [
   { id: 'safe_injection', label: 'Safe consumption' },
 ];
 
-function renderAmenityList(filterType = 'all', region = 'all') {
+function renderAmenityList(filterType = 'all', region = 'all', search = '', wheelchairOnly = false) {
   const app = getAppEl();
   if (!regionData || !regionData.amenities) return;
 
@@ -246,15 +301,65 @@ function renderAmenityList(filterType = 'all', region = 'all') {
   if (region !== 'all') {
     filtered = filtered.filter((a) => (a.region || 'downtown') === region);
   }
+  if (wheelchairOnly) {
+    filtered = filtered.filter((a) => (a.notes || '').toLowerCase().includes('wheelchair accessible'));
+  }
+  if (search.trim()) {
+    const q = search.trim().toLowerCase();
+    filtered = filtered.filter((a) =>
+      (a.name || '').toLowerCase().includes(q) ||
+      (a.address || '').toLowerCase().includes(q) ||
+      (a.intersection || '').toLowerCase().includes(q) ||
+      (a.notes || '').toLowerCase().includes(q) ||
+      (a.category || '').toLowerCase().includes(q)
+    );
+  }
   const regions = regionData.meta?.regions || [];
   const cityName = CITIES[currentCity]?.name || 'City';
+  const updated = regionData.meta?.updated || '';
+  const listHtml = filtered.map((a) => `
+    <li class="amenity-item">
+      <button class="amenity-link" type="button" data-id="${a.id}" style="width:100%;text-align:left;border:none;background:none;cursor:pointer;font:inherit;color:inherit;">
+        <span style="float:right;color:var(--muted);">${isFavorite(a.id) ? '★' : ''}</span>
+        <strong>${escapeHtml(a.name)}</strong>
+        <small>${TYPE_LABELS[a.type] || a.type} · ${escapeHtml(a.address || a.intersection || '')}</small>
+      </button>
+    </li>
+  `).join('');
+
+  const listContainer = document.getElementById('amenity-list-container');
+  if (listContainer) {
+    listContainer.innerHTML = listHtml;
+    const headerSub = document.querySelector('.amenity-list-header-sub');
+    if (headerSub) headerSub.textContent = `${filtered.length} places${updated ? ` · Updated ${updated}` : ''}`;
+    app.querySelectorAll('.amenity-link[data-id]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        lastClickedAmenityId = btn.dataset.id;
+        const a = amenities.find((x) => x.id === btn.dataset.id);
+        if (a) renderAmenityDetail(a);
+      });
+    });
+    if (lastClickedAmenityId) {
+      requestAnimationFrame(() => {
+        const el = document.querySelector(`[data-id="${lastClickedAmenityId}"]`);
+        if (el) el.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+        lastClickedAmenityId = null;
+      });
+    }
+    return;
+  }
+
   app.innerHTML = `
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back-to-list">← Back</button>
       <header class="header">
         <h1>${cityName}</h1>
-        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${filtered.length} places</p>
+        <p class="amenity-list-header-sub" style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">${filtered.length} places${updated ? ` · Updated ${updated}` : ''}</p>
       </header>
+      <div style="margin-bottom:1rem;">
+        <label for="places-search" style="font-size:0.75rem;color:var(--muted);display:block;margin-bottom:0.25rem;">Search by name, address, or notes</label>
+        <input id="places-search" type="search" class="search-input" placeholder="e.g. Union Gospel, Hastings…" value="${escapeHtml(search)}" data-action="search" aria-label="Search by name, address, or notes" />
+      </div>
       ${regions.length > 0 ? `
       <div class="filter-row" style="margin-bottom:0.75rem;">
         <label style="font-size:0.75rem;color:var(--muted);display:block;margin-bottom:0.25rem;">Area</label>
@@ -270,16 +375,10 @@ function renderAmenityList(filterType = 'all', region = 'all') {
         ${AMENITY_TYPES.map((t) => `
           <button class="filter-btn" type="button" data-filter="${t.id}" aria-pressed="${filterType === t.id}">${t.label}</button>
         `).join('')}
+        <button class="filter-btn" type="button" data-wheelchair aria-pressed="${wheelchairOnly}">Wheelchair accessible</button>
       </div>
-      <ul class="amenity-list">
-        ${filtered.map((a) => `
-          <li class="amenity-item">
-            <button class="amenity-link" type="button" data-id="${a.id}" style="width:100%;text-align:left;border:none;background:none;cursor:pointer;font:inherit;color:inherit;">
-              <strong>${escapeHtml(a.name)}</strong>
-              <small>${TYPE_LABELS[a.type] || a.type} · ${escapeHtml(a.address || a.intersection || '')}</small>
-            </button>
-          </li>
-        `).join('')}
+      <ul class="amenity-list" id="amenity-list-container">
+        ${listHtml}
       </ul>
       <section class="detail-section" style="margin-top: 2rem;">
         <h3>Transit</h3>
@@ -291,19 +390,33 @@ function renderAmenityList(filterType = 'all', region = 'all') {
     regionData = null;
     currentFilterType = 'all';
     currentRegion = 'all';
+    currentSearch = '';
+    currentWheelchairOnly = false;
     lastClickedAmenityId = null;
     renderHome();
+  });
+  app.querySelector('[data-action="search"]')?.addEventListener('input', (e) => {
+    currentSearch = e.target.value;
+    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
+  });
+  app.querySelector('[data-action="search"]')?.addEventListener('search', (e) => {
+    currentSearch = e.target.value || '';
+    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
+  });
+  app.querySelector('[data-action="wheelchair"]')?.addEventListener('click', () => {
+    currentWheelchairOnly = !currentWheelchairOnly;
+    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
   });
   app.querySelectorAll('.filter-btn[data-filter]').forEach((btn) => {
     btn.addEventListener('click', () => {
       currentFilterType = btn.dataset.filter;
-      renderAmenityList(currentFilterType, currentRegion);
+      renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
     });
   });
   app.querySelectorAll('.filter-btn[data-region]').forEach((btn) => {
     btn.addEventListener('click', () => {
       currentRegion = btn.dataset.region;
-      renderAmenityList(currentFilterType, currentRegion);
+      renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
     });
   });
   app.querySelectorAll('.amenity-link[data-id]').forEach((btn) => {
@@ -323,6 +436,15 @@ function renderAmenityList(filterType = 'all', region = 'all') {
   }
 }
 
+function sharePlace(amenity) {
+  const text = [amenity.name, amenity.address || amenity.intersection, amenity.phone].filter(Boolean).join(' · ');
+  if (navigator.share) {
+    navigator.share({ title: amenity.name, text }).catch(() => {});
+  } else {
+    navigator.clipboard?.writeText(text).then(() => {});
+  }
+}
+
 function renderAmenityDetail(amenity) {
   const app = getAppEl();
   const phone = (amenity.phone || '').replace(/[\s\-\(\)]/g, '');
@@ -330,12 +452,23 @@ function renderAmenityDetail(amenity) {
   const hours = amenity.hours || '';
   const hoursRequireCall = /^call\s+for\s+(hours|info)/i.test(hours.trim());
   const showHours = hours && (hasPhone || !hoursRequireCall);
+  const faved = isFavorite(amenity.id);
+  const dirUrl = getDirectionsUrl(amenity);
   app.innerHTML = `
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back-to-list">← Back to list</button>
       <div class="detail">
-        <h2>${escapeHtml(amenity.name)}</h2>
+        <div style="display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:0.5rem;">
+          <h2 style="flex:1;margin:0;">${escapeHtml(amenity.name)}</h2>
+          <div style="display:flex;gap:0.25rem;">
+            <button type="button" class="icon-btn" data-action="favorite" aria-label="${faved ? 'Remove from favorites' : 'Add to favorites'}">${faved ? '★' : '☆'}</button>
+            <button type="button" class="icon-btn" data-action="share" aria-label="Share">⎘</button>
+          </div>
+        </div>
         <p class="detail-meta">${TYPE_LABELS[amenity.type] || amenity.type} · ${escapeHtml(amenity.address || amenity.intersection || '')}</p>
+        <div class="detail-section">
+          <a href="${dirUrl}" target="_blank" rel="noopener" class="directions-link">Get directions</a>
+        </div>
         ${hasPhone ? `
         <div class="detail-section">
           <h3>Contact</h3>
@@ -371,8 +504,13 @@ function renderAmenityDetail(amenity) {
     </main>
   `;
   app.querySelector('[data-action="back-to-list"]').addEventListener('click', () => {
-    renderAmenityList(currentFilterType, currentRegion);
+    renderAmenityList(currentFilterType, currentRegion, currentSearch, currentWheelchairOnly);
   });
+  app.querySelector('[data-action="favorite"]')?.addEventListener('click', () => {
+    toggleFavorite(amenity.id);
+    renderAmenityDetail(amenity);
+  });
+  app.querySelector('[data-action="share"]').addEventListener('click', () => sharePlace(amenity));
 }
 
 function escapeHtml(s) {
@@ -380,6 +518,14 @@ function escapeHtml(s) {
   const div = document.createElement('div');
   div.textContent = s;
   return div.innerHTML;
+}
+
+function getDirectionsUrl(amenity) {
+  const addr = amenity.address || amenity.intersection || amenity.name || '';
+  const q = (amenity.lat != null && amenity.lng != null)
+    ? `${amenity.lat},${amenity.lng}`
+    : encodeURIComponent(addr);
+  return `https://www.google.com/maps/search/?api=1&query=${q}`;
 }
 
 async function loadBenefitsContent() {
@@ -508,6 +654,7 @@ if ('serviceWorker' in navigator) {
       .then((reg) => {
         if (navigator.onLine) reg.update(); // Only when online — avoids failed requests that can trigger iOS "no internet" popup
         navigator.serviceWorker.addEventListener('controllerchange', () => {
+          setUpdatedFlag();
           window.location.reload(); // New SW activated — reload to get fresh app
         });
         return reg.ready;
@@ -517,7 +664,10 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-window.addEventListener('load', initInfoScreen);
+window.addEventListener('load', () => {
+  initInfoScreen();
+  initOfflineIndicator();
+});
 
 window.addEventListener('hashchange', handleRoute);
 handleRoute();
