@@ -78,7 +78,7 @@ function initInfoScreen() {
   btn.type = 'button';
   btn.className = 'info-btn';
   btn.setAttribute('aria-label', 'App info & how to save offline');
-  btn.innerHTML = 'ℹ️';
+  btn.innerHTML = 'i';
   btn.addEventListener('click', showInfoScreen);
   document.body.appendChild(btn);
 
@@ -95,6 +95,7 @@ const CITIES = {
 const SECTIONS = [
   { id: 'survival', title: 'Places', desc: 'Shelters, meals, washrooms, transit', route: '/survival' },
   { id: 'foster', title: 'Life skills', desc: 'Benefits, taxes, healthcare, jobs', route: '/foster' },
+  { id: 'donate', title: 'Donate', desc: 'Support shelters and kitchens', route: '/donate' },
 ];
 
 const TYPE_LABELS = {
@@ -196,6 +197,7 @@ function selectCity(cityId) {
 function navigate(route) {
   if (route === '/survival') renderSurvival();
   else if (route === '/foster') renderFoster();
+  else if (route === '/donate') renderDonate();
   else renderHome();
 }
 
@@ -323,20 +325,27 @@ function renderAmenityList(filterType = 'all', region = 'all') {
 
 function renderAmenityDetail(amenity) {
   const app = getAppEl();
+  const phone = (amenity.phone || '').replace(/[\s\-\(\)]/g, '');
+  const hasPhone = phone.length >= 10;
+  const hours = amenity.hours || '';
+  const hoursRequireCall = /^call\s+for\s+(hours|info)/i.test(hours.trim());
+  const showHours = hours && (hasPhone || !hoursRequireCall);
   app.innerHTML = `
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back-to-list">← Back to list</button>
       <div class="detail">
         <h2>${escapeHtml(amenity.name)}</h2>
         <p class="detail-meta">${TYPE_LABELS[amenity.type] || amenity.type} · ${escapeHtml(amenity.address || amenity.intersection || '')}</p>
+        ${hasPhone ? `
         <div class="detail-section">
           <h3>Contact</h3>
-          <p>${amenity.phone ? `<a href="tel:${amenity.phone}">${escapeHtml(amenity.phone)}</a>` : 'Call for info'}</p>
+          <p><a href="tel:${phone}">${escapeHtml((amenity.phone || '').trim())}</a></p>
         </div>
-        ${amenity.hours ? `
+        ` : ''}
+        ${showHours ? `
         <div class="detail-section">
           <h3>Hours</h3>
-          <p>${escapeHtml(amenity.hours)}</p>
+          <p>${escapeHtml(hours)}</p>
         </div>
         ` : ''}
         ${amenity.notes ? `
@@ -444,9 +453,46 @@ function renderFoster(sectionId = null) {
   });
 }
 
+const DONATION_ORGS = {
+  vancouver: [
+    { name: 'Union Gospel Mission', url: 'https://ugm.ca/ways-to-give', desc: 'Shelters, meals, outreach' },
+    { name: 'Covenant House Vancouver', url: 'https://www.covenanthousebc.org/take-action/ways-to-give/', desc: 'Youth shelter, meals' },
+    { name: 'Greater Vancouver Food Bank', url: 'https://foodbank.bc.ca/donate/', desc: 'Food for meal programs' },
+  ],
+  toronto: [
+    { name: 'Daily Bread Food Bank', url: 'https://www.dailybread.ca/give-now/', desc: 'Food for meal programs' },
+    { name: 'Covenant House Toronto', url: 'https://covenanthousetoronto.ca/how-to-help/', desc: 'Youth shelter' },
+    { name: 'Street Haven', url: 'https://streethaven.org/donation/', desc: "Women's shelter" },
+  ],
+};
+
+function renderDonate() {
+  const app = getAppEl();
+  const city = currentCity || 'vancouver';
+  const orgs = DONATION_ORGS[city] || [];
+  const cityName = CITIES[city]?.name || city;
+  const listHtml = orgs.map((o) =>
+    `<li><a href="${escapeHtml(o.url)}" target="_blank" rel="noopener">${escapeHtml(o.name)}</a> — ${escapeHtml(o.desc)}</li>`
+  ).join('');
+  app.innerHTML = `
+    <main class="page" role="main">
+      <button class="back-btn" type="button" data-action="back">← Back</button>
+      <header class="header">
+        <h1>Donate</h1>
+        <p style="margin: 0.25rem 0 0; color: var(--muted); font-size: 0.875rem;">Support shelters and kitchens in ${escapeHtml(cityName)}</p>
+      </header>
+      <div class="detail foster-content">
+        <ul>${listHtml}</ul>
+      </div>
+    </main>
+  `;
+  app.querySelector('[data-action="back"]').addEventListener('click', () => renderHome());
+}
+
 function handleRoute() {
   const hash = window.location.hash.slice(1) || '';
   if (hash === 'survival') { if (!currentCity) currentCity = 'vancouver'; renderSurvival(); }
+  else if (hash === 'donate') renderDonate();
   else if (hash.startsWith('foster')) {
     const part = hash.replace('foster', '').replace(/^\//, '');
     if (part && FOSTER_CONTENT[part]) renderFoster(part);
