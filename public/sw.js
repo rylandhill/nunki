@@ -3,8 +3,8 @@
  * Network-first: JSON data (fresh when online, cache when offline)
  */
 
-const SHELL_CACHE = 'nunki-shell-v8';
-const DATA_CACHE = 'nunki-data-v8';
+const SHELL_CACHE = 'nunki-shell-v9';
+const DATA_CACHE = 'nunki-data-v9';
 
 const SHELL_ASSETS = [
   '/',
