@@ -6,9 +6,20 @@
 
 ## What Nunki Is
 
-**Nunki** is an offline-first PWA for survival resources: shelters, meals, washrooms, and foster youth life skills. Built for Vancouver and Toronto. No logins, no tracking, no backend.
+**Nunki** is an offline-first PWA for survival resources: shelters, meals, washrooms, and foster youth life skills. Built for Vancouver, Toronto, and Hamilton. No logins, no tracking, no backend.
 
 **Users:** People in crisis, shelter staff, donors, foster youth. Many have unreliable internet. Accuracy is critical—wrong info can waste time and erode trust.
+
+---
+
+## Submissions pipeline — **partially outside the repo** (read before changing “contributions” code)
+
+Google Forms drive community intake, but **most of the filesystem around submissions is not version-controlled**:
+
+- **Gitignored (you will not see these in a normal clone):** `contributions/` (pending, archive, merged JSON, local README), `tools/` (optional maintainer review UI), and optionally `docs/SUBMISSIONS_ARCHITECTURE.md`.
+- **In git:** `scripts/import_google_form_csv.py`, `scripts/apply_merged_to_public.py`, `scripts/contribution_merge.py`, plus **[COMMUNITY_FORMS.md](COMMUNITY_FORMS.md)** (form URLs + CSV columns).
+
+**Implications for agents:** Do not assume `contributions/*` or `tools/*` source files exist in the workspace. Do not “fix” missing directories by recreating full trees unless the user asks—those paths are intentional omissions. When editing merge/import logic, only change tracked files under `scripts/`. See root **README** (Community submissions section) and **COMMUNITY_FORMS.md** (top callout) for the same policy in human-facing form.
 
 ---
 
@@ -37,12 +48,17 @@ nunki/
 ├── scripts/
 │   ├── fetch_vancouver.py  # Vancouver amenities from Open Data
 │   ├── fetch_toronto.py    # Toronto amenities from CKAN + manual meals
+│   ├── fetch_hamilton.py   # Hamilton curated (city page + parks; Open Hamilton export often 403)
 │   ├── fetch_benefits.py   # Foster youth benefits
 │   ├── validate_crossref.py # NSPL cross-reference for shelter accuracy
 │   ├── bump-cache.js       # Bump SW cache version before deploy
-│   └── gtfs_nearby.py      # Transit route enrichment (optional)
+│   ├── gtfs_nearby.py      # Transit route enrichment (optional)
+│   ├── import_google_form_csv.py  # Form CSV → contributions/pending (that dir not in git)
+│   ├── apply_merged_to_public.py  # merged/ → public/data (merged/ not in git)
+│   └── contribution_merge.py      # fetch_* merge hook; reads gitignored merged/
 └── docs/
     ├── DATA_SOURCES.md     # Data sources, schemas, add-city guide
+    ├── COMMUNITY_FORMS.md  # Public form links; table of hidden vs tracked submission paths
     ├── ACCURACY.md         # Cross-reference, validation workflow
     ├── MAINTENANCE.md      # Manual-only sources, update schedule
     └── AGENT_CONTEXT.md    # This file
@@ -112,16 +128,18 @@ nunki/
 
 ## Data Flow
 
-1. **Build time:** `npm run fetch-data` runs Python scripts → `public/data/*.json`.
-2. **Runtime:** App fetches `vancouver.json` or `toronto.json` when user picks city.
-3. **Service Worker:** Intercepts fetch. Cache-first for `/data/`; if cache miss, fetch. Caches successful responses.
-4. **Deploy:** `npm run bump-cache` before deploy so cache version increments; users get fresh SW.
+1. **Automatic data:** `scripts/fetch_*.py` (run via `npm run fetch-data`) → base `public/data/*.json`.
+2. **Community layer:** `contributions/merged/` (maintainer-local; directory not in git) applied during fetch **or** via `npm run apply-merged` only (no APIs). See **[DATA_PIPELINE.md](DATA_PIPELINE.md)**. **Public intake:** **Google Forms** — **[COMMUNITY_FORMS.md](COMMUNITY_FORMS.md)** — not JSON in PRs.
+3. **Local dev:** `npm run dev` / `npm run start` do **not** run fetch — uses committed `public/data/`.
+4. **Deploy:** Prefer `npm run build:deploy` (fetch + bump-cache + build). **`npm run start`** = bump-cache + build only.
+5. **Runtime:** App fetches city JSON when user picks city.
+6. **Service Worker:** Cache-first for `/data/`; `bump-cache` before deploy.
 
 ---
 
 ## Before Rollout
 
-1. `npm run fetch-data`
+1. `npm run fetch-data` (or `apply-merged` if only `contributions/merged/` changed)
 2. `npm run validate-data` — cross-reference shelters with NSPL
 3. Spot-check 3–5 random entries (call/visit)
 4. See [docs/ACCURACY.md](ACCURACY.md) for full workflow
@@ -141,5 +159,7 @@ nunki/
 ## Key Docs
 
 - **[DATA_SOURCES.md](DATA_SOURCES.md)** — Data sources, schemas, API endpoints, add-city templates
+- **[DATA_PIPELINE.md](DATA_PIPELINE.md)** — Fetch vs merge; notes what’s gitignored
+- **[COMMUNITY_FORMS.md](COMMUNITY_FORMS.md)** — Public forms; explicit table of hidden vs tracked submission paths
 - **[ACCURACY.md](ACCURACY.md)** — Cross-reference resources, validation, `SHELTER_NAME_ALIASES`
 - **[MAINTENANCE.md](MAINTENANCE.md)** — Manual-only sources, update schedule, how to add manual entries

@@ -2,11 +2,11 @@
   "meta": {
     "city": "vancouver",
     "region": "mount-pleasant",
-    "updated": "2026-02-26"
+    "updated": "2026-03-21"
   },
   "amenities": [
     {
-      "id": "shelter-van-1",
+      "id": "shelter-van-2",
       "type": "shelter",
       "name": "Tenth Avenue Church",
       "address": "11 W 10th Ave (10th & Ontario)",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "id": "shelter-van-9",
+      "id": "shelter-van-11",
       "type": "shelter",
       "name": "Yukon Shelter",
       "address": "1300 Yukon St",
@@ -169,7 +169,7 @@
       ]
     },
     {
-      "id": "washroom-van-102",
+      "id": "washroom-van-103",
       "type": "washroom",
       "name": "China Creek North Park \u2014 south-east corner",
       "address": "south-east corner, Mount Pleasant",
@@ -190,7 +190,7 @@
       ]
     },
     {
-      "id": "washroom-van-115",
+      "id": "washroom-van-117",
       "type": "washroom",
       "name": "Prince Edward Park \u2014 Sout east corner, fieldhouse",
       "address": "Sout east corner, fieldhouse, Riley Park",
@@ -207,7 +207,7 @@
       ]
     },
     {
-      "id": "washroom-van-121",
+      "id": "washroom-van-123",
       "type": "washroom",
       "name": "Creekside \u2014 1 Athletes Way",
       "address": "1 Athletes Way, Mount Pleasant",
@@ -231,7 +231,7 @@
       ]
     },
     {
-      "id": "washroom-van-130",
+      "id": "washroom-van-132",
       "type": "washroom",
       "name": "Queen Elizabeth Park \u2014 Under \"Seasons\"",
       "address": "Under \"Seasons\", Riley Park",
@@ -249,7 +249,7 @@
       ]
     },
     {
-      "id": "washroom-van-141",
+      "id": "washroom-van-142",
       "type": "washroom",
       "name": "Riley Park \u2014 Fieldhouse",
       "address": "Fieldhouse, Riley Park",

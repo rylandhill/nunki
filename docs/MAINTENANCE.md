@@ -15,6 +15,7 @@ Some data cannot be fetched automatically. This document lists what requires man
 | **BC211** | Cross-reference only | Before rollout | No API. Use shelters.bc211.ca (updated 2× daily) for manual validation. PDF lists at bc.211.ca/shelter-lists. |
 | **BC Housing** | Cross-reference only | Before rollout | No public API. Use smap.bchousing.org for manual validation. |
 | **211 Ontario / 211 Central** | Cross-reference only | Before rollout | API requires auth (211HSIS). Use 211central.ca for manual search. |
+| **Hamilton (all Places data)** | `SHELTERS`, `MEALS`, `WASHROOMS_FALLBACK`, `SAFE_CONSUMPTION`; park washrooms from **ArcGIS** in-script | Quarterly / when city page changes | Shelters/meals: [hamilton.ca emergency shelters & drop-ins](https://www.hamilton.ca/people-programs/housing-shelter/preventing-ending-homelessness/emergency-shelters-drop-ins). Park washrooms: **FeatureServer** (see [DATA_SOURCES.md](DATA_SOURCES.md) Hamilton → Washrooms); seasonal copy: [hamilton.ca park washrooms](https://www.hamilton.ca/things-do/parks-green-space/parks-trails/park-washrooms). Harm reduction: [hamilton.ca public health](https://www.hamilton.ca/people-programs/public-health/alcohol-drugs-gambling/harm-reduction-services). |
 
 ---
 
@@ -30,12 +31,13 @@ Some data cannot be fetched automatically. This document lists what requires man
 
 | Task | Frequency |
 |------|-----------|
-| Run `npm run fetch-data` | Weekly or before rollout |
+| Run `npm run fetch-data` | When open data changed, or before rollout / use `build:deploy` |
+| Run `npm run apply-merged` | After editing maintainer-local **`contributions/merged/`** (that tree is **gitignored** — see root README / **COMMUNITY_FORMS.md**) without needing API refresh |
 | Run `npm run validate-data` | Before each rollout |
 | Update Toronto MEAL_PROGRAMS | Quarterly |
 | Update safe consumption lists | Quarterly |
 | Spot-check 3–5 random entries (call/visit) | Before rollout |
-| Cross-check with BC211 (Vancouver) or 211 Central (Toronto) | Before rollout |
+| Cross-check with BC211 (Vancouver), 211 Central (Toronto), or 211 (Hamilton area) | Before rollout |
 
 ---
 

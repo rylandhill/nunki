@@ -2,11 +2,11 @@
   "meta": {
     "city": "vancouver",
     "region": "east-van",
-    "updated": "2026-02-26"
+    "updated": "2026-03-21"
   },
   "amenities": [
     {
-      "id": "shelter-van-5",
+      "id": "shelter-van-8",
       "type": "shelter",
       "name": "Vineyard Church",
       "address": "1801 E 1st Ave",
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "id": "shelter-van-14",
+      "id": "shelter-van-15",
       "type": "shelter",
       "name": "Grandview Calvary Baptist Church",
       "address": "1803 E 1st Ave",
@@ -471,7 +471,7 @@
       ]
     },
     {
-      "id": "washroom-van-100",
+      "id": "washroom-van-101",
       "type": "washroom",
       "name": "Kingcrest Park \u2014 Playground",
       "address": "Playground, Kensington-Cedar Cottage",
@@ -490,7 +490,7 @@
       ]
     },
     {
-      "id": "washroom-van-107",
+      "id": "washroom-van-109",
       "type": "washroom",
       "name": "Brewers Park \u2014 North east corner fieldhouse",
       "address": "North east corner fieldhouse, Kensington-Cedar Cottage",
@@ -510,7 +510,7 @@
       ]
     },
     {
-      "id": "washroom-van-108",
+      "id": "washroom-van-110",
       "type": "washroom",
       "name": "Garden Park \u2014 North east corner, fieldhouse",
       "address": "North east corner, fieldhouse, Grandview-Woodland",
@@ -526,7 +526,7 @@
       ]
     },
     {
-      "id": "washroom-van-110",
+      "id": "washroom-van-112",
       "type": "washroom",
       "name": "Grandview Park \u2014 North East Corner",
       "address": "North East Corner, Grandview-Woodland",
@@ -543,7 +543,7 @@
       ]
     },
     {
-      "id": "washroom-van-111",
+      "id": "washroom-van-113",
       "type": "washroom",
       "name": "Grays Park \u2014 Centre west by parking lot",
       "address": "Centre west by parking lot, Kensington-Cedar Cottage",
@@ -561,7 +561,7 @@
       ]
     },
     {
-      "id": "washroom-van-117",
+      "id": "washroom-van-119",
       "type": "washroom",
       "name": "Slocan Park \u2014 North side",
       "address": "North side, Renfrew-Collingwood",
@@ -581,7 +581,7 @@
       ]
     },
     {
-      "id": "washroom-van-131",
+      "id": "washroom-van-133",
       "type": "washroom",
       "name": "Rupert Park \u2014 South side, fieldhouse",
       "address": "South side, fieldhouse, Hastings-Sunrise",
@@ -597,7 +597,7 @@
       ]
     },
     {
-      "id": "washroom-van-139",
+      "id": "washroom-van-140",
       "type": "washroom",
       "name": "Empire Fields - Hastings Park \u2014 West Side",
       "address": "West Side, Hastings-Sunrise",

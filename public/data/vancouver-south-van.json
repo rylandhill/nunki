@@ -2,7 +2,7 @@
   "meta": {
     "city": "vancouver",
     "region": "south-van",
-    "updated": "2026-02-26"
+    "updated": "2026-03-21"
   },
   "amenities": [
     {
@@ -352,7 +352,7 @@
       ]
     },
     {
-      "id": "washroom-van-103",
+      "id": "washroom-van-104",
       "type": "washroom",
       "name": "Mccleery Golf Course \u2014 Unsure of exact location",
       "address": "Unsure of exact location, Kerrisdale",
@@ -365,7 +365,24 @@
       "notes": ""
     },
     {
-      "id": "washroom-van-109",
+      "id": "washroom-van-105",
+      "type": "washroom",
+      "name": "West Fraserlands Childare Centre \u2014 West Fraserlands Childcare Centre",
+      "address": "West Fraserlands Childcare Centre, Killarney",
+      "intersection": "Killarney",
+      "region": "south-van",
+      "hours": "Dawn to dusk",
+      "phone": "",
+      "lat": 49.20617033163846,
+      "lng": -123.04464654205405,
+      "notes": "",
+      "nearby_routes": [
+        "080",
+        "100"
+      ]
+    },
+    {
+      "id": "washroom-van-111",
       "type": "washroom",
       "name": "Gordon Park \u2014 East side",
       "address": "East side, Victoria-Fraserview",
@@ -384,7 +401,7 @@
       ]
     },
     {
-      "id": "washroom-van-114",
+      "id": "washroom-van-116",
       "type": "washroom",
       "name": "Maple Grove Park \u2014 Central, field house",
       "address": "Central, field house, Kerrisdale",
@@ -401,7 +418,7 @@
       ]
     },
     {
-      "id": "washroom-van-116",
+      "id": "washroom-van-118",
       "type": "washroom",
       "name": "Ross Park \u2014 South west corner, fieldhouse",
       "address": "South west corner, fieldhouse, Sunset",
@@ -418,7 +435,7 @@
       ]
     },
     {
-      "id": "washroom-van-120",
+      "id": "washroom-van-122",
       "type": "washroom",
       "name": "Champlain Heights \u2014 3350 Maquinna Drive",
       "address": "3350 Maquinna Drive, Killarney",
@@ -435,7 +452,7 @@
       ]
     },
     {
-      "id": "washroom-van-122",
+      "id": "washroom-van-124",
       "type": "washroom",
       "name": "Dunbar \u2014 4747 Dunbar St",
       "address": "4747 Dunbar St, Dunbar-Southlands",
@@ -451,7 +468,7 @@
       ]
     },
     {
-      "id": "washroom-van-125",
+      "id": "washroom-van-127",
       "type": "washroom",
       "name": "Marpole-Oakridge \u2014 990 W 59th Av",
       "address": "990 W 59th Av, Marpole",
@@ -467,7 +484,7 @@
       ]
     },
     {
-      "id": "washroom-van-126",
+      "id": "washroom-van-128",
       "type": "washroom",
       "name": "Sunset \u2014 6810 Main St",
       "address": "6810 Main St, Sunset",
@@ -484,7 +501,7 @@
       ]
     },
     {
-      "id": "washroom-van-132",
+      "id": "washroom-van-134",
       "type": "washroom",
       "name": "VanDusen Botanical Garden \u2014 At front entrance",
       "address": "At front entrance, Shaughnessy",
@@ -502,7 +519,7 @@
       ]
     },
     {
-      "id": "washroom-van-143",
+      "id": "washroom-van-144",
       "type": "washroom",
       "name": "Langara Golf Course \u2014 Exterior of Building",
       "address": "Exterior of Building, Oakridge",

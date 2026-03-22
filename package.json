@@ -8,10 +8,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "bump-cache": "node scripts/bump-cache.js",
-    "fetch-data": "python3 scripts/fetch_vancouver.py && python3 scripts/fetch_toronto.py && python3 scripts/fetch_benefits.py",
+    "fetch-data": "python3 scripts/fetch_vancouver.py && python3 scripts/fetch_toronto.py && python3 scripts/fetch_hamilton.py && python3 scripts/fetch_benefits.py",
+    "apply-merged": "python3 scripts/apply_merged_to_public.py",
     "validate-data": "python3 scripts/validate_crossref.py",
-    "start-dev": "npm run fetch-data && npm run build && npm run dev",
-    "start": "npm run bump-cache && npm run fetch-data && npm run build"
+    "build:deploy": "npm run fetch-data && npm run bump-cache && npm run build",
+    "start-dev": "npm run dev",
+    "start": "npm run bump-cache && npm run build",
+    "import-form-submissions": "python3 scripts/import_google_form_csv.py submissions",
+    "import-form-issues": "python3 scripts/import_google_form_csv.py issues"
   },
   "devDependencies": {
     "vite": "^7.3.1"

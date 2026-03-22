@@ -1,7 +1,7 @@
 {
   "meta": {
     "city": "toronto",
-    "updated": "2026-02-26",
+    "updated": "2026-03-21",
     "regions": [
       {
         "id": "downtown",
@@ -1969,6 +1969,250 @@
     {
       "id": "washroom-tor-1",
       "type": "washroom",
+      "name": "Riverdale Park East Fieldhouse Washroom ",
+      "address": "550 Broadview Ave",
+      "intersection": "Toronto",
+      "region": "east-york",
+      "hours": "9 a.m. to 10 p.m. (currently closed)",
+      "phone": "",
+      "lat": 43.66772754,
+      "lng": -79.35550582,
+      "notes": "Located in the fieldhouse at the south end of the park.",
+      "nearby_routes": [
+        "121",
+        "301",
+        "305",
+        "306",
+        "504",
+        "505",
+        "506",
+        "62",
+        "8"
+      ]
+    },
+    {
+      "id": "washroom-tor-2",
+      "type": "washroom",
+      "name": "Sunnybrook Park Washroom",
+      "address": "1132 Leslie St",
+      "intersection": "Toronto",
+      "region": "north-york",
+      "hours": "9 a.m. to 10 p.m. (currently closed)",
+      "phone": "",
+      "lat": 43.72292259,
+      "lng": -79.36275387,
+      "notes": "Located in the washroom building.",
+      "nearby_routes": [
+        "162"
+      ]
+    },
+    {
+      "id": "washroom-tor-3",
+      "type": "washroom",
+      "name": "Thomson Memorial Park North Washroom",
+      "address": "1005 Brimley Rd",
+      "intersection": "Toronto",
+      "region": "north-york",
+      "hours": "9 a.m. to 10 p.m. (currently closed)",
+      "phone": "",
+      "lat": 43.75907419,
+      "lng": -79.25506082999999,
+      "notes": "Located in the north washroom building of the park.",
+      "nearby_routes": [
+        "21"
+      ]
+    },
+    {
+      "id": "washroom-tor-4",
+      "type": "washroom",
+      "name": "Sir Adam Beck Park Outdoor Rink Washroom",
+      "address": "55 Eltham Dr",
+      "intersection": "Toronto",
+      "region": "etobicoke",
+      "hours": "View outdoor rink hours (currently closed)",
+      "phone": "",
+      "lat": 43.6024034,
+      "lng": -79.54745953,
+      "notes": "Located in the rink building next to the outdoor ice rink.",
+      "nearby_routes": [
+        "110",
+        "123",
+        "315"
+      ]
+    },
+    {
+      "id": "washroom-tor-5",
+      "type": "washroom",
+      "name": "West Deane Park Outdoor Rink Washroom",
+      "address": "19 Sedgebrook Cres",
+      "intersection": "Toronto",
+      "region": "etobicoke",
+      "hours": "View outdoor rink hours (currently closed)",
+      "phone": "",
+      "lat": 43.66358211,
+      "lng": -79.55902437,
+      "notes": "Located in the outdoor rink building.",
+      "nearby_routes": [
+        "46"
+      ]
+    },
+    {
+      "id": "washroom-tor-6",
+      "type": "washroom",
+      "name": "Sunnydale Acres Park Outdoor Rink Washroom",
+      "address": "50 Amoro Dr",
+      "intersection": "Toronto",
+      "region": "north-york",
+      "hours": "View outdoor rink hours (currently closed)",
+      "phone": "",
+      "lat": 43.724459350000004,
+      "lng": -79.57792068,
+      "notes": "Located in the outdoor ice rink building.",
+      "nearby_routes": [
+        "396",
+        "45",
+        "945",
+        "96",
+        "996"
+      ]
+    },
+    {
+      "id": "washroom-tor-7",
+      "type": "washroom",
+      "name": "Valleyfield Park Outdoor Rink Washroom",
+      "address": "35 The Westway",
+      "intersection": "Toronto",
+      "region": "etobicoke",
+      "hours": "View outdoor rink hours (currently closed)",
+      "phone": "",
+      "lat": 43.69466171,
+      "lng": -79.53438656,
+      "notes": "Located in the rink building next to the ice rink.",
+      "nearby_routes": [
+        "352",
+        "405",
+        "52",
+        "73"
+      ]
+    },
+    {
+      "id": "washroom-tor-8",
+      "type": "washroom",
+      "name": "Wedgewood Park Outdoor Rink Washroom",
+      "address": "15 Swan Ave",
+      "intersection": "Toronto",
+      "region": "etobicoke",
+      "hours": "View outdoor rink hours (currently closed)",
+      "phone": "",
+      "lat": 43.64453464,
+      "lng": -79.5475486,
+      "notes": "Located in the rink building next to the outdoor ice rink.",
+      "nearby_routes": [
+        "50"
+      ]
+    },
+    {
+      "id": "washroom-tor-9",
+      "type": "washroom",
+      "name": "Trinity Community Recreation Centre Washroom",
+      "address": "155 Crawford St",
+      "intersection": "Toronto",
+      "region": "downtown",
+      "hours": "View centre hours",
+      "phone": "",
+      "lat": 43.64625046,
+      "lng": -79.41487796,
+      "notes": "Located in the Community Centre.",
+      "nearby_routes": [
+        "301",
+        "305",
+        "363",
+        "501",
+        "505",
+        "63"
+      ]
+    },
+    {
+      "id": "washroom-tor-10",
+      "type": "washroom",
+      "name": "Humber Bay Park West Washroom",
+      "address": "2225 Lake Shore Blvd  W",
+      "intersection": "Toronto",
+      "region": "etobicoke",
+      "hours": "9 a.m. to 10 p.m.",
+      "phone": "",
+      "lat": 43.61953924,
+      "lng": -79.48051239,
+      "notes": "Located on the west side of the parking lot.",
+      "nearby_routes": [
+        "301",
+        "501",
+        "507",
+        "508",
+        "66",
+        "80"
+      ]
+    },
+    {
+      "id": "washroom-tor-11",
+      "type": "washroom",
+      "name": "Viewmount Community Centre Washroom",
+      "address": "169 Viewmount Ave",
+      "intersection": "Toronto",
+      "region": "west",
+      "hours": "View centre hours (currently closed)",
+      "phone": "",
+      "lat": 43.70748851,
+      "lng": -79.43721163000001,
+      "notes": "Entrance is located on the outside of the Community Centre.",
+      "nearby_routes": [
+        "1",
+        "109",
+        "14"
+      ]
+    },
+    {
+      "id": "washroom-tor-12",
+      "type": "washroom",
+      "name": "Sir Winston Churchill Park Washroom",
+      "address": "301 St. Clair Ave  W",
+      "intersection": "Toronto",
+      "region": "west",
+      "hours": "9 a.m. to 10 p.m.",
+      "phone": "",
+      "lat": 43.684288679999995,
+      "lng": -79.40840168,
+      "notes": "Located in the clubhouse/washroom building.",
+      "nearby_routes": [
+        "312",
+        "33",
+        "512"
+      ]
+    },
+    {
+      "id": "washroom-tor-13",
+      "type": "washroom",
+      "name": "Leslie Grove Park Washroom",
+      "address": "1158 Queen St  E",
+      "intersection": "Toronto",
+      "region": "east-york",
+      "hours": "9 a.m. to 10 p.m. (Men\u2019s washroom, one washroom stall door is missing.)",
+      "phone": "",
+      "lat": 43.662684569999996,
+      "lng": -79.33365154,
+      "notes": "Located in the fieldhouse.",
+      "nearby_routes": [
+        "301",
+        "31",
+        "325",
+        "501",
+        "503",
+        "83"
+      ]
+    },
+    {
+      "id": "washroom-tor-14",
+      "type": "washroom",
       "name": "Withrow Park North Washroom",
       "address": "725 Logan Ave",
       "intersection": "Toronto",
@@ -1986,7 +2230,7 @@
       ]
     },
     {
-      "id": "washroom-tor-2",
+      "id": "washroom-tor-15",
       "type": "washroom",
       "name": "Toronto Islands - Centre Island Washroom",
       "address": "1 Centre Island Park",
@@ -1999,7 +2243,7 @@
       "notes": "Located east of the maze."
     },
     {
-      "id": "washroom-tor-3",
+      "id": "washroom-tor-16",
       "type": "washroom",
       "name": "Bellevue Square Park Washroom",
       "address": "5 Bellevue Ave",
@@ -2022,7 +2266,7 @@
       ]
     },
     {
-      "id": "washroom-tor-4",
+      "id": "washroom-tor-17",
       "type": "washroom",
       "name": "Riverdale Park East Outdoor Rink / Pool Washroom ",
       "address": "550 Broadview Ave",
@@ -2048,7 +2292,7 @@
       ]
     },
     {
-      "id": "washroom-tor-5",
+      "id": "washroom-tor-18",
       "type": "washroom",
       "name": "Kew Gardens Outdoor Rink Washroom",
       "address": "2075 Queen St  E",
@@ -2065,7 +2309,7 @@
       ]
     },
     {
-      "id": "washroom-tor-6",
+      "id": "washroom-tor-19",
       "type": "washroom",
       "name": "Otter Creek Centre Outdoor Rink Washroom",
       "address": "140 Cheritan Ave",
@@ -2084,7 +2328,7 @@
       ]
     },
     {
-      "id": "washroom-tor-7",
+      "id": "washroom-tor-20",
       "type": "washroom",
       "name": "Harbour Square Park Lands Fieldhouse Washroom",
       "address": "25 Queens Quay W",
@@ -2104,7 +2348,7 @@
       ]
     },
     {
-      "id": "washroom-tor-8",
+      "id": "washroom-tor-21",
       "type": "washroom",
       "name": "Jack Layton Ferry Terminal Washroom",
       "address": "25 Queens Quay W",
@@ -2124,31 +2368,7 @@
       ]
     },
     {
-      "id": "washroom-tor-9",
-      "type": "washroom",
-      "name": "Riverdale Park East Fieldhouse Washroom ",
-      "address": "550 Broadview Ave",
-      "intersection": "Toronto",
-      "region": "east-york",
-      "hours": "9 a.m. to 10 p.m. (currently closed)",
-      "phone": "",
-      "lat": 43.66772754,
-      "lng": -79.35550582,
-      "notes": "Located in the fieldhouse at the south end of the park.",
-      "nearby_routes": [
-        "121",
-        "301",
-        "305",
-        "306",
-        "504",
-        "505",
-        "506",
-        "62",
-        "8"
-      ]
-    },
-    {
-      "id": "washroom-tor-10",
+      "id": "washroom-tor-22",
       "type": "washroom",
       "name": "Trinity Bellwoods Playground Washroom",
       "address": "790 Queen St  W",
@@ -2169,7 +2389,7 @@
       ]
     },
     {
-      "id": "washroom-tor-11",
+      "id": "washroom-tor-23",
       "type": "washroom",
       "name": "Phil White Arena Washroom",
       "address": "443 Arlington Ave",
@@ -2185,7 +2405,7 @@
       ]
     },
     {
-      "id": "washroom-tor-12",
+      "id": "washroom-tor-24",
       "type": "washroom",
       "name": "Trinity Bellwoods Park North Baseball Diamond Washroom ",
       "address": "790 Queen St  W",
@@ -2204,7 +2424,7 @@
       ]
     },
     {
-      "id": "washroom-tor-13",
+      "id": "washroom-tor-25",
       "type": "washroom",
       "name": "Esther Shiner Stadium Washroom",
       "address": "5720 Bathurst St",
@@ -2226,7 +2446,7 @@
       ]
     },
     {
-      "id": "washroom-tor-14",
+      "id": "washroom-tor-26",
       "type": "washroom",
       "name": "G. Ross Lord Park Sport Pavillion Washroom",
       "address": "4801 Dufferin St",
@@ -2239,7 +2459,7 @@
       "notes": "Located in the sports pavilion east of main parking lot."
     },
     {
-      "id": "washroom-tor-15",
+      "id": "washroom-tor-27",
       "type": "washroom",
       "name": "Elie Wiesel Park Washroom ",
       "address": "30 Palm Dr",
@@ -2257,28 +2477,7 @@
       ]
     },
     {
-      "id": "washroom-tor-16",
-      "type": "washroom",
-      "name": "Humber Bay Park West Washroom",
-      "address": "2225 Lake Shore Blvd  W",
-      "intersection": "Toronto",
-      "region": "etobicoke",
-      "hours": "9 a.m. to 10 p.m.",
-      "phone": "",
-      "lat": 43.61953924,
-      "lng": -79.48051239,
-      "notes": "Located on the west side of the parking lot.",
-      "nearby_routes": [
-        "301",
-        "501",
-        "507",
-        "508",
-        "66",
-        "80"
-      ]
-    },
-    {
-      "id": "washroom-tor-17",
+      "id": "washroom-tor-28",
       "type": "washroom",
       "name": "Marie Curtis Park Beach Washroom",
       "address": "2 Forty Second St",
@@ -2291,23 +2490,7 @@
       "notes": "Located at the south end of the park close to the beach and creek mouth."
     },
     {
-      "id": "washroom-tor-18",
-      "type": "washroom",
-      "name": "Sunnybrook Park Washroom",
-      "address": "1132 Leslie St",
-      "intersection": "Toronto",
-      "region": "north-york",
-      "hours": "9 a.m. to 10 p.m.",
-      "phone": "",
-      "lat": 43.72292259,
-      "lng": -79.36275387,
-      "notes": "Located in the washroom building.",
-      "nearby_routes": [
-        "162"
-      ]
-    },
-    {
-      "id": "washroom-tor-19",
+      "id": "washroom-tor-29",
       "type": "washroom",
       "name": "Wilket Creek Park Washroom",
       "address": "1100 Leslie St",
@@ -2323,7 +2506,7 @@
       ]
     },
     {
-      "id": "washroom-tor-20",
+      "id": "washroom-tor-30",
       "type": "washroom",
       "name": "Edwards Gardens Washroom",
       "address": "755 Lawrence Ave  E",
@@ -2340,25 +2523,7 @@
       ]
     },
     {
-      "id": "washroom-tor-21",
-      "type": "washroom",
-      "name": "Viewmount Community Centre Washroom",
-      "address": "169 Viewmount Ave",
-      "intersection": "Toronto",
-      "region": "west",
-      "hours": "View centre hours",
-      "phone": "",
-      "lat": 43.70748851,
-      "lng": -79.43721163000001,
-      "notes": "Entrance is located on the outside of the Community Centre.",
-      "nearby_routes": [
-        "1",
-        "109",
-        "14"
-      ]
-    },
-    {
-      "id": "washroom-tor-22",
+      "id": "washroom-tor-31",
       "type": "washroom",
       "name": "Westway Outdoor Rink Washroom",
       "address": "175 The Westway",
@@ -2378,7 +2543,7 @@
       ]
     },
     {
-      "id": "washroom-tor-23",
+      "id": "washroom-tor-32",
       "type": "washroom",
       "name": "West Mall Outdoor Rink Washroom",
       "address": "370 The West Mall",
@@ -2396,39 +2561,7 @@
       ]
     },
     {
-      "id": "washroom-tor-24",
-      "type": "washroom",
-      "name": "West Deane Park Outdoor Rink Washroom",
-      "address": "19 Sedgebrook Cres",
-      "intersection": "Toronto",
-      "region": "etobicoke",
-      "hours": "View outdoor rink hours",
-      "phone": "",
-      "lat": 43.66358211,
-      "lng": -79.55902437,
-      "notes": "Located in the outdoor rink building.",
-      "nearby_routes": [
-        "46"
-      ]
-    },
-    {
-      "id": "washroom-tor-25",
-      "type": "washroom",
-      "name": "Wedgewood Park Outdoor Rink Washroom",
-      "address": "15 Swan Ave",
-      "intersection": "Toronto",
-      "region": "etobicoke",
-      "hours": "View outdoor rink hours",
-      "phone": "",
-      "lat": 43.64453464,
-      "lng": -79.5475486,
-      "notes": "Located in the rink building next to the outdoor ice rink.",
-      "nearby_routes": [
-        "50"
-      ]
-    },
-    {
-      "id": "washroom-tor-26",
+      "id": "washroom-tor-33",
       "type": "washroom",
       "name": "Humber Valley Outdoor Rink Washroom",
       "address": "50 Anglesey Blvd",
@@ -2445,7 +2578,7 @@
       ]
     },
     {
-      "id": "washroom-tor-27",
+      "id": "washroom-tor-34",
       "type": "washroom",
       "name": "Prince of Wales Outdoor Rink Washroom",
       "address": "1 Third St",
@@ -2464,7 +2597,7 @@
       ]
     },
     {
-      "id": "washroom-tor-28",
+      "id": "washroom-tor-35",
       "type": "washroom",
       "name": "Grange Park North Washroom",
       "address": "26 Grange Rd  W",
@@ -2479,12 +2612,14 @@
         "1",
         "301",
         "305",
+        "306",
         "501",
-        "505"
+        "505",
+        "506"
       ]
     },
     {
-      "id": "washroom-tor-29",
+      "id": "washroom-tor-36",
       "type": "washroom",
       "name": "Royal Crest Park Outdoor Rink Washroom",
       "address": "50 Cabernet Cir",
@@ -2502,7 +2637,7 @@
       ]
     },
     {
-      "id": "washroom-tor-30",
+      "id": "washroom-tor-37",
       "type": "washroom",
       "name": "Ramsden Park Outdoor Rink Washroom",
       "address": "1020 Yonge St",
@@ -2523,7 +2658,7 @@
       ]
     },
     {
-      "id": "washroom-tor-31",
+      "id": "washroom-tor-38",
       "type": "washroom",
       "name": "Grange Park South Washroom",
       "address": "26 Grange Rd  W",
@@ -2538,12 +2673,14 @@
         "1",
         "301",
         "305",
+        "306",
         "501",
-        "505"
+        "505",
+        "506"
       ]
     },
     {
-      "id": "washroom-tor-32",
+      "id": "washroom-tor-39",
       "type": "washroom",
       "name": "Toronto Islands - Ward's Island Fire Station Washroom",
       "address": "None",
@@ -2556,28 +2693,7 @@
       "notes": "Located on the west side of the Fire Station, entrance from the outside."
     },
     {
-      "id": "washroom-tor-33",
-      "type": "washroom",
-      "name": "Leslie Grove Park Washroom",
-      "address": "1158 Queen St  E",
-      "intersection": "Toronto",
-      "region": "east-york",
-      "hours": "9 a.m. to 10 p.m.",
-      "phone": "",
-      "lat": 43.662684569999996,
-      "lng": -79.33365154,
-      "notes": "Located in the fieldhouse.",
-      "nearby_routes": [
-        "301",
-        "31",
-        "325",
-        "501",
-        "503",
-        "83"
-      ]
-    },
-    {
-      "id": "washroom-tor-34",
+      "id": "washroom-tor-40",
       "type": "washroom",
       "name": "Scarlett Woods Golf Course Washroom",
       "address": "1000 Jane St",
@@ -2600,7 +2716,7 @@
       ]
     },
     {
-      "id": "washroom-tor-35",
+      "id": "washroom-tor-41",
       "type": "washroom",
       "name": "Greenwood Park Fieldhouse Washroom",
       "address": "150 Greenwood Ave",
@@ -2618,7 +2734,7 @@
       ]
     },
     {
-      "id": "washroom-tor-36",
+      "id": "washroom-tor-42",
       "type": "washroom",
       "name": "Fire Hall 30 Park Washroom",
       "address": "31 Commissioners St",
@@ -2634,25 +2750,7 @@
       ]
     },
     {
-      "id": "washroom-tor-37",
-      "type": "washroom",
-      "name": "Sir Winston Churchill Park Washroom",
-      "address": "301 St. Clair Ave  W",
-      "intersection": "Toronto",
-      "region": "west",
-      "hours": "9 a.m. to 10 p.m.",
-      "phone": "",
-      "lat": 43.684288679999995,
-      "lng": -79.40840168,
-      "notes": "Located in the clubhouse/washroom building.",
-      "nearby_routes": [
-        "312",
-        "33",
-        "512"
-      ]
-    },
-    {
-      "id": "washroom-tor-38",
+      "id": "washroom-tor-43",
       "type": "washroom",
       "name": "Tam O'Shanter Golf Course Washroom",
       "address": "2481 Birchmount Rd",
@@ -2668,7 +2766,7 @@
       ]
     },
     {
-      "id": "washroom-tor-39",
+      "id": "washroom-tor-44",
       "type": "washroom",
       "name": "Don Valley Brick Works Washroom ",
       "address": "550 Bayview Ave",
@@ -2685,7 +2783,7 @@
       ]
     },
     {
-      "id": "washroom-tor-40",
+      "id": "washroom-tor-45",
       "type": "washroom",
       "name": "Willowdale Park North York Tennis Club Washroom ",
       "address": "75 Hollywood Ave",
@@ -2706,7 +2804,7 @@
       ]
     },
     {
-      "id": "washroom-tor-41",
+      "id": "washroom-tor-46",
       "type": "washroom",
       "name": "Little Norway Park Washroom",
       "address": "659 Queens Quay  W",
@@ -2723,7 +2821,7 @@
       ]
     },
     {
-      "id": "washroom-tor-42",
+      "id": "washroom-tor-47",
       "type": "washroom",
       "name": "Blantyre Park Outdoor Pool Washroom",
       "address": "180 Fallingbrook Rd",
@@ -2746,7 +2844,7 @@
       ]
     },
     {
-      "id": "washroom-tor-43",
+      "id": "washroom-tor-48",
       "type": "washroom",
       "name": "Blantyre Park Fieldhouse Washroom",
       "address": "180 Fallingbrook Rd",
@@ -2768,7 +2866,7 @@
       ]
     },
     {
-      "id": "washroom-tor-44",
+      "id": "washroom-tor-49",
       "type": "washroom",
       "name": "Dufferin Grove Sports Field Washroom",
       "address": "875 Dufferin St",
@@ -2791,7 +2889,7 @@
       ]
     },
     {
-      "id": "washroom-tor-45",
+      "id": "washroom-tor-50",
       "type": "washroom",
       "name": "Toronto Islands - Ward's Island Baseball Diamond Washroom",
       "address": "1 Centre Island Park",
@@ -2804,7 +2902,7 @@
       "notes": "Located on Ward's Island east of the baseball diamond in the washroom building."
     },
     {
-      "id": "washroom-tor-46",
+      "id": "washroom-tor-51",
       "type": "washroom",
       "name": "Thomson Memorial Park South Washroom",
       "address": "1005 Brimley Rd",
@@ -2823,23 +2921,7 @@
       ]
     },
     {
-      "id": "washroom-tor-47",
-      "type": "washroom",
-      "name": "Thomson Memorial Park North Washroom",
-      "address": "1005 Brimley Rd",
-      "intersection": "Toronto",
-      "region": "north-york",
-      "hours": "9 a.m. to 10 p.m.",
-      "phone": "",
-      "lat": 43.75907419,
-      "lng": -79.25506082999999,
-      "notes": "Located in the north washroom building of the park.",
-      "nearby_routes": [
-        "21"
-      ]
-    },
-    {
-      "id": "washroom-tor-48",
+      "id": "washroom-tor-52",
       "type": "washroom",
       "name": "E.T. Seton Park Washroom",
       "address": "73 Thorncliffe Park Dr",
@@ -2860,7 +2942,7 @@
       ]
     },
     {
-      "id": "washroom-tor-49",
+      "id": "washroom-tor-53",
       "type": "washroom",
       "name": "Lawrence Park Ravine Tennis Clubhouse Washroom",
       "address": "51 Alexander Muir Rd",
@@ -2879,7 +2961,7 @@
       ]
     },
     {
-      "id": "washroom-tor-50",
+      "id": "washroom-tor-54",
       "type": "washroom",
       "name": "Serena Gundy Park Washroom ",
       "address": "58 Rykert Cres",
@@ -2892,7 +2974,7 @@
       "notes": "Located on the park pathway across from Picnic Site #1."
     },
     {
-      "id": "washroom-tor-51",
+      "id": "washroom-tor-55",
       "type": "washroom",
       "name": "Wanless Park Fieldhouse Washroom ",
       "address": "250 Wanless Ave",
@@ -2912,7 +2994,7 @@
       ]
     },
     {
-      "id": "washroom-tor-52",
+      "id": "washroom-tor-56",
       "type": "washroom",
       "name": "Dentonia Park Washroom",
       "address": "80 Thyra Ave",
@@ -2939,45 +3021,7 @@
       ]
     },
     {
-      "id": "washroom-tor-53",
-      "type": "washroom",
-      "name": "Sunnydale Acres Park Outdoor Rink Washroom",
-      "address": "50 Amoro Dr",
-      "intersection": "Toronto",
-      "region": "north-york",
-      "hours": "View outdoor rink hours",
-      "phone": "",
-      "lat": 43.724459350000004,
-      "lng": -79.57792068,
-      "notes": "Located in the outdoor ice rink building.",
-      "nearby_routes": [
-        "396",
-        "45",
-        "945",
-        "96",
-        "996"
-      ]
-    },
-    {
-      "id": "washroom-tor-54",
-      "type": "washroom",
-      "name": "Sir Adam Beck Park Outdoor Rink Washroom",
-      "address": "55 Eltham Dr",
-      "intersection": "Toronto",
-      "region": "etobicoke",
-      "hours": "View outdoor rink hours",
-      "phone": "",
-      "lat": 43.6024034,
-      "lng": -79.54745953,
-      "notes": "Located in the rink building next to the outdoor ice rink.",
-      "nearby_routes": [
-        "110",
-        "123",
-        "315"
-      ]
-    },
-    {
-      "id": "washroom-tor-55",
+      "id": "washroom-tor-57",
       "type": "washroom",
       "name": "High Park Outdoor Pool / Rink Building Washroom",
       "address": "1873 Bloor St  W",
@@ -2990,31 +3034,13 @@
       "notes": "Located in the outdoor pool and ice rink building.",
       "nearby_routes": [
         "2",
+        "203",
         "30",
         "300"
       ]
     },
     {
-      "id": "washroom-tor-56",
-      "type": "washroom",
-      "name": "Valleyfield Park Outdoor Rink Washroom",
-      "address": "35 The Westway",
-      "intersection": "Toronto",
-      "region": "etobicoke",
-      "hours": "View outdoor rink hours",
-      "phone": "",
-      "lat": 43.69466171,
-      "lng": -79.53438656,
-      "notes": "Located in the rink building next to the ice rink.",
-      "nearby_routes": [
-        "352",
-        "405",
-        "52",
-        "73"
-      ]
-    },
-    {
-      "id": "washroom-tor-57",
+      "id": "washroom-tor-58",
       "type": "washroom",
       "name": "Queensway Outdoor Rink Washroom",
       "address": "1 Third St",
@@ -3033,7 +3059,7 @@
       ]
     },
     {
-      "id": "washroom-tor-58",
+      "id": "washroom-tor-59",
       "type": "washroom",
       "name": "James Gardens Washroom",
       "address": "99 Edenbridge Dr",
@@ -3046,7 +3072,7 @@
       "notes": "Located on the west side of parking lot."
     },
     {
-      "id": "washroom-tor-59",
+      "id": "washroom-tor-60",
       "type": "washroom",
       "name": "Humberline Park Washroom ",
       "address": "32 Humberline Dr",
@@ -3066,7 +3092,7 @@
       ]
     },
     {
-      "id": "washroom-tor-60",
+      "id": "washroom-tor-61",
       "type": "washroom",
       "name": "Rotary Peace Park Outdoor Pool  Washroom",
       "address": "25 Eleventh St",
@@ -3079,7 +3105,7 @@
       "notes": "Located on the west side of the outdoor pool near Eleventh Street."
     },
     {
-      "id": "washroom-tor-61",
+      "id": "washroom-tor-62",
       "type": "washroom",
       "name": "Ourland Park Outdoor Pool Washroom",
       "address": "36 Ourland Ave",
@@ -3098,7 +3124,7 @@
       ]
     },
     {
-      "id": "washroom-tor-62",
+      "id": "washroom-tor-63",
       "type": "washroom",
       "name": "Amos Waites Park Outdoor Pool Washroom",
       "address": "2441 Lake Shore Blvd  W",
@@ -3119,7 +3145,7 @@
       ]
     },
     {
-      "id": "washroom-tor-63",
+      "id": "washroom-tor-64",
       "type": "washroom",
       "name": "West Mall Outdoor Pool Washroom ",
       "address": "380 The West Mall",
@@ -3137,7 +3163,7 @@
       ]
     },
     {
-      "id": "washroom-tor-64",
+      "id": "washroom-tor-65",
       "type": "washroom",
       "name": "West Deane Park Outdoor Pool Washroom ",
       "address": "19 Sedgebrook Cres",
@@ -3150,7 +3176,7 @@
       "notes": "Located on the west side of the pool on the pathway from Sedgebrook Crescent."
     },
     {
-      "id": "washroom-tor-65",
+      "id": "washroom-tor-66",
       "type": "washroom",
       "name": "Eringate Park Outdoor Pool Washroom",
       "address": "121 Wellesworth Dr",
@@ -3168,7 +3194,7 @@
       ]
     },
     {
-      "id": "washroom-tor-66",
+      "id": "washroom-tor-67",
       "type": "washroom",
       "name": "Westgrove Park Outdoor Pool Washroom ",
       "address": "15 Redgrave Dr",
@@ -3186,7 +3212,7 @@
       ]
     },
     {
-      "id": "washroom-tor-67",
+      "id": "washroom-tor-68",
       "type": "washroom",
       "name": "Pine Point Park Outdoor Pool Washroom",
       "address": "15 Grierson Rd",
@@ -3199,7 +3225,7 @@
       "notes": "Located in the pool building on the south end of the outdoor pool."
     },
     {
-      "id": "washroom-tor-68",
+      "id": "washroom-tor-69",
       "type": "washroom",
       "name": "Flagstaff Park Outdoor Pool Washroom",
       "address": "42 Mercury Rd",
@@ -3215,7 +3241,7 @@
       ]
     },
     {
-      "id": "washroom-tor-69",
+      "id": "washroom-tor-70",
       "type": "washroom",
       "name": "Smithfield Park Outdoor Pool Washroom ",
       "address": "175 Mount Olive Dr",
@@ -3233,7 +3259,7 @@
       ]
     },
     {
-      "id": "washroom-tor-70",
+      "id": "washroom-tor-71",
       "type": "washroom",
       "name": "Richmond Gardens Outdoor Pool Washroom ",
       "address": "44 Strathdee Dr",
@@ -3253,7 +3279,7 @@
       ]
     },
     {
-      "id": "washroom-tor-71",
+      "id": "washroom-tor-72",
       "type": "washroom",
       "name": "Westmount Park Outdoor Pool Washroom ",
       "address": "22 Arcade Dr",
@@ -3273,7 +3299,7 @@
       ]
     },
     {
-      "id": "washroom-tor-72",
+      "id": "washroom-tor-73",
       "type": "washroom",
       "name": "Fairhaven Park Outdoor Pool Washroom",
       "address": "100 Golfwood Hts",
@@ -3291,7 +3317,7 @@
       ]
     },
     {
-      "id": "washroom-tor-73",
+      "id": "washroom-tor-74",
       "type": "washroom",
       "name": "Weston Lions Park Outdoor Pool Washroom ",
       "address": "2125 Lawrence Ave  W",
@@ -3313,7 +3339,7 @@
       ]
     },
     {
-      "id": "washroom-tor-74",
+      "id": "washroom-tor-75",
       "type": "washroom",
       "name": "Leaside Park Washroom",
       "address": "5 Leaside Park Dr",
@@ -3326,6 +3352,7 @@
       "notes": "Entrance is located on the outside of the outdoor pool building.",
       "nearby_routes": [
         "100",
+        "156",
         "25",
         "325",
         "403",
@@ -3336,7 +3363,7 @@
       ]
     },
     {
-      "id": "washroom-tor-75",
+      "id": "washroom-tor-76",
       "type": "washroom",
       "name": "Lee Lifeson Art Park Washroom ",
       "address": "45 Princess Ave",
@@ -3354,7 +3381,7 @@
       ]
     },
     {
-      "id": "washroom-tor-76",
+      "id": "washroom-tor-77",
       "type": "washroom",
       "name": "High Park Upper Hillside Washroom",
       "address": "1873 Bloor St  W",
@@ -3364,10 +3391,13 @@
       "phone": "",
       "lat": 43.645106059999996,
       "lng": -79.466897,
-      "notes": "Located on the pathway from the last West Road parking lot."
+      "notes": "Located on the pathway from the last West Road parking lot.",
+      "nearby_routes": [
+        "203"
+      ]
     },
     {
-      "id": "washroom-tor-77",
+      "id": "washroom-tor-78",
       "type": "washroom",
       "name": "High Park Sport Field Washroom",
       "address": "1873 Bloor St  W",
@@ -3381,12 +3411,13 @@
       "nearby_routes": [
         "189",
         "2",
+        "203",
         "30",
         "300"
       ]
     },
     {
-      "id": "washroom-tor-78",
+      "id": "washroom-tor-79",
       "type": "washroom",
       "name": "High Park Children's Garden Washroom",
       "address": "1873 Bloor St  W",
@@ -3398,6 +3429,7 @@
       "lng": -79.46137055999999,
       "notes": "Located east of the Children's Garden.",
       "nearby_routes": [
+        "203",
         "301",
         "501",
         "508",
@@ -3405,7 +3437,7 @@
       ]
     },
     {
-      "id": "washroom-tor-79",
+      "id": "washroom-tor-80",
       "type": "washroom",
       "name": "Memorial Park Washroom",
       "address": "340 Chaplin Cres",
@@ -3428,7 +3460,7 @@
       ]
     },
     {
-      "id": "washroom-tor-80",
+      "id": "washroom-tor-81",
       "type": "washroom",
       "name": "Topham Park Community Centre and Clubhouse Washroom ",
       "address": "181 Westview Blvd",
@@ -3447,7 +3479,7 @@
       ]
     },
     {
-      "id": "washroom-tor-81",
+      "id": "washroom-tor-82",
       "type": "washroom",
       "name": "Woodbine Bathing Station Washroom ",
       "address": "1675 Lake Shore Blvd  E",
@@ -3463,7 +3495,7 @@
       ]
     },
     {
-      "id": "washroom-tor-82",
+      "id": "washroom-tor-83",
       "type": "washroom",
       "name": "Cherry Beach Sports Fields Washroom",
       "address": "275 Unwin Ave",
@@ -3476,7 +3508,7 @@
       "notes": "Located in the building next to the east sports field."
     },
     {
-      "id": "washroom-tor-83",
+      "id": "washroom-tor-84",
       "type": "washroom",
       "name": "Rosetta McClain Gardens Washroom ",
       "address": "5 Glen Everest Rd",
@@ -3494,7 +3526,7 @@
       ]
     },
     {
-      "id": "washroom-tor-84",
+      "id": "washroom-tor-85",
       "type": "washroom",
       "name": "Centennial Park Rob Ford Stadium Women's North Washroom",
       "address": "256 Centennial Park Rd",
@@ -3510,7 +3542,7 @@
       ]
     },
     {
-      "id": "washroom-tor-85",
+      "id": "washroom-tor-86",
       "type": "washroom",
       "name": "Centennial Park Rob Ford Stadium Men's South Washroom",
       "address": "256 Centennial Park Rd",
@@ -3526,7 +3558,7 @@
       ]
     },
     {
-      "id": "washroom-tor-86",
+      "id": "washroom-tor-87",
       "type": "washroom",
       "name": "Prairie Drive Park Washroom ",
       "address": "101 Pharmacy Ave",
@@ -3545,7 +3577,7 @@
       ]
     },
     {
-      "id": "washroom-tor-87",
+      "id": "washroom-tor-88",
       "type": "washroom",
       "name": "Kew Gardens Playground Washroom",
       "address": "2075 Queen St  E",
@@ -3564,7 +3596,7 @@
       ]
     },
     {
-      "id": "washroom-tor-88",
+      "id": "washroom-tor-89",
       "type": "washroom",
       "name": "Silverbirch Boat House Washroom",
       "address": "2 Silver Birch Ave",
@@ -3581,7 +3613,7 @@
       ]
     },
     {
-      "id": "washroom-tor-89",
+      "id": "washroom-tor-90",
       "type": "washroom",
       "name": "Ethennonnhawahstihnen Park Outdoor Rink Washroom",
       "address": "80 Mcmahon Dr  E",
@@ -3602,7 +3634,7 @@
       ]
     },
     {
-      "id": "washroom-tor-90",
+      "id": "washroom-tor-91",
       "type": "washroom",
       "name": "Woburn Avenue Playground Washroom ",
       "address": "75 Woburn Ave",
@@ -3625,7 +3657,7 @@
       ]
     },
     {
-      "id": "washroom-tor-91",
+      "id": "washroom-tor-92",
       "type": "washroom",
       "name": "Perth Square Park Washroom ",
       "address": "350 Perth Ave",
@@ -3644,7 +3676,7 @@
       ]
     },
     {
-      "id": "washroom-tor-92",
+      "id": "washroom-tor-93",
       "type": "washroom",
       "name": "Maryvale Park Outdoor Pool Washroom",
       "address": "5 Trestleside Grove",
@@ -3660,7 +3692,7 @@
       ]
     },
     {
-      "id": "washroom-tor-93",
+      "id": "washroom-tor-94",
       "type": "washroom",
       "name": "Stanley Park North Toronto Playground Washroom ",
       "address": "890 King St  W",
@@ -3682,7 +3714,7 @@
       ]
     },
     {
-      "id": "washroom-tor-94",
+      "id": "washroom-tor-95",
       "type": "washroom",
       "name": "Toronto Islands - Hanlan's Point Ferry Dock Washroom",
       "address": "9 Queens Quay  W",
@@ -3695,7 +3727,7 @@
       "notes": "Located on Hanlan's Point south of the ferry dock in the snack/concession stand, washroom building. "
     },
     {
-      "id": "washroom-tor-95",
+      "id": "washroom-tor-96",
       "type": "washroom",
       "name": "Derrydowns Park Washroom",
       "address": "271 Derrydown Rd",
@@ -3709,12 +3741,11 @@
       "nearby_routes": [
         "106",
         "336",
-        "6",
-        "806"
+        "6"
       ]
     },
     {
-      "id": "washroom-tor-96",
+      "id": "washroom-tor-97",
       "type": "washroom",
       "name": "Rowntree Mills Park Washroom",
       "address": "155 Rowntree Mill Rd",
@@ -3727,7 +3758,7 @@
       "notes": "Located on a pathway between Rowntree Mill Road and the second parking lot."
     },
     {
-      "id": "washroom-tor-97",
+      "id": "washroom-tor-98",
       "type": "washroom",
       "name": "Sunnyside Park Pavillion West Washroom",
       "address": "1755 Lake Shore Blvd  W",
@@ -3746,7 +3777,7 @@
       ]
     },
     {
-      "id": "washroom-tor-98",
+      "id": "washroom-tor-99",
       "type": "washroom",
       "name": "Sunnyside Park Pavillion East Washroom",
       "address": "1755 Lake Shore Blvd  W",
@@ -3766,7 +3797,7 @@
       ]
     },
     {
-      "id": "washroom-tor-99",
+      "id": "washroom-tor-100",
       "type": "washroom",
       "name": "Earl Bales Park Barry Zukerman Amphitheatre Washroom",
       "address": "4169 Bathurst St",
@@ -3787,7 +3818,7 @@
       ]
     },
     {
-      "id": "washroom-tor-100",
+      "id": "washroom-tor-101",
       "type": "washroom",
       "name": "Hillcrest Park Washroom",
       "address": "950 Davenport Rd",
@@ -3804,7 +3835,7 @@
       ]
     },
     {
-      "id": "washroom-tor-101",
+      "id": "washroom-tor-102",
       "type": "washroom",
       "name": "Sherwood Park Washroom ",
       "address": "190 Sherwood Ave",
@@ -3817,7 +3848,7 @@
       "notes": "Located on the east side of the splash pad. "
     },
     {
-      "id": "washroom-tor-102",
+      "id": "washroom-tor-103",
       "type": "washroom",
       "name": "Oriole Park Toronto Washroom ",
       "address": "201 Oriole Pkwy",
@@ -3839,7 +3870,7 @@
       ]
     },
     {
-      "id": "washroom-tor-103",
+      "id": "washroom-tor-104",
       "type": "washroom",
       "name": "Wells Hill Park Washroom ",
       "address": "145 Hilton Ave",
@@ -3862,7 +3893,7 @@
       ]
     },
     {
-      "id": "washroom-tor-104",
+      "id": "washroom-tor-105",
       "type": "washroom",
       "name": "Bond Park Sport Centre Washroom",
       "address": "120 Bond Ave",
@@ -3878,7 +3909,7 @@
       ]
     },
     {
-      "id": "washroom-tor-105",
+      "id": "washroom-tor-106",
       "type": "washroom",
       "name": "Port Union Village Common Park Washroom",
       "address": "105 Bridgend St",
@@ -3898,7 +3929,7 @@
       ]
     },
     {
-      "id": "washroom-tor-106",
+      "id": "washroom-tor-107",
       "type": "washroom",
       "name": "Bellbury Park Tennis Club Washroom",
       "address": "55 Van Horne Ave",
@@ -3914,7 +3945,7 @@
       ]
     },
     {
-      "id": "washroom-tor-107",
+      "id": "washroom-tor-108",
       "type": "washroom",
       "name": "Clydesdale Park Tennis Clubhouse Universal Washroom",
       "address": "116 Clydesdale Dr",
@@ -3932,7 +3963,7 @@
       ]
     },
     {
-      "id": "washroom-tor-108",
+      "id": "washroom-tor-109",
       "type": "washroom",
       "name": "Colonel Danforth Park Washroom",
       "address": "73 Colonel Danforth Trl",
@@ -3951,7 +3982,7 @@
       ]
     },
     {
-      "id": "washroom-tor-109",
+      "id": "washroom-tor-110",
       "type": "washroom",
       "name": "Earlscourt Park Washroom",
       "address": "1200 Lansdowne Ave",
@@ -3971,7 +4002,7 @@
       ]
     },
     {
-      "id": "washroom-tor-110",
+      "id": "washroom-tor-111",
       "type": "washroom",
       "name": "Withrow Park South Washroom",
       "address": "725 Logan Ave",
@@ -3988,7 +4019,7 @@
       ]
     },
     {
-      "id": "washroom-tor-111",
+      "id": "washroom-tor-112",
       "type": "washroom",
       "name": "Bluffer's Park East Washroom",
       "address": "1 Brimley Rd  S",
@@ -4001,7 +4032,7 @@
       "notes": "Located on a pathway between the east parking lot and the beach."
     },
     {
-      "id": "washroom-tor-112",
+      "id": "washroom-tor-113",
       "type": "washroom",
       "name": "Highview Park Washroom",
       "address": "150 Highview Ave",
@@ -4020,7 +4051,7 @@
       ]
     },
     {
-      "id": "washroom-tor-113",
+      "id": "washroom-tor-114",
       "type": "washroom",
       "name": "Dunlop Park Washroom",
       "address": "19 Dunlop Ave",
@@ -4043,7 +4074,7 @@
       ]
     },
     {
-      "id": "washroom-tor-114",
+      "id": "washroom-tor-115",
       "type": "washroom",
       "name": "Corvette Park Washroom",
       "address": "40 Corvette Ave",
@@ -4060,7 +4091,7 @@
       ]
     },
     {
-      "id": "washroom-tor-115",
+      "id": "washroom-tor-116",
       "type": "washroom",
       "name": "Stanley Greene Park Pavilion Washroom",
       "address": "55 Stanley Greene Blvd.",
@@ -4078,7 +4109,7 @@
       ]
     },
     {
-      "id": "washroom-tor-116",
+      "id": "washroom-tor-117",
       "type": "washroom",
       "name": "Northwood Park Washroom ",
       "address": "140 Stilecroft Dr",
@@ -4095,7 +4126,7 @@
       ]
     },
     {
-      "id": "washroom-tor-117",
+      "id": "washroom-tor-118",
       "type": "washroom",
       "name": "G. Ross Lord Park Hidden Trail Washroom",
       "address": "4801 Dufferin St",
@@ -4111,7 +4142,7 @@
       ]
     },
     {
-      "id": "washroom-tor-118",
+      "id": "washroom-tor-119",
       "type": "washroom",
       "name": "Downsview Dells Park South Washroom ",
       "address": "2515 Jane St",
@@ -4127,7 +4158,7 @@
       ]
     },
     {
-      "id": "washroom-tor-119",
+      "id": "washroom-tor-120",
       "type": "washroom",
       "name": "Downsview Dells Park North Washroom",
       "address": "2515 Jane St",
@@ -4143,7 +4174,7 @@
       ]
     },
     {
-      "id": "washroom-tor-120",
+      "id": "washroom-tor-121",
       "type": "washroom",
       "name": "Earl Bales Park South Washroom",
       "address": "4169 Bathurst St",
@@ -4156,7 +4187,7 @@
       "notes": "Located south of the base of the ski hill at the end of a pathway."
     },
     {
-      "id": "washroom-tor-121",
+      "id": "washroom-tor-122",
       "type": "washroom",
       "name": "Hinder Area Washroom ",
       "address": "44 Don River Blvd",
@@ -4176,7 +4207,7 @@
       ]
     },
     {
-      "id": "washroom-tor-122",
+      "id": "washroom-tor-123",
       "type": "washroom",
       "name": "Hendon Park Tennis Clubhouse Washroom",
       "address": "50 Hendon Ave",
@@ -4203,7 +4234,7 @@
       ]
     },
     {
-      "id": "washroom-tor-123",
+      "id": "washroom-tor-124",
       "type": "washroom",
       "name": "Lytton Park Tennis Clubhouse Washroom",
       "address": "200 Lytton Blvd",
@@ -4219,7 +4250,7 @@
       ]
     },
     {
-      "id": "washroom-tor-124",
+      "id": "washroom-tor-125",
       "type": "washroom",
       "name": "Eglinton Park Washroom",
       "address": "200 Eglinton Ave  W",
@@ -4243,7 +4274,7 @@
       ]
     },
     {
-      "id": "washroom-tor-125",
+      "id": "washroom-tor-126",
       "type": "washroom",
       "name": "Glamorgan Park Washroom",
       "address": "50 Antrim Cres",
@@ -4261,7 +4292,7 @@
       ]
     },
     {
-      "id": "washroom-tor-126",
+      "id": "washroom-tor-127",
       "type": "washroom",
       "name": "Knob Hill Park Outdoor Pool Washroom",
       "address": "625 Brimley Rd",
@@ -4279,7 +4310,7 @@
       ]
     },
     {
-      "id": "washroom-tor-127",
+      "id": "washroom-tor-128",
       "type": "washroom",
       "name": "Ashtonbee Reservoir Park Washroom",
       "address": "21 Ashtonbee Rd",
@@ -4302,7 +4333,7 @@
       ]
     },
     {
-      "id": "washroom-tor-128",
+      "id": "washroom-tor-129",
       "type": "washroom",
       "name": "Wexford Park Fieldhouse Washroom ",
       "address": "55 Elm Bank Rd",
@@ -4318,7 +4349,7 @@
       ]
     },
     {
-      "id": "washroom-tor-129",
+      "id": "washroom-tor-130",
       "type": "washroom",
       "name": "Connorvale Park - Steve \"Whitey\" Breitner Clubhouse Washroom",
       "address": "281 Rimilton Ave",
@@ -4334,7 +4365,7 @@
       ]
     },
     {
-      "id": "washroom-tor-130",
+      "id": "washroom-tor-131",
       "type": "washroom",
       "name": "Etobicoke Valley Park Washroom",
       "address": "615 Horner Ave",
@@ -4347,7 +4378,7 @@
       "notes": "Located on the pathway south of the stairs up to the parking lot."
     },
     {
-      "id": "washroom-tor-131",
+      "id": "washroom-tor-132",
       "type": "washroom",
       "name": "Amos Waites Park Washroom",
       "address": "2441 Lake Shore Blvd  W",
@@ -4368,7 +4399,7 @@
       ]
     },
     {
-      "id": "washroom-tor-132",
+      "id": "washroom-tor-133",
       "type": "washroom",
       "name": "Dieppe Park Washroom",
       "address": "455 Cosburn Ave",
@@ -4386,7 +4417,7 @@
       ]
     },
     {
-      "id": "washroom-tor-133",
+      "id": "washroom-tor-134",
       "type": "washroom",
       "name": "Morse Street Playground Washroom",
       "address": "76 Morse St",
@@ -4406,7 +4437,7 @@
       ]
     },
     {
-      "id": "washroom-tor-134",
+      "id": "washroom-tor-135",
       "type": "washroom",
       "name": "Felstead Avenue Playground Washroom",
       "address": "60 Felstead Ave",
@@ -4425,7 +4456,7 @@
       ]
     },
     {
-      "id": "washroom-tor-135",
+      "id": "washroom-tor-136",
       "type": "washroom",
       "name": "Taylor Creek Park Washroom",
       "address": "260 Dawes Rd",
@@ -4443,7 +4474,7 @@
       ]
     },
     {
-      "id": "washroom-tor-136",
+      "id": "washroom-tor-137",
       "type": "washroom",
       "name": "George Webster Park Washroom",
       "address": "30 Chapman Ave",
@@ -4460,7 +4491,7 @@
       ]
     },
     {
-      "id": "washroom-tor-137",
+      "id": "washroom-tor-138",
       "type": "washroom",
       "name": "Norwood Park Washroom",
       "address": "16 Norwood Rd",
@@ -4481,7 +4512,7 @@
       ]
     },
     {
-      "id": "washroom-tor-138",
+      "id": "washroom-tor-139",
       "type": "washroom",
       "name": "Stan Wadlow Park Washroom",
       "address": "888 Cosburn Ave",
@@ -4502,7 +4533,7 @@
       ]
     },
     {
-      "id": "washroom-tor-139",
+      "id": "washroom-tor-140",
       "type": "washroom",
       "name": "Ashbridges Bay Park Washroom ",
       "address": "1561 Lake Shore Blvd  E",
@@ -4515,7 +4546,7 @@
       "notes": "Located on the boardwalk near the southern most beach volleyball courts."
     },
     {
-      "id": "washroom-tor-140",
+      "id": "washroom-tor-141",
       "type": "washroom",
       "name": "Donald D. Summerville Olympic Outdoor Pool Washroom",
       "address": "1867 Lake Shore Blvd  E",
@@ -4533,7 +4564,7 @@
       ]
     },
     {
-      "id": "washroom-tor-141",
+      "id": "washroom-tor-142",
       "type": "washroom",
       "name": "Cherry Beach Clarke Beach Park Washroom",
       "address": "1 Cherry St",
@@ -4546,7 +4577,7 @@
       "notes": "Located between the parking lot and the beach."
     },
     {
-      "id": "washroom-tor-142",
+      "id": "washroom-tor-143",
       "type": "washroom",
       "name": "Jonathan Ashbridge Park Fieldhouse Washroom",
       "address": "1515 Queen St  E",
@@ -4567,7 +4598,7 @@
       ]
     },
     {
-      "id": "washroom-tor-143",
+      "id": "washroom-tor-144",
       "type": "washroom",
       "name": "McCleary Park Washroom",
       "address": "755 Lake Shore Blvd  E",
@@ -4585,7 +4616,7 @@
       ]
     },
     {
-      "id": "washroom-tor-144",
+      "id": "washroom-tor-145",
       "type": "washroom",
       "name": "Pantry Park Fieldhouse Washroom",
       "address": "70 Kewbeach Ave",
@@ -4603,7 +4634,7 @@
       ]
     },
     {
-      "id": "washroom-tor-145",
+      "id": "washroom-tor-146",
       "type": "washroom",
       "name": "West Deane Park Washroom ",
       "address": "19 Sedgebrook Cres",
@@ -4619,7 +4650,7 @@
       ]
     },
     {
-      "id": "washroom-tor-146",
+      "id": "washroom-tor-147",
       "type": "washroom",
       "name": "Riverdale Park West Washroom ",
       "address": "375 Sumach St",
@@ -4643,7 +4674,7 @@
       ]
     },
     {
-      "id": "washroom-tor-147",
+      "id": "washroom-tor-148",
       "type": "washroom",
       "name": "Corktown Common Pavilion Washroom",
       "address": "155 Bayview Ave",
@@ -4657,12 +4688,13 @@
       "nearby_routes": [
         "121",
         "304",
+        "503",
         "504",
         "508"
       ]
     },
     {
-      "id": "washroom-tor-148",
+      "id": "washroom-tor-149",
       "type": "washroom",
       "name": "Toronto Islands - Toronto Island Park Avenue of the Islands Washroom",
       "address": "9 Queens Quay  W",
@@ -4675,7 +4707,7 @@
       "notes": "Located on the south side of the pathway between the Centre Island ferry docks and Centreville. Near the east side of picnic area 13."
     },
     {
-      "id": "washroom-tor-149",
+      "id": "washroom-tor-150",
       "type": "washroom",
       "name": "Toronto Islands - Hanlan\u2019s Point Mid-Hanlan's Washroom",
       "address": "9 Queens Quay  W",
@@ -4688,7 +4720,7 @@
       "notes": "Located on the pathway east of beach access #4."
     },
     {
-      "id": "washroom-tor-150",
+      "id": "washroom-tor-151",
       "type": "washroom",
       "name": "Toronto Islands - Centre Island West Pier Washroom",
       "address": "9 Queens Quay  W",
@@ -4701,7 +4733,7 @@
       "notes": "Located in the building on the west side of the entrance to the pier."
     },
     {
-      "id": "washroom-tor-151",
+      "id": "washroom-tor-152",
       "type": "washroom",
       "name": "Toronto Islands - Ward's Island Chippewa House Washroom ",
       "address": "1 Centre Island Park",
@@ -4714,7 +4746,7 @@
       "notes": "Located at the south west corner of Chippawa and Cibola Avenues."
     },
     {
-      "id": "washroom-tor-152",
+      "id": "washroom-tor-153",
       "type": "washroom",
       "name": "Matty Eckler Recreation Centre Washroom",
       "address": "953 Gerrard St  E",
@@ -4734,7 +4766,7 @@
       ]
     },
     {
-      "id": "washroom-tor-153",
+      "id": "washroom-tor-154",
       "type": "washroom",
       "name": "Harry R. Gairey Outdoor Rink Washroom",
       "address": "275 Bathurst St",
@@ -4755,7 +4787,7 @@
       ]
     },
     {
-      "id": "washroom-tor-154",
+      "id": "washroom-tor-155",
       "type": "washroom",
       "name": "Power House Recreation Centre Washroom",
       "address": "65 Colonel Samuel Smith Park Dr",
@@ -4772,7 +4804,7 @@
       ]
     },
     {
-      "id": "washroom-tor-155",
+      "id": "washroom-tor-156",
       "type": "washroom",
       "name": "MacGregor Playground Washroom",
       "address": "346 Lansdowne Ave",
@@ -4793,7 +4825,7 @@
       ]
     },
     {
-      "id": "washroom-tor-156",
+      "id": "washroom-tor-157",
       "type": "washroom",
       "name": "Sorauren Avenue Park Fieldhouse Washroom ",
       "address": "289 Sorauren Ave",
@@ -4814,7 +4846,7 @@
       ]
     },
     {
-      "id": "washroom-tor-157",
+      "id": "washroom-tor-158",
       "type": "washroom",
       "name": "Ramsden Park Washroom ",
       "address": "1020 Yonge St",
@@ -4835,7 +4867,7 @@
       ]
     },
     {
-      "id": "washroom-tor-158",
+      "id": "washroom-tor-159",
       "type": "washroom",
       "name": "Toronto Islands - Gibraltar Point Washroom",
       "address": "9 Queens Quay  W",
@@ -4848,7 +4880,7 @@
       "notes": "Located on the pathway near the water's edge at Gibraltar Point."
     },
     {
-      "id": "washroom-tor-159",
+      "id": "washroom-tor-160",
       "type": "washroom",
       "name": "Toronto Islands - Hanlan's Point Picnic Area Washroom",
       "address": "9 Queens Quay  W",
@@ -4861,7 +4893,7 @@
       "notes": "Located on the pathway east of the picnic areas, south of the Hanlan's Point ferry docks."
     },
     {
-      "id": "washroom-tor-160",
+      "id": "washroom-tor-161",
       "type": "washroom",
       "name": "Toronto Islands - Olympic Island Park Washroom",
       "address": "9 Queens Quay  W",
@@ -4874,7 +4906,7 @@
       "notes": "Located along the pathway, in the pavillion on the north side of the island."
     },
     {
-      "id": "washroom-tor-161",
+      "id": "washroom-tor-162",
       "type": "washroom",
       "name": "Fergy Brown Park Washroom ",
       "address": "3700 Eglinton Ave  W",
@@ -4900,7 +4932,7 @@
       ]
     },
     {
-      "id": "washroom-tor-162",
+      "id": "washroom-tor-163",
       "type": "washroom",
       "name": "Eglinton Flats Southeast Sports Pavilion Washroom",
       "address": "101 Emmett Ave",
@@ -4926,7 +4958,7 @@
       ]
     },
     {
-      "id": "washroom-tor-163",
+      "id": "washroom-tor-164",
       "type": "washroom",
       "name": "Eglinton Flats Northwest Sports Pavilion Washroom",
       "address": "101 Emmett Ave",
@@ -4949,7 +4981,7 @@
       ]
     },
     {
-      "id": "washroom-tor-164",
+      "id": "washroom-tor-165",
       "type": "washroom",
       "name": "Eglinton Flats Northwest Service Building Washroom",
       "address": "101 Emmett Ave",
@@ -4969,7 +5001,7 @@
       ]
     },
     {
-      "id": "washroom-tor-165",
+      "id": "washroom-tor-166",
       "type": "washroom",
       "name": "Smythe Park Outdoor Pool Washroom ",
       "address": "61 Black Creek Blvd",
@@ -4990,7 +5022,7 @@
       ]
     },
     {
-      "id": "washroom-tor-166",
+      "id": "washroom-tor-167",
       "type": "washroom",
       "name": "Marie Curtis Park Playground Washroom",
       "address": "2 Forty Second St",
@@ -5012,7 +5044,7 @@
       ]
     },
     {
-      "id": "washroom-tor-167",
+      "id": "washroom-tor-168",
       "type": "washroom",
       "name": "Millwood Park Washroom ",
       "address": "4370 Bloor St  W",
@@ -5028,7 +5060,7 @@
       ]
     },
     {
-      "id": "washroom-tor-168",
+      "id": "washroom-tor-169",
       "type": "washroom",
       "name": "Eringate Park Washroom ",
       "address": "121 Wellesworth Dr",
@@ -5046,7 +5078,7 @@
       ]
     },
     {
-      "id": "washroom-tor-169",
+      "id": "washroom-tor-170",
       "type": "washroom",
       "name": "Centennial Park Etobicoke Picnic Site 6 Washroom",
       "address": "256 Centennial Park Rd",
@@ -5059,7 +5091,7 @@
       "notes": "Located next to Picnic Site #6."
     },
     {
-      "id": "washroom-tor-170",
+      "id": "washroom-tor-171",
       "type": "washroom",
       "name": "Wellesworth Park Washroom ",
       "address": "55 Dixfield Dr",
@@ -5077,7 +5109,7 @@
       ]
     },
     {
-      "id": "washroom-tor-171",
+      "id": "washroom-tor-172",
       "type": "washroom",
       "name": "McCowan District Park Outdoor Rink Washroom",
       "address": "150 Mccowan Rd",
@@ -5097,7 +5129,7 @@
       ]
     },
     {
-      "id": "washroom-tor-172",
+      "id": "washroom-tor-173",
       "type": "washroom",
       "name": "Banbury Community Centre Washroom",
       "address": "120 Banbury Rd",
@@ -5110,7 +5142,7 @@
       "notes": "Located in the Community Centre."
     },
     {
-      "id": "washroom-tor-173",
+      "id": "washroom-tor-174",
       "type": "washroom",
       "name": "June Rowlands Park Washroom",
       "address": "220 Davisville Ave",
@@ -5128,7 +5160,7 @@
       ]
     },
     {
-      "id": "washroom-tor-174",
+      "id": "washroom-tor-175",
       "type": "washroom",
       "name": "Centennial Park Rob Ford Stadium Accessible Washrooms",
       "address": "256 Centennial Park Rd",
@@ -5144,7 +5176,7 @@
       ]
     },
     {
-      "id": "washroom-tor-175",
+      "id": "washroom-tor-176",
       "type": "washroom",
       "name": "Neilson Park Scarborough Washroom",
       "address": "1555 Neilson Rd",
@@ -5166,7 +5198,7 @@
       ]
     },
     {
-      "id": "washroom-tor-176",
+      "id": "washroom-tor-177",
       "type": "washroom",
       "name": "Rouge Valley Community Recreation Centre  Washrooms",
       "address": "8450 Sheppard Ave E",
@@ -5184,7 +5216,7 @@
       ]
     },
     {
-      "id": "washroom-tor-177",
+      "id": "washroom-tor-178",
       "type": "washroom",
       "name": "Scarborough Village Park Fieldhouse Washroom",
       "address": "23 Gatesview Ave",
@@ -5204,7 +5236,7 @@
       ]
     },
     {
-      "id": "washroom-tor-178",
+      "id": "washroom-tor-179",
       "type": "washroom",
       "name": "Morningside Park Washroom",
       "address": "390 Morningside Ave",
@@ -5223,7 +5255,7 @@
       ]
     },
     {
-      "id": "washroom-tor-179",
+      "id": "washroom-tor-180",
       "type": "washroom",
       "name": "Centennial Park Etobicoke Picnic Site 1 Washroom",
       "address": "256 Centennial Park Rd",
@@ -5239,7 +5271,7 @@
       ]
     },
     {
-      "id": "washroom-tor-180",
+      "id": "washroom-tor-181",
       "type": "washroom",
       "name": "Sir Casimir Gzowski Park Fieldhouse Washroom ",
       "address": "2001 Lake Shore Blvd  W",
@@ -5259,7 +5291,7 @@
       ]
     },
     {
-      "id": "washroom-tor-181",
+      "id": "washroom-tor-182",
       "type": "washroom",
       "name": "Lithuania Park Washroom",
       "address": "155 Oakmount Rd",
@@ -5279,7 +5311,7 @@
       ]
     },
     {
-      "id": "washroom-tor-182",
+      "id": "washroom-tor-183",
       "type": "washroom",
       "name": "Baird Park Washroom",
       "address": "275 Keele St",
@@ -5304,7 +5336,7 @@
       ]
     },
     {
-      "id": "washroom-tor-183",
+      "id": "washroom-tor-184",
       "type": "washroom",
       "name": "Milliken Park Washroom Building",
       "address": "5555 Steeles Ave  E",
@@ -5326,7 +5358,7 @@
       ]
     },
     {
-      "id": "washroom-tor-184",
+      "id": "washroom-tor-185",
       "type": "washroom",
       "name": "Guild Park and Gardens East Washroom",
       "address": "201 Guildwood Pkwy",
@@ -5343,7 +5375,7 @@
       ]
     },
     {
-      "id": "washroom-tor-185",
+      "id": "washroom-tor-186",
       "type": "washroom",
       "name": "Sherbourne Common Outdoor Rink Washroom",
       "address": "5 Lower Sherbourne St",
@@ -5362,7 +5394,7 @@
       ]
     },
     {
-      "id": "washroom-tor-186",
+      "id": "washroom-tor-187",
       "type": "washroom",
       "name": "Coronation Park Toronto Washroom",
       "address": "711 Lake Shore Blvd  W",
@@ -5374,7 +5406,6 @@
       "lng": -79.40490539,
       "notes": "Located east of the south baseball diamond.",
       "nearby_routes": [
-        "29",
         "307",
         "329",
         "363",
@@ -5383,7 +5414,7 @@
       ]
     },
     {
-      "id": "washroom-tor-187",
+      "id": "washroom-tor-188",
       "type": "washroom",
       "name": "Christie Pits Park Washroom",
       "address": "750 Bloor St  W",
@@ -5403,7 +5434,7 @@
       ]
     },
     {
-      "id": "washroom-tor-188",
+      "id": "washroom-tor-189",
       "type": "washroom",
       "name": "Bickford Park Washroom",
       "address": "400 Grace St",
@@ -5422,7 +5453,7 @@
       ]
     },
     {
-      "id": "washroom-tor-189",
+      "id": "washroom-tor-190",
       "type": "washroom",
       "name": "Campbell Avenue Park Outdoor Rink Washroom",
       "address": "225 Campbell Ave",
@@ -5440,7 +5471,7 @@
       ]
     },
     {
-      "id": "washroom-tor-190",
+      "id": "washroom-tor-191",
       "type": "washroom",
       "name": "David A. Balfour Park Washroom",
       "address": "75 Rosehill Ave",
@@ -5462,7 +5493,7 @@
       ]
     },
     {
-      "id": "washroom-tor-191",
+      "id": "washroom-tor-192",
       "type": "washroom",
       "name": "Adams Park West Fieldhouse Washroom",
       "address": "2 Rozell Rd",
@@ -5478,7 +5509,7 @@
       ]
     },
     {
-      "id": "washroom-tor-192",
+      "id": "washroom-tor-193",
       "type": "washroom",
       "name": "Bridlewood Park Washroom",
       "address": "445 Huntingwood Dr",
@@ -5497,7 +5528,7 @@
       ]
     },
     {
-      "id": "washroom-tor-193",
+      "id": "washroom-tor-194",
       "type": "washroom",
       "name": "McGregor Park Community Centre Washroom",
       "address": "2231 Lawrence Ave  E",
@@ -5518,7 +5549,7 @@
       ]
     },
     {
-      "id": "washroom-tor-194",
+      "id": "washroom-tor-195",
       "type": "washroom",
       "name": "Earl Bales Ski and Snowboard Centre Washroom",
       "address": "4169 Bathurst St",
@@ -5538,7 +5569,7 @@
       ]
     },
     {
-      "id": "washroom-tor-195",
+      "id": "washroom-tor-196",
       "type": "washroom",
       "name": "Dieppe Park Outdoor Rink Washroom",
       "address": "455 Cosburn Ave",
@@ -5558,7 +5589,7 @@
       ]
     },
     {
-      "id": "washroom-tor-196",
+      "id": "washroom-tor-197",
       "type": "washroom",
       "name": "High Park Lower Hillside Washroom",
       "address": "1873 Bloor St  W",
@@ -5568,10 +5599,13 @@
       "phone": "",
       "lat": 43.64366457,
       "lng": -79.46699991999999,
-      "notes": "Located on the pathway north of Maple Leaf Garden."
+      "notes": "Located on the pathway north of Maple Leaf Garden.",
+      "nearby_routes": [
+        "203"
+      ]
     },
     {
-      "id": "washroom-tor-197",
+      "id": "washroom-tor-198",
       "type": "washroom",
       "name": "Jack Goodlad Community Centre Washroom",
       "address": "929 Kennedy Rd",
@@ -5588,7 +5622,7 @@
       ]
     },
     {
-      "id": "washroom-tor-198",
+      "id": "washroom-tor-199",
       "type": "washroom",
       "name": "Woodbine Park Washroom",
       "address": "1695 Queen St  E",
@@ -5610,7 +5644,7 @@
       ]
     },
     {
-      "id": "washroom-tor-199",
+      "id": "washroom-tor-200",
       "type": "washroom",
       "name": "Halbert Park Outdoor Pool Washroom",
       "address": "24 Rockwood Dr",
@@ -5630,7 +5664,7 @@
       ]
     },
     {
-      "id": "washroom-tor-200",
+      "id": "washroom-tor-201",
       "type": "washroom",
       "name": "Albert Campbell Square Outdoor Rink Washroom",
       "address": "150 Borough Dr",
@@ -5667,7 +5701,7 @@
       ]
     },
     {
-      "id": "washroom-tor-201",
+      "id": "washroom-tor-202",
       "type": "washroom",
       "name": "Dennis R. Timbrell Resource Centre Washroom",
       "address": "29 St Dennis Dr",
@@ -5685,27 +5719,6 @@
         "403",
         "72",
         "925"
-      ]
-    },
-    {
-      "id": "washroom-tor-202",
-      "type": "washroom",
-      "name": "Trinity Community Recreation Centre Washroom",
-      "address": "155 Crawford St",
-      "intersection": "Toronto",
-      "region": "downtown",
-      "hours": "View centre hours (currently closed)",
-      "phone": "",
-      "lat": 43.64625046,
-      "lng": -79.41487796,
-      "notes": "Located in the Community Centre.",
-      "nearby_routes": [
-        "301",
-        "305",
-        "363",
-        "501",
-        "505",
-        "63"
       ]
     },
     {
@@ -6415,6 +6428,7 @@
       "nearby_routes": [
         "189",
         "2",
+        "203",
         "30",
         "300"
       ]
@@ -6581,11 +6595,13 @@
         "301",
         "304",
         "305",
+        "306",
         "320",
         "501",
         "503",
         "504",
         "505",
+        "506",
         "508",
         "97"
       ]
@@ -6958,6 +6974,7 @@
       "lng": -79.36729826999999,
       "notes": "Located in the Community Centre.",
       "nearby_routes": [
+        "156",
         "51",
         "88"
       ]
@@ -7183,11 +7200,13 @@
         "301",
         "304",
         "305",
+        "306",
         "365",
         "501",
         "503",
         "504",
         "505",
+        "506",
         "508",
         "65"
       ]
@@ -7276,6 +7295,7 @@
         "306",
         "365",
         "501",
+        "504",
         "505",
         "506",
         "65"
@@ -7727,11 +7747,13 @@
         "301",
         "304",
         "305",
+        "306",
         "365",
         "501",
         "503",
         "504",
         "505",
+        "506",
         "508",
         "65",
         "75"
@@ -7773,6 +7795,7 @@
       "notes": "Located in the Community Centre.",
       "nearby_routes": [
         "100",
+        "156",
         "25",
         "325",
         "403",
@@ -7816,9 +7839,11 @@
         "1",
         "301",
         "305",
+        "306",
         "501",
         "503",
-        "505"
+        "505",
+        "506"
       ]
     },
     {
@@ -7899,7 +7924,6 @@
         "337",
         "37",
         "6",
-        "806",
         "937"
       ]
     },
@@ -8046,7 +8070,6 @@
         "396",
         "46",
         "6",
-        "806",
         "927",
         "96",
         "996"
@@ -8655,7 +8678,6 @@
         "45",
         "6",
         "73",
-        "806",
         "945",
         "96"
       ]

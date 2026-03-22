@@ -2,7 +2,7 @@
   "meta": {
     "city": "vancouver",
     "region": "kitsilano",
-    "updated": "2026-02-26"
+    "updated": "2026-03-21"
   },
   "amenities": [
     {
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "id": "washroom-van-112",
+      "id": "washroom-van-114",
       "type": "washroom",
       "name": "Hadden Park \u2014 West, caretaker house (actually in Kits)",
       "address": "West, caretaker house (actually in Kits), Kitsilano",
@@ -142,7 +142,7 @@
       "notes": "Wheelchair accessible"
     },
     {
-      "id": "washroom-van-118",
+      "id": "washroom-van-120",
       "type": "washroom",
       "name": "Tatlow Park \u2014 South, field house",
       "address": "South, field house, Kitsilano",
@@ -164,7 +164,7 @@
       ]
     },
     {
-      "id": "washroom-van-127",
+      "id": "washroom-van-129",
       "type": "washroom",
       "name": "Jericho Beach Park \u2014 Concession/fieldhouse",
       "address": "Concession/fieldhouse, West Point Grey",
@@ -180,7 +180,7 @@
       ]
     },
     {
-      "id": "washroom-van-128",
+      "id": "washroom-van-130",
       "type": "washroom",
       "name": "Kitsilano Beach Park \u2014 Kitsilano Showboat concession",
       "address": "Kitsilano Showboat concession, Kitsilano",
@@ -197,7 +197,7 @@
       ]
     },
     {
-      "id": "washroom-van-129",
+      "id": "washroom-van-131",
       "type": "washroom",
       "name": "Kitsilano Beach Park \u2014 Lifeguard station",
       "address": "Lifeguard station, Kitsilano",

@@ -17,6 +17,7 @@ People using Nunki may be in crisis. Outdated or wrong information (closed shelt
 | **Vancouver shelters** | Addresses from manual lookup (`SHELTER_ADDRESSES`); Open Data has no addresses | Cross-reference with NSPL, BC211; verify with BC Housing |
 | **Vancouver meals** | API sometimes returns wrong coords (e.g. Prince George); `program_status` may lag | Bounds check (already in place); cross-reference with foodpolicy@vancouver.ca |
 | **Toronto shelters** | No lat/lng from API; Central Intake only | NSPL cross-reference; consider geocoding addresses |
+| **Hamilton** | Curated from city page; Open Hamilton bulk export often 403 | `npm run validate-data` (NSPL Hamilton); re-sync when [hamilton.ca shelter page](https://www.hamilton.ca/people-programs/housing-shelter/preventing-ending-homelessness/emergency-shelters-drop-ins) updates |
 | **Toronto meals** | Fully manual from TDIN; no API | Cross-reference with 211 Central; update from tdin.ca/meals PDF regularly |
 | **Safe consumption** | Manually maintained; hours change | Verify quarterly with Vancouver Coastal Health / Toronto Public Health |
 

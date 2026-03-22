@@ -305,6 +305,13 @@ def main():
     except Exception as e:
         print(f"Transit enrichment skipped: {e}")
 
+    try:
+        from contribution_merge import apply_merged_contributions
+
+        apply_merged_contributions(root, "toronto", all_amenities)
+    except ImportError:
+        pass
+
     # Ensure all have region; build regions list for UI
     REGION_NAMES = {
         "downtown": "Downtown",

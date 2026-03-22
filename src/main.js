@@ -52,7 +52,7 @@ function initInfoScreen() {
           <h3>What works offline</h3>
           <p>After you open Nunki once while online, everything is saved for offline use:</p>
           <ul>
-            <li><strong>Places</strong> — Shelters, meals, washrooms, safe consumption (Vancouver & Toronto)</li>
+            <li><strong>Places</strong> — Shelters, meals, washrooms, safe consumption (Vancouver, Toronto & Hamilton)</li>
             <li><strong>Life skills</strong> — Benefits, taxes, healthcare, jobs, mental health</li>
             <li><strong>Transit tips</strong> — Text stop numbers for real-time arrivals</li>
           </ul>
@@ -127,7 +127,84 @@ function setUpdatedFlag() {
 const CITIES = {
   vancouver: { name: 'Vancouver', dataFile: 'vancouver.json' },
   toronto: { name: 'Toronto', dataFile: 'toronto.json' },
+  hamilton: { name: 'Hamilton', dataFile: 'hamilton.json' },
 };
+
+/** Google Forms (public submission) — base view URLs */
+const GOOGLE_FORM_SUGGEST_PLACE =
+  'https://docs.google.com/forms/d/e/1FAIpQLSdyoqRqDGKCx8w4r4AHaM-UFcENICq2KR_Raag4f-3BQxzK8Q/viewform';
+const GOOGLE_FORM_REPORT_ISSUE =
+  'https://docs.google.com/forms/d/e/1FAIpQLSdMVjBa-Zr3FOd6k8klAAx1AX-0KspOsw2dBgENxS64Ycf-FQ/viewform';
+
+/**
+ * Prefill entry IDs (from each form’s embedded FB_PUBLIC_LOAD_DATA / “Get pre-filled link”).
+ * If Google Form questions are reordered or recreated, update these to match.
+ */
+const FORM_SUGGEST_ENTRY_CITY = '1414695933';
+const FORM_REPORT_ENTRY_CITY = '2030346749';
+const FORM_REPORT_ENTRY_PLACE_NAME = '793334179';
+const FORM_REPORT_ENTRY_TYPE = '489835213';
+const FORM_REPORT_ENTRY_OTHER = '468962753';
+
+/** Maps amenity.type → Google Form “Type” option label (report form). */
+function reportFormTypeLabel(type) {
+  const m = {
+    shelter: 'Shelter',
+    meal: 'Meals',
+    washroom: 'Washroom',
+    safe_injection: 'Safe Injection',
+    transit_hub: 'Transit Hub',
+  };
+  return m[type] || 'Washroom';
+}
+
+function googleFormPrefillUrl(baseViewUrl, entryPairs) {
+  const params = new URLSearchParams();
+  params.set('usp', 'pp_url');
+  for (const [entryId, value] of entryPairs) {
+    if (value == null || String(value).trim() === '') continue;
+    params.set(`entry.${entryId}`, String(value));
+  }
+  return `${baseViewUrl}?${params.toString()}`;
+}
+
+function getSuggestPlaceFormUrl(cityDisplayName) {
+  return googleFormPrefillUrl(GOOGLE_FORM_SUGGEST_PLACE, [[FORM_SUGGEST_ENTRY_CITY, cityDisplayName]]);
+}
+
+/**
+ * Report form has no dedicated “record id” field in production; we prefill city, name, type,
+ * and put the stable app id in “Other details” for maintainers.
+ */
+function getReportIssueFormUrl(amenity, cityDisplayName) {
+  const other = `App record ID (for maintainers): ${amenity.id}`;
+  return googleFormPrefillUrl(GOOGLE_FORM_REPORT_ISSUE, [
+    [FORM_REPORT_ENTRY_CITY, cityDisplayName],
+    [FORM_REPORT_ENTRY_PLACE_NAME, amenity.name || ''],
+    [FORM_REPORT_ENTRY_TYPE, reportFormTypeLabel(amenity.type)],
+    [FORM_REPORT_ENTRY_OTHER, other],
+  ]);
+}
+
+function getTransitTipsParagraph() {
+  if (currentCity === 'vancouver') {
+    return 'Text your bus stop number to <strong>33333</strong> for real-time arrivals. Find stop numbers on the pole.';
+  }
+  if (currentCity === 'hamilton') {
+    return 'HSR: call <strong>905-527-4441</strong> for next bus times, or use <strong>hsrnow.hamilton.ca</strong> for real-time info.';
+  }
+  return 'Text your stop number to <strong>898882</strong> (TXTTTC) for real-time bus/streetcar arrivals.';
+}
+
+function getTransitDetailFootnote() {
+  if (currentCity === 'vancouver') {
+    return 'Text stop # to 33333 for arrivals. Route data by permission of TransLink.';
+  }
+  if (currentCity === 'hamilton') {
+    return 'HSR: 905-527-4441 or hsrnow.hamilton.ca.';
+  }
+  return 'Text stop # to 898882 for arrivals.';
+}
 
 const SECTIONS = [
   { id: 'survival', title: 'Places', desc: 'Shelters, meals, washrooms, transit', route: '/survival' },
@@ -204,7 +281,7 @@ function prefetchForOffline() {
     if (url && url.startsWith(origin)) fetch(url).catch(() => {});
   });
   // Cache all data files
-  ['vancouver.json', 'toronto.json', 'benefits.json'].forEach((f) =>
+  ['vancouver.json', 'toronto.json', 'hamilton.json', 'benefits.json'].forEach((f) =>
     fetch(`${base}data/${f}`).catch(() => {})
   );
 }
@@ -309,6 +386,34 @@ const AMENITY_TYPES = [
   { id: 'safe_injection', label: 'Safe consumption' },
 ];
 
+/** Human-readable area from meta.regions or title-cased id (e.g. ward-10 → Ward 10). */
+function amenityRegionLabel(amenity, regionsList) {
+  const id = amenity.region || 'downtown';
+  const found = (regionsList || []).find((r) => r.id === id);
+  if (found?.name) return found.name;
+  return id
+    .split('-')
+    .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1).toLowerCase() : ''))
+    .filter(Boolean)
+    .join(' ');
+}
+
+/** Keep filter chip borders / aria-pressed in sync (fast path only replaced the list, not these). */
+function syncFilterChipState(app, filterType, region, wheelchairOnly, favoritesOnly) {
+  app.querySelectorAll('.filter-btn[data-filter]').forEach((btn) => {
+    const on = btn.dataset.filter === filterType;
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  app.querySelectorAll('.filter-btn[data-region]').forEach((btn) => {
+    const on = btn.dataset.region === region;
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  const wBtn = app.querySelector('[data-wheelchair]');
+  if (wBtn) wBtn.setAttribute('aria-pressed', wheelchairOnly ? 'true' : 'false');
+  const fBtn = app.querySelector('[data-favorites]');
+  if (fBtn) fBtn.setAttribute('aria-pressed', favoritesOnly ? 'true' : 'false');
+}
+
 function renderAmenityList(filterType = 'all', region = 'all', search = '', wheelchairOnly = false, favoritesOnly = false) {
   const app = getAppEl();
   if (!regionData || !regionData.amenities) return;
@@ -337,25 +442,29 @@ function renderAmenityList(filterType = 'all', region = 'all', search = '', whee
   const regions = regionData.meta?.regions || [];
   const cityName = CITIES[currentCity]?.name || 'City';
   const updated = regionData.meta?.updated || '';
-  const listHtml = filtered.map((a) => `
+  const listHtml = filtered.map((a) => {
+    const typeLine = [TYPE_LABELS[a.type] || a.type];
+    const addr = (a.address || a.intersection || '').trim();
+    if (addr) typeLine.push(addr);
+    typeLine.push(amenityRegionLabel(a, regions));
+    const sub = typeLine.map(escapeHtml).join(' · ');
+    return `
     <li class="amenity-item">
       <button class="amenity-link" type="button" data-id="${a.id}" style="width:100%;text-align:left;border:none;background:none;cursor:pointer;font:inherit;color:inherit;">
         <span style="float:right;color:var(--muted);">${isFavorite(a.id) ? '★' : ''}</span>
         <strong>${escapeHtml(a.name)}</strong>
-        <small>${TYPE_LABELS[a.type] || a.type} · ${escapeHtml(a.address || a.intersection || '')}</small>
+        <small>${sub}</small>
       </button>
     </li>
-  `).join('');
+  `;
+  }).join('');
 
   const listContainer = document.getElementById('amenity-list-container');
   if (listContainer) {
     listContainer.innerHTML = listHtml;
     const headerSub = document.querySelector('.amenity-list-header-sub');
     if (headerSub) headerSub.textContent = `${filtered.length} places${updated ? ` · Updated ${updated}` : ''}`;
-    const wheelchairBtn = app.querySelector('[data-wheelchair]');
-    if (wheelchairBtn) wheelchairBtn.setAttribute('aria-pressed', wheelchairOnly);
-    const favoritesBtn = app.querySelector('[data-favorites]');
-    if (favoritesBtn) favoritesBtn.setAttribute('aria-pressed', favoritesOnly);
+    syncFilterChipState(app, filterType, region, wheelchairOnly, favoritesOnly);
     app.querySelectorAll('.amenity-link[data-id]').forEach((btn) => {
       btn.addEventListener('click', () => {
         lastClickedAmenityId = btn.dataset.id;
@@ -385,29 +494,41 @@ function renderAmenityList(filterType = 'all', region = 'all', search = '', whee
         <input id="places-search" type="search" class="search-input" placeholder="e.g. Union Gospel, Hastings…" value="${escapeHtml(search)}" data-action="search" aria-label="Search by name, address, or notes" />
       </div>
       ${regions.length > 0 ? `
-      <div class="filter-row" style="margin-bottom:0.75rem;">
-        <label style="font-size:0.75rem;color:var(--muted);display:block;margin-bottom:0.25rem;">Area</label>
-        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-          <button class="filter-btn" type="button" data-region="all" aria-pressed="${region === 'all'}">All areas</button>
+      <section class="filter-section" aria-label="Filter by area">
+        <h2 class="filter-section-title">Area</h2>
+        <div class="filter-chip-row" role="group">
+          <button class="filter-btn" type="button" data-region="all" aria-pressed="${region === 'all' ? 'true' : 'false'}">All areas</button>
           ${regions.map((r) => `
-            <button class="filter-btn" type="button" data-region="${escapeHtml(r.id)}" aria-pressed="${region === r.id}">${escapeHtml(r.name)}</button>
+            <button class="filter-btn" type="button" data-region="${escapeHtml(r.id)}" aria-pressed="${region === r.id ? 'true' : 'false'}">${escapeHtml(r.name)}</button>
           `).join('')}
         </div>
-      </div>
+      </section>
       ` : ''}
-      <div class="filter-row" style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
-        ${AMENITY_TYPES.map((t) => `
-          <button class="filter-btn" type="button" data-filter="${t.id}" aria-pressed="${filterType === t.id}">${t.label}</button>
-        `).join('')}
-        <button class="filter-btn" type="button" data-wheelchair aria-pressed="${wheelchairOnly}">Wheelchair accessible</button>
-        <button class="filter-btn" type="button" data-favorites aria-pressed="${favoritesOnly}">Favorites</button>
-      </div>
+      <section class="filter-section" aria-label="Filter by place type">
+        <h2 class="filter-section-title">Type</h2>
+        <div class="filter-chip-row" role="group">
+          ${AMENITY_TYPES.map((t) => `
+            <button class="filter-btn" type="button" data-filter="${t.id}" aria-pressed="${filterType === t.id ? 'true' : 'false'}">${t.label}</button>
+          `).join('')}
+        </div>
+      </section>
+      <section class="filter-section filter-section--refine" aria-label="Narrow the list">
+        <h2 class="filter-section-title">Refine</h2>
+        <div class="filter-chip-row" role="group">
+          <button class="filter-btn filter-btn--toggle" type="button" data-wheelchair aria-pressed="${wheelchairOnly ? 'true' : 'false'}">Wheelchair accessible</button>
+          <button class="filter-btn filter-btn--toggle" type="button" data-favorites aria-pressed="${favoritesOnly ? 'true' : 'false'}">Favorites</button>
+        </div>
+      </section>
+      <section class="submission-actions" aria-label="Suggest a place">
+        <a class="submission-btn submission-btn--add" href="${escapeHtml(getSuggestPlaceFormUrl(cityName))}" target="_blank" rel="noopener noreferrer">Suggest a missing place</a>
+        <p class="submission-hint">Opens a short Google Form · ${escapeHtml(cityName)} is pre-selected</p>
+      </section>
       <ul class="amenity-list" id="amenity-list-container">
         ${listHtml}
       </ul>
       <section class="detail-section" style="margin-top: 2rem;">
         <h3>Transit</h3>
-        <p>${currentCity === 'vancouver' ? 'Text your bus stop number to <strong>33333</strong> for real-time arrivals. Find stop numbers on the pole.' : 'Text your stop number to <strong>898882</strong> (TXTTTC) for real-time bus/streetcar arrivals.'}</p>
+        <p>${getTransitTipsParagraph()}</p>
       </section>
     </main>
   `;
@@ -477,13 +598,21 @@ function sharePlace(amenity) {
 
 function renderAmenityDetail(amenity) {
   const app = getAppEl();
-  const phone = (amenity.phone || '').replace(/[\s\-\(\)]/g, '');
-  const hasPhone = phone.length >= 10;
-  const hours = amenity.hours || '';
-  const hoursRequireCall = /^call\s+for\s+(hours|info)/i.test(hours.trim());
-  const showHours = hours && (hasPhone || !hoursRequireCall);
+  const phoneRaw = (amenity.phone || '').trim();
+  const phoneDigitsOnly = (phoneRaw.match(/\d/g) || []).join('');
+  const hasDialablePhone = phoneDigitsOnly.length >= 10;
+  const hasAnyPhone = phoneRaw.length > 0;
+  const hours = (amenity.hours || '').trim();
+  // Hide generic "call for hours" only when there is no number to call at all
+  const hoursRequireCall =
+    /call\s+for\s+(hours|info)|call\s+or\s+check\s+with\s+venue/i.test(hours);
+  const showHours =
+    hours.length > 0 &&
+    (!hoursRequireCall || hasDialablePhone || hasAnyPhone);
   const faved = isFavorite(amenity.id);
   const dirUrl = getDirectionsUrl(amenity);
+  const cityDisplay = CITIES[currentCity]?.name || 'City';
+  const reportFormUrl = getReportIssueFormUrl(amenity, cityDisplay);
   app.innerHTML = `
     <main class="page" role="main">
       <button class="back-btn" type="button" data-action="back-to-list">← Back to list</button>
@@ -499,10 +628,12 @@ function renderAmenityDetail(amenity) {
         <div class="detail-section">
           <a href="${dirUrl}" target="_blank" rel="noopener" class="directions-link">Get directions</a>
         </div>
-        ${hasPhone ? `
+        ${hasAnyPhone ? `
         <div class="detail-section">
-          <h3>Contact</h3>
-          <p><a href="tel:${phone}">${escapeHtml((amenity.phone || '').trim())}</a></p>
+          <h3>Phone</h3>
+          <p>${hasDialablePhone
+    ? `<a href="tel:${phoneDigitsOnly}">${escapeHtml(phoneRaw)}</a>`
+    : `<span>${escapeHtml(phoneRaw)}</span>`}</p>
         </div>
         ` : ''}
         ${showHours ? `
@@ -527,9 +658,13 @@ function renderAmenityDetail(amenity) {
         <div class="detail-section">
           <h3>Nearby transit</h3>
           <p>${amenity.nearby_routes.map((r) => escapeHtml(r)).join(", ")}</p>
-          <p style="margin-top:0.5rem;font-size:0.875rem;color:var(--muted);">${currentCity === 'vancouver' ? 'Text stop # to 33333 for arrivals. Route data by permission of TransLink.' : 'Text stop # to 898882 for arrivals.'}</p>
+          <p style="margin-top:0.5rem;font-size:0.875rem;color:var(--muted);">${getTransitDetailFootnote()}</p>
         </div>
         ` : ''}
+        <div class="detail-section detail-section--report">
+          <a class="submission-btn submission-btn--report" href="${escapeHtml(reportFormUrl)}" target="_blank" rel="noopener noreferrer">Report wrong or missing info</a>
+          <p class="submission-hint">Google Form · place name, type, city, and app record ID pre-filled where the form allows</p>
+        </div>
       </div>
     </main>
   `;
@@ -639,6 +774,11 @@ const DONATION_ORGS = {
     { name: 'Daily Bread Food Bank', url: 'https://www.dailybread.ca/give-now/', desc: 'Food for meal programs' },
     { name: 'Covenant House Toronto', url: 'https://covenanthousetoronto.ca/how-to-help/', desc: 'Youth shelter' },
     { name: 'Street Haven', url: 'https://streethaven.org/donation/', desc: "Women's shelter" },
+  ],
+  hamilton: [
+    { name: 'Good Shepherd Hamilton', url: 'https://goodshepherdcentres.ca/donate/', desc: 'Shelters, meals, family programs' },
+    { name: 'Mission Services Hamilton', url: 'https://missionservices.ca/donate/', desc: 'Shelters, drop-ins' },
+    { name: 'Hamilton Food Share', url: 'https://hamiltonfoodshare.org/how-you-can-help/donate', desc: 'Food bank network' },
   ],
 };
 

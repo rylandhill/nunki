@@ -271,6 +271,13 @@ def main():
     except Exception as e:
         print(f"Transit enrichment skipped: {e}")
 
+    try:
+        from contribution_merge import apply_merged_contributions
+
+        apply_merged_contributions(root, "vancouver", all_amenities)
+    except ImportError:
+        pass
+
     # Group by region (use each amenity's region field; don't recalculate from lat/lng)
     by_region: dict[str, list] = {}
     for a in all_amenities:

@@ -2,7 +2,7 @@
 
 This document describes all data sources used by Nunki and how to add support for new cities. The app is designed to be adopted by developers in other cities—this guide makes that process straightforward.
 
-**Accuracy is the top priority.** See **[docs/ACCURACY.md](ACCURACY.md)** for cross-reference resources and validation. See **[docs/MAINTENANCE.md](MAINTENANCE.md)** for manual-only sources and update schedule.
+**Accuracy is the top priority.** See **[docs/ACCURACY.md](ACCURACY.md)** for cross-reference resources and validation. See **[docs/MAINTENANCE.md](MAINTENANCE.md)** for manual-only sources and update schedule. For **community submissions** (Google Forms, CSV import), see **[docs/COMMUNITY_FORMS.md](COMMUNITY_FORMS.md)** — note that **`contributions/`** and **`tools/`** are **gitignored** (maintainer-local); only the **`scripts/`** merge/import helpers and **COMMUNITY_FORMS** are in git. Crowd-sourced place data is **not** accepted via JSON in pull requests. For **fetch vs apply-merged vs deploy**, see **[docs/DATA_PIPELINE.md](DATA_PIPELINE.md)**.
 
 ---
 
@@ -16,6 +16,7 @@ The app uses **static JSON files** in `public/data/`. Data is fetched at build t
 |------|----------|
 | `vancouver.json` | All Vancouver amenities (shelters, meals, washrooms, safe consumption) |
 | `toronto.json` | All Toronto amenities (shelters, meals, washrooms, safe consumption) |
+| `hamilton.json` | All Hamilton amenities (shelters, meals, washrooms, safe consumption) |
 | `benefits.json` | BC and Ontario foster youth benefits programs |
 
 ### Adding a New City
@@ -133,6 +134,45 @@ Toronto uses **CKAN** (open.toronto.ca). API base: `https://ckan0.cf.opendata.in
 
 ---
 
+## Hamilton Data Sources
+
+Hamilton uses **curated data** in `scripts/fetch_hamilton.py` because [Open Hamilton](https://open.hamilton.ca) (ArcGIS Hub) shelter-beds and park-washrooms bulk exports often return **403** without authentication, while the **City of Hamilton** publishes authoritative shelter and drop-in listings as HTML.
+
+### Primary reference
+
+- **Emergency shelters & drop-ins:** [hamilton.ca — Emergency Shelters & Drop-in Programs](https://www.hamilton.ca/people-programs/housing-shelter/preventing-ending-homelessness/emergency-shelters-drop-ins) (addresses and phones aligned with this page; re-check when the city updates it).
+
+### Shelters, meals, drop-ins
+
+- **Script:** `SHELTERS`, `MEALS` arrays in `fetch_hamilton.py` — sourced from the city page above. Coordinated access: **1-844-777-1924** (CMHA Hamilton) noted in shelter `notes`.
+
+### Washrooms
+
+- **Primary (automated):** `scripts/fetch_hamilton.py` loads **all park washrooms** from the City’s ArcGIS **FeatureServer** (same data as Open Hamilton, without using Hub bulk download):
+  - **Query endpoint:** `https://services.arcgis.com/rYz782eMbySr2srL/arcgis/rest/services/Park_Washrooms/FeatureServer/46/query`  
+  - Parameters: `where=1=1`, `outFields=OBJECTID,LOCATION,PARK_ADDRESS,WARD,WASHROOM_TYPE,AODA_ACCESSIBILITY,CATEGORY`, `returnGeometry=true`, `outSR=4326`, `f=json`.  
+  - **Note:** ArcGIS Hub “Download / GeoJSON” for [park-washrooms](https://open.hamilton.ca/datasets/park-washrooms) often returns **403**; the REST `query` API above is the reliable path.
+- **Seasonal hours** are not in the layer; UI copy points users to [Park washrooms (hamilton.ca)](https://www.hamilton.ca/things-do/parks-green-space/parks-trails/park-washrooms). Issues: **905-546-2489**.
+- **Regions:** Washrooms use `ward-{n}` (e.g. `ward-3`) so filters stay meaningful across 70+ sites.
+- **Fallback:** If the FeatureServer request fails, the script uses `WASHROOMS_FALLBACK` (the previous short curated list).
+- **Other references (manual cross-check):** [HPL Red Book — Park Washroom Finder](https://redbook.hpl.ca/node/40526); [211 Ontario](https://211ontario.ca/) for community facilities (not a full park washroom API).
+
+### Safe consumption / harm reduction
+
+- **Script:** `SAFE_CONSUMPTION` — Street Health / public health harm reduction. **Verify** with [hamilton.ca harm reduction](https://www.hamilton.ca/people-programs/public-health/alcohol-drugs-gambling/harm-reduction-services) — provincial policy and sites change.
+
+### Open data (future automation)
+
+- **Shelter beds available:** [open.hamilton.ca/datasets/shelter-beds-available](https://open.hamilton.ca/datasets/shelter-beds-available) — may be time-series; explore API when export access is available.
+- **Park washrooms:** [open.hamilton.ca/datasets/park-washrooms](https://open.hamilton.ca/datasets/park-washrooms) — washroom rows are already pulled at fetch time via **FeatureServer/46** (see Washrooms above).
+- **NSPL:** Federal list includes Hamilton shelters — use `npm run validate-data` and `SHELTER_NAME_ALIASES` for `hamilton`.
+
+### Transit (app copy only)
+
+- **HSR:** Call **905-527-4441** or **hsrnow.hamilton.ca** — documented in `main.js` (`getTransitTipsParagraph`). No GTFS enrichment in `fetch_hamilton.py` yet.
+
+---
+
 ## Foster Youth Benefits
 
 Benefits are **curated** in `scripts/fetch_benefits.py`. Data is written to `benefits.json`. No scraping yet—content is manually maintained from official sources.
@@ -164,6 +204,7 @@ Edit `scripts/fetch_benefits.py`. Add a new key (e.g. `"ab"` for Alberta) to `BE
 
 - **Vancouver (TransLink):** Text bus stop number to **33333** for real-time arrivals
 - **Toronto (TTC):** Text stop number to **898882** (TXTTTC) for real-time arrivals
+- **Hamilton (HSR):** Call **905-527-4441** or use **hsrnow.hamilton.ca**
 
 These are documented in the app UI, not fetched as data.
 

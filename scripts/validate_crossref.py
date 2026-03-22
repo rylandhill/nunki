@@ -28,6 +28,15 @@ SHELTER_NAME_ALIASES: dict[str, set[str]] = {
         "lookout - sakura-so", "lookout - walton hotel", "walton hotel",
         "lookout - hazelton", "hazelton",
     },
+    "hamilton": {
+        "good shepherd men's centre", "men's centre", "men's residence",
+        "hamilton booth centre", "salvation army booth centre",
+        "mary's place hamilton", "good shepherd mary's place",
+        "notre dame house", "good shepherd notre dame house",
+        "gsc family centre", "good shepherd family centre",
+        "native women's centre",
+        "mountain view project", "womankind emergency shelter",
+    },
     "toronto": {
         "na-me-res", "na-me-res (native men's residence)", "native men's residence",
         "covenant house - madison", "covenant house - toronto", "covenant house toronto",
@@ -137,7 +146,13 @@ def nspl_shelters_by_city(nspl: list[dict]) -> dict[str, list[dict]]:
         if prov == "BC":
             key = "vancouver" if "vancouver" in city.lower() else city.lower()
         elif prov == "ON":
-            key = "toronto" if "toronto" in city.lower() else city.lower()
+            cl = city.lower()
+            if "toronto" in cl:
+                key = "toronto"
+            elif "hamilton" in cl:
+                key = "hamilton"
+            else:
+                key = cl
         else:
             continue
         if key not in by_city:
@@ -163,9 +178,12 @@ def main():
         print("Fetching NSPL 2019 (install openpyxl for 2024)...")
         nspl = fetch_nspl_2019()
     by_city = nspl_shelters_by_city(nspl)
-    print(f"NSPL: {len(nspl)} shelters total. Vancouver: {len(by_city.get('vancouver', []))}, Toronto: {len(by_city.get('toronto', []))}")
+    print(
+        f"NSPL: {len(nspl)} shelters total. Vancouver: {len(by_city.get('vancouver', []))}, "
+        f"Toronto: {len(by_city.get('toronto', []))}, Hamilton: {len(by_city.get('hamilton', []))}"
+    )
 
-    for city_id, label in [("vancouver", "Vancouver"), ("toronto", "Toronto")]:
+    for city_id, label in [("vancouver", "Vancouver"), ("toronto", "Toronto"), ("hamilton", "Hamilton")]:
         print(f"\n--- {label} ---")
         ours = load_nunki_shelters(city_id, root)
         nspl_list = by_city.get(city_id, [])

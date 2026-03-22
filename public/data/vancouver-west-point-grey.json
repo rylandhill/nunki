@@ -2,7 +2,7 @@
   "meta": {
     "city": "vancouver",
     "region": "west-point-grey",
-    "updated": "2026-02-26"
+    "updated": "2026-03-21"
   },
   "amenities": [
     {
@@ -63,7 +63,7 @@
       "notes": "Wheelchair accessible"
     },
     {
-      "id": "washroom-van-119",
+      "id": "washroom-van-121",
       "type": "washroom",
       "name": "West Point Grey Park \u2014 Centre",
       "address": "Centre, West Point Grey",

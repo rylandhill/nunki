@@ -1,8 +1,29 @@
 # Dependencies
 node_modules/
 
-# Build output
+# Build output — generate with `npm run build` or CI (do not commit)
 dist/
 
-# Local / personal docs (customize for sharing; not committed)
+# Env / secrets (none expected today; safe default)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+# GTFS zip cache — re-fetched by fetch_vancouver / fetch_toronto when needed (~80MB+)
+scripts/.gtfs_cache/
+
+# Maintainer-only (not in repo): contribution queue, merge UI, internal notes
+contributions/
+tools/
+
+# Maintainer planning doc (optional local copy)
+docs/SUBMISSIONS_ARCHITECTURE.md
+
+# Local / personal docs
 personal_docs/
